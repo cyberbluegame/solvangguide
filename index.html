@@ -1092,11 +1092,11 @@
                         <div class="embed-container">
                             <iframe 
                                 id="youtube-embed"
-                                src="" 
-                                data-placeholder-src="https://www.youtube.com/embed/VIDEO_ID"
+                                src="https://www.youtube.com/embed/JCs1XclY-7g"
                                 loading="lazy" 
                                 allowfullscreen 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                onload="this.classList.add('loaded')">
                             </iframe>
                         </div>
                         <div class="embed-fallback youtube-fallback">
@@ -1134,12 +1134,12 @@
                     </div>
                     <div class="video-preview-thumb">
                         <div class="embed-container">
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@olgadanishmaid" data-video-id="VIDEO_ID">
+                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@olgadanishmaid">
                                 <section>
                                     <a target="_blank" title="@olgadanishmaid" href="https://www.tiktok.com/@olgadanishmaid">@olgadanishmaid</a>
                                 </section>
                             </blockquote>
-                            <script async src="https://www.tiktok.com/embed.js"></script>
+                            <script async src="https://www.tiktok.com/embed.js" onload="this.parentElement.classList.add('loaded')"></script>
                         </div>
                         <div class="embed-fallback tiktok-fallback">
                             <div class="branded-placeholder">
@@ -1186,7 +1186,7 @@
                             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/olgadanishmaid/" data-instgrm-version="14">
                                 <a href="https://www.instagram.com/olgadanishmaid/" target="_blank">@olgadanishmaid</a>
                             </blockquote>
-                            <script async src="https://www.instagram.com/embed.js"></script>
+                            <script async src="https://www.instagram.com/embed.js" onload="this.parentElement.classList.add('loaded')"></script>
                         </div>
                         <div class="embed-fallback instagram-fallback">
                             <div class="branded-placeholder">
