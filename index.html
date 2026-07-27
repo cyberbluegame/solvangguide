@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solvang Guide | The Danish Capital of America</title>
+    <meta name="description" content="Your ultimate guide to Solvang, California - wine tasting, authentic Danish bakeries, and boutique stays in the Danish Capital of America.">
+    
+    <!-- Schema.org JSON-LD for Local Tourist Attraction/Guide -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Solvang, California",
+        "description": "The Danish Capital of America - a charming village known for its Danish architecture, bakeries, wine tasting, and boutique shopping.",
+        "url": "https://solvangguide.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Solvang",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+        },
+        "touristType": ["Cultural", "Food", "Wine"],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1250"
+        }
+    }
+    </script>
+    
+    <style>
+        /* CSS Reset & Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-lilac: #EBE5F9;
+            --bg-soft-blue: #E3EDF7;
+            --bg-emerald: #E1F4EC;
+            --bg-amethyst: #F1E6FA;
+            --text-slate: #1A1D2E;
+            --text-graphite: #2D1E2F;
+            --text-wine: #7A1C29;
+            --text-blue-gray: #5A6275;
+            --amber-light: #FFC107;
+            --amber-dark: #FF9800;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.9);
+            --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-smooth: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            background: linear-gradient(135deg, var(--bg-lilac) 0%, var(--bg-soft-blue) 35%, var(--bg-emerald) 70%, var(--bg-amethyst) 100%);
+            color: var(--text-slate);
+            line-height: 1.75;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Ambient Blur Circles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 5%;
+            left: 10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: float1 8s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255, 152, 0, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: float2 10s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -20px) scale(1.1); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, 30px) scale(1.05); }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: 700;
+            color: var(--text-slate);
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--text-graphite), var(--text-wine));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text-graphite);
+            letter-spacing: 0.03em;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-graphite);
+            letter-spacing: 0.02em;
+        }
+
+        p {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            color: var(--text-blue-gray);
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Cute Premium Liquid Glass Base */
+        .liquid-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(230, 160, 140, 0.12), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+            border-radius: 28px;
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .liquid-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: var(--transition-smooth);
+            pointer-events: none;
+        }
+
+        .liquid-glass:hover::before {
+            left: 100%;
+        }
+
+        .liquid-glass:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 1.5rem 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--text-graphite), var(--text-wine));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-blue-gray);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 2.5rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-section {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-blue-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* Social Channels Section */
+        .social-section {
+            background: transparent;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(230, 160, 140, 0.12), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+            border-radius: 28px;
+            padding: 0;
+            text-align: left;
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: var(--transition-smooth);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .social-card:hover::before {
+            left: 100%;
+        }
+
+        .social-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+        }
+
+        .social-card.youtube-card:hover {
+            box-shadow: 0 20px 45px rgba(255, 0, 0, 0.15), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+        }
+
+        .social-card.tiktok-card:hover {
+            box-shadow: 0 20px 45px rgba(255, 215, 0, 0.2), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+        }
+
+        .social-card.instagram-card:hover {
+            box-shadow: 0 20px 45px rgba(225, 48, 108, 0.18), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+        }
+
+        .social-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .brand-logo {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .brand-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-graphite);
+            letter-spacing: 0.02em;
+        }
+
+        .video-preview-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 280px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #FFEBE6 0%, #FFF3D6 100%);
+        }
+
+        .video-preview-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .video-preview-thumb img[src=""],
+        .video-preview-thumb img:not([src]) {
+            display: none;
+        }
+
+        .embed-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .embed-container iframe,
+        .embed-container .widget-wrapper {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+        }
+
+        .embed-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFEBE6 0%, #FFF3D6 100%);
+        }
+
+        .embed-fallback img {
+            position: relative;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .play-button {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-bounce);
+        }
+
+        .youtube-card .play-button {
+            background: linear-gradient(135deg, #FF0000, #CC0000);
+        }
+
+        .tiktok-card .play-button {
+            background: linear-gradient(135deg, #000000, #333333);
+        }
+
+        .instagram-card .play-button {
+            background: linear-gradient(135deg, #E1306C, #C13584);
+        }
+
+        .social-card:hover .video-preview-thumb img {
+            transform: scale(1.05);
+        }
+
+        .social-card:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .social-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .social-card-content h3 {
+            color: var(--text-graphite);
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+            letter-spacing: 0.02em;
+        }
+
+        .social-card-content p {
+            font-size: 0.875rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .social-btn {
+            display: inline-block;
+            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
+            color: #FFFFFF;
+            padding: 0.875rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-align: center;
+            transition: var(--transition-bounce);
+            border: none;
+            min-height: 40px;
+            min-width: 44px;
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.02em;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
+        }
+
+        /* Things to Do Section */
+        .things-section {
+            background: transparent;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .activity-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(230, 160, 140, 0.12), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+            position: relative;
+        }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: var(--transition-smooth);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .activity-card:hover::before {
+            left: 100%;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.08) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-icon-bubble {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--glass-border);
+            font-size: 2.5rem;
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.25);
+        }
+
+        .card-rating {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--text-graphite);
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-content h3 {
+            color: var(--text-graphite);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .book-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
+            color: #FFFFFF;
+            padding: 1.125rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: 700;
+            text-align: center;
+            transition: var(--transition-bounce);
+            min-height: 44px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.35);
+            letter-spacing: 0.02em;
+        }
+
+        .book-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .book-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
+        }
+
+        /* Where to Stay Section */
+        .stay-section {
+            background: transparent;
+        }
+
+        .hotel-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(230, 160, 140, 0.12), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+            position: relative;
+        }
+
+        .hotel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: var(--transition-smooth);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hotel-card:hover::before {
+            left: 100%;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+        }
+
+        .hotel-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.12) 0%, rgba(255, 152, 0, 0.06) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .hotel-icon-bubble {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--glass-border);
+            font-size: 2.25rem;
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.25);
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
+            color: #FFFFFF;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+            letter-spacing: 0.02em;
+        }
+
+        .hotel-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hotel-content h3 {
+            color: var(--text-graphite);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.625rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .amenity {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            color: var(--text-graphite);
+            padding: 0.375rem 0.875rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: 600;
+            border: 2px solid var(--glass-border);
+            letter-spacing: 0.02em;
+        }
+
+        .availability-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
+            color: #FFFFFF;
+            padding: 1.125rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: 700;
+            text-align: center;
+            transition: var(--transition-bounce);
+            min-height: 44px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.35);
+            letter-spacing: 0.02em;
+        }
+
+        .availability-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .availability-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: transparent;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(230, 160, 140, 0.12), 
+                        inset 0 2px 4px rgba(255, 255, 255, 1);
+            border-radius: 24px;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 193, 7, 0.4);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-graphite);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 44px;
+            transition: var(--transition-smooth);
+            letter-spacing: 0.02em;
+        }
+
+        .faq-question:hover {
+            color: var(--amber-dark);
+        }
+
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.875rem;
+            color: var(--amber-light);
+            transition: var(--transition-smooth);
+            text-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--amber-dark);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 2rem 2rem 2rem;
+            margin-bottom: 0;
+            letter-spacing: 0.01em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border-top: 2px solid var(--glass-border);
+            color: var(--text-graphite);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            color: var(--text-blue-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        footer a {
+            color: var(--amber-dark);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-blue-gray);
+            margin-top: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+            letter-spacing: 0.02em;
+        }
+
+        /* Tablet Breakpoint (768px+) */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.25rem;
+            }
+
+            .hero {
+                padding: 7rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .social-grid,
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-image,
+            .hotel-image {
+                height: 220px;
+            }
+        }
+
+        /* Desktop Breakpoint (1024px+) */
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero {
+                padding: 9rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .social-grid,
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .card-image,
+            .hotel-image {
+                height: 240px;
+            }
+
+            section {
+                padding: 6rem 2rem;
+            }
+        }
+
+        /* Touch-friendly adjustments */
+        @media (hover: none) {
+            .social-card,
+            .activity-card,
+            .hotel-card {
+                transform: none;
+            }
+
+            .social-btn,
+            .book-btn,
+            .availability-btn {
+                padding: 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Solvang: The Danish Capital of America</h1>
+            <p class="hero-subtitle">Your ultimate guide to wine tasting, authentic Danish bakeries, and boutique stays.</p>
+        </div>
+    </header>
+
+    <!-- Featured Social Channels Section -->
+    <section class="social-section">
+        <div class="container">
+            <h2>Watch Solvang in Motion | Most Popular City Channels</h2>
+            <p class="section-subtitle">Discover aesthetic views, Danish pastries, and hidden gems with @olgadanishmaid</p>
+            
+            <div class="social-grid">
+                <!-- YouTube Card -->
+                <a href="https://youtube.com/@olgadanishmaid?si=zPnEYeflPpPs073r" target="_blank" rel="noopener noreferrer" class="social-card youtube-card">
+                    <div class="social-card-header">
+                        <svg class="brand-logo youtube-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/>
+                        </svg>
+                        <span class="brand-name">YouTube</span>
+                    </div>
+                    <div class="video-preview-thumb">
+                        <div class="embed-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/videoseries?list=UUzP-Kl9wOQZlZ7v7lZ7v7v7" 
+                                loading="lazy" 
+                                allowfullscreen 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                            </iframe>
+                        </div>
+                        <div class="embed-fallback">
+                            <img src="images/youtube-short.jpg" alt="Latest YouTube Short" loading="lazy">
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-card-content">
+                        <h3>YouTube Shorts</h3>
+                        <p>Watch our latest Solvang Shorts & quick walking guides.</p>
+                    </div>
+                </a>
+
+                <!-- TikTok Card -->
+                <a href="https://www.tiktok.com/@olgadanishmaid" target="_blank" rel="noopener noreferrer" class="social-card tiktok-card">
+                    <div class="social-card-header">
+                        <svg class="brand-logo tiktok-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="#000000"/>
+                        </svg>
+                        <span class="brand-name">TikTok</span>
+                    </div>
+                    <div class="video-preview-thumb">
+                        <div class="embed-container">
+                            <div class="widget-wrapper" data-widget="tiktok" data-username="@olgadanishmaid">
+                                <!-- Elfsight / Curator.io / Juicer widget placeholder -->
+                            </div>
+                        </div>
+                        <div class="embed-fallback">
+                            <img src="images/tiktok-video.jpg" alt="Latest TikTok Video" loading="lazy">
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-card-content">
+                        <h3>TikTok Trending</h3>
+                        <p>Latest viral clips, Danish bakery taste-tests, and local spots.</p>
+                    </div>
+                </a>
+
+                <!-- Instagram Card -->
+                <a href="https://www.instagram.com/olgadanishmaid" target="_blank" rel="noopener noreferrer" class="social-card instagram-card">
+                    <div class="social-card-header">
+                        <svg class="brand-logo instagram-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#F09433"/>
+                                <stop offset="25%" style="stop-color:#E6683C"/>
+                                <stop offset="50%" style="stop-color:#DC2743"/>
+                                <stop offset="75%" style="stop-color:#CC2366"/>
+                                <stop offset="100%" style="stop-color:#BC1888"/>
+                            </linearGradient>
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="url(#instagram-gradient)"/>
+                        </svg>
+                        <span class="brand-name">Instagram</span>
+                    </div>
+                    <div class="video-preview-thumb">
+                        <div class="embed-container">
+                            <div class="widget-wrapper" data-widget="instagram" data-username="@olgadanishmaid">
+                                <!-- Elfsight / Curator.io / Juicer widget placeholder -->
+                            </div>
+                        </div>
+                        <div class="embed-fallback">
+                            <img src="images/instagram-reel.jpg" alt="Latest Instagram Reel" loading="lazy">
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-card-content">
+                        <h3>Instagram Reels</h3>
+                        <p>Exclusive Reels, aesthetic video tours, and daily village vibes.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Things to Do Section -->
+    <section class="things-section">
+        <div class="container">
+            <h2>Must-Experience Solvang Tours & Tastings</h2>
+            <p class="section-subtitle">Handpicked experiences that capture the essence of Danish California.</p>
+            
+            <div class="cards-grid">
+                <!-- Wine Tasting Card -->
+                <div class="activity-card">
+                    <div class="card-image">
+                        <div class="card-icon-bubble">🍷</div>
+                        <span class="card-rating">★ 4.9</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Santa Ynez Wine Tasting Pass</h3>
+                        <p>Visit 5+ premium tasting rooms in the heart of wine country. Includes complimentary tastings and a souvenir glass.</p>
+                        <a href="#" class="book-btn">Book Tour</a>
+                    </div>
+                </div>
+
+                <!-- Bakery Tour Card -->
+                <div class="activity-card">
+                    <div class="card-image">
+                        <div class="card-icon-bubble">🥐</div>
+                        <span class="card-rating">★ 4.8</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Danish Bakery & Village Walking Tour</h3>
+                        <p>Guided 2-hour tour through historic Solvang with stops at 4 authentic bakeries. Samples included.</p>
+                        <a href="#" class="book-btn">Book Tour</a>
+                    </div>
+                </div>
+
+                <!-- Trolley Tour Card -->
+                <div class="activity-card">
+                    <div class="card-image">
+                        <div class="card-icon-bubble">🎠</div>
+                        <span class="card-rating">★ 4.7</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Horse-Driven Trolley Tour</h3>
+                        <p>Scenic 45-minute carriage ride through the village with historical commentary and photo stops.</p>
+                        <a href="#" class="book-btn">Book Tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where to Stay Section -->
+    <section class="stay-section">
+        <div class="container">
+            <h2>Charming Boutique Stays & Inns</h2>
+            <p class="section-subtitle">Experience Danish hospitality in these hand-selected accommodations.</p>
+            
+            <div class="cards-grid">
+                <!-- Hotel Card 1 -->
+                <div class="hotel-card">
+                    <div class="hotel-image" style="position: relative;">
+                        <div class="hotel-icon-bubble">🏨</div>
+                        <span class="price-tag">From $189/night</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Danish Village Inn</h3>
+                        <div class="amenities">
+                            <span class="amenity">Free Breakfast</span>
+                            <span class="amenity">Pool</span>
+                            <span class="amenity">WiFi</span>
+                        </div>
+                        <a href="#" class="availability-btn">Check Availability</a>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 2 -->
+                <div class="hotel-card">
+                    <div class="hotel-image" style="position: relative;">
+                        <div class="hotel-icon-bubble">🏡</div>
+                        <span class="price-tag">From $249/night</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Solvang Gardens Hotel</h3>
+                        <div class="amenities">
+                            <span class="amenity">Garden Views</span>
+                            <span class="amenity">Spa</span>
+                            <span class="amenity">Restaurant</span>
+                        </div>
+                        <a href="#" class="availability-btn">Check Availability</a>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 3 -->
+                <div class="hotel-card">
+                    <div class="hotel-image" style="position: relative;">
+                        <div class="hotel-icon-bubble">🛏️</div>
+                        <span class="price-tag">From $159/night</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Windy Hill Bed & Breakfast</h3>
+                        <div class="amenities">
+                            <span class="amenity">Homemade Breakfast</span>
+                            <span class="amenity">Fireplace</span>
+                            <span class="amenity">Parking</span>
+                        </div>
+                        <a href="#" class="availability-btn">Check Availability</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions About Solvang</h2>
+            <p class="section-subtitle">Everything you need to know before visiting the Danish Capital of America.</p>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">What is the best time to visit Solvang?</button>
+                    <div class="faq-answer">
+                        <p>The best time to visit Solvang is during spring (March-May) and fall (September-November) when the weather is mild and the vineyards are most beautiful. Summer can be warm but perfect for wine tasting, while winter offers cozy Danish holiday decorations and fewer crowds.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">How much does wine tasting cost in Solvang?</button>
+                    <div class="faq-answer">
+                        <p>Wine tasting in the Santa Ynez Valley typically ranges from $15-$40 per tasting room. Many tasting rooms waive the fee if you purchase bottles. Multi-winery passes are available for $50-$100 and offer better value for visitors planning to visit multiple locations.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">Is parking available in downtown Solvang?</button>
+                    <div class="faq-answer">
+                        <p>Yes, Solvang offers ample free parking throughout the village. There are several public parking lots on Copenhagen Drive, Alisal Road, and Mission Drive. Street parking is also available and typically has a 2-hour limit in the busiest areas. Weekends can be busy, so arriving early is recommended.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Solvang Guide. All rights reserved.</p>
+        <p>Contact: <a href="mailto:hello@solvangguide.com">hello@solvangguide.com</a></p>
+        <p class="footer-disclaimer">This website contains affiliate links. We may earn a commission when you book through our links, at no extra cost to you. This helps support our guide and allows us to continue providing free travel information.</p>
+    </footer>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't already active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
