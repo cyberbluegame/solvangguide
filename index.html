@@ -952,10 +952,8 @@
             background-size: cover;
             background-position: center;
             object-fit: cover;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            padding: 1rem;
+            display: block;
+            overflow: hidden;
             border-bottom: 2px solid rgba(255, 255, 255, 0.35);
         }
 
@@ -1363,11 +1361,12 @@
             <h2>Featured Solvang Stays & Boutique Inns</h2>
             <div class="featured-hotels-grid">
                 <article class="feature-hotel-card">
-                    <div class="feature-hotel-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80');">
-                        <span class="feature-hotel-tag">Boutique</span>
-                        <span class="feature-hotel-price">From $189/night</span>
-                    </div>
+                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800" alt="The Landsby" style="width: 100%; height: 200px; object-fit: cover; display: block;">
                     <div class="feature-hotel-content">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
+                            <span class="feature-hotel-tag">Boutique</span>
+                            <span class="feature-hotel-price">From $189/night</span>
+                        </div>
                         <h3>The Landsby</h3>
                         <div class="feature-hotel-location">📍 Downtown Solvang</div>
                         <p>Scandinavian-inspired stay with warm interiors, plush linens, and a downtown location.</p>
@@ -1376,11 +1375,12 @@
                 </article>
 
                 <article class="feature-hotel-card">
-                    <div class="feature-hotel-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80');">
-                        <span class="feature-hotel-tag">Luxury</span>
-                        <span class="feature-hotel-price">From $249/night</span>
-                    </div>
+                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hotel Corque" style="width: 100%; height: 200px; object-fit: cover; display: block;">
                     <div class="feature-hotel-content">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
+                            <span class="feature-hotel-tag">Luxury</span>
+                            <span class="feature-hotel-price">From $249/night</span>
+                        </div>
                         <h3>Hotel Corque</h3>
                         <div class="feature-hotel-location">📍 Downtown Solvang</div>
                         <p>Refined guest rooms and a calm, upscale retreat near the village core.</p>
@@ -1389,11 +1389,12 @@
                 </article>
 
                 <article class="feature-hotel-card">
-                    <div class="feature-hotel-image" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80');">
-                        <span class="feature-hotel-tag">Garden</span>
-                        <span class="feature-hotel-price">From $214/night</span>
-                    </div>
+                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Solvang Gardens Lodge" style="width: 100%; height: 200px; object-fit: cover; display: block;">
                     <div class="feature-hotel-content">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
+                            <span class="feature-hotel-tag">Garden</span>
+                            <span class="feature-hotel-price">From $214/night</span>
+                        </div>
                         <h3>Solvang Gardens Lodge</h3>
                         <div class="feature-hotel-location">📍 Downtown Solvang</div>
                         <p>Cozy suites surrounded by greenery and a relaxed, countryside feel.</p>
@@ -1402,11 +1403,12 @@
                 </article>
 
                 <article class="feature-hotel-card">
-                    <div class="feature-hotel-image" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80');">
-                        <span class="feature-hotel-tag">Inn</span>
-                        <span class="feature-hotel-price">From $199/night</span>
-                    </div>
+                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mirabelle Inn" style="width: 100%; height: 200px; object-fit: cover; display: block;">
                     <div class="feature-hotel-content">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
+                            <span class="feature-hotel-tag">Inn</span>
+                            <span class="feature-hotel-price">From $199/night</span>
+                        </div>
                         <h3>Mirabelle Inn</h3>
                         <div class="feature-hotel-location">📍 Downtown Solvang</div>
                         <p>European-style rooms, warm hospitality, and easy access to the village.</p>
@@ -1415,11 +1417,12 @@
                 </article>
 
                 <article class="feature-hotel-card">
-                    <div class="feature-hotel-image" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');">
-                        <span class="feature-hotel-tag">Danish</span>
-                        <span class="feature-hotel-price">From $175/night</span>
-                    </div>
+                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=800" alt="King Frederik Inn" style="width: 100%; height: 200px; object-fit: cover; display: block;">
                     <div class="feature-hotel-content">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
+                            <span class="feature-hotel-tag">Danish</span>
+                            <span class="feature-hotel-price">From $175/night</span>
+                        </div>
                         <h3>King Frederik Inn</h3>
                         <div class="feature-hotel-location">📍 Downtown Solvang</div>
                         <p>Charming Danish-themed rooms in the center of the village walkable core.</p>
@@ -1428,11 +1431,12 @@
                 </article>
 
                 <article class="feature-hotel-card">
-                    <div class="feature-hotel-image" style="background-image: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80');">
-                        <span class="feature-hotel-tag">Historic</span>
-                        <span class="feature-hotel-price">From $182/night</span>
-                    </div>
+                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=800" alt="The Copenhagen House Stays" style="width: 100%; height: 200px; object-fit: cover; display: block;">
                     <div class="feature-hotel-content">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
+                            <span class="feature-hotel-tag">Historic</span>
+                            <span class="feature-hotel-price">From $182/night</span>
+                        </div>
                         <h3>The Copenhagen House Stays</h3>
                         <div class="feature-hotel-location">📍 Downtown Solvang</div>
                         <p>Historic charm, cozy decor, and a warm welcome in the heart of Solvang.</p>
