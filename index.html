@@ -903,138 +903,12 @@
 
         #stay22-widget {
             width: 100%;
-            height: 680px;
-            min-height: 680px;
+            height: 800px;
+            min-height: 800px;
             display: block;
             border: 0;
             border-radius: 22px;
             background: rgba(255, 255, 255, 0.18);
-        }
-
-        .featured-hotels-section {
-            background: transparent;
-            padding-top: 1rem;
-        }
-
-        .featured-hotels-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .feature-hotel-card {
-            display: flex;
-            flex-direction: column;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px) saturate(160%);
-            -webkit-backdrop-filter: blur(20px) saturate(160%);
-            border: 2px solid var(--glass-border);
-            box-shadow: 0 15px 35px rgba(230, 160, 140, 0.12),
-                        inset 0 2px 4px rgba(255, 255, 255, 1);
-            border-radius: 28px;
-            overflow: hidden;
-            transition: var(--transition-bounce);
-            position: relative;
-        }
-
-        .feature-hotel-card:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18),
-                        inset 0 2px 4px rgba(255, 255, 255, 1);
-        }
-
-        .feature-hotel-image {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            object-fit: cover;
-            display: block;
-            overflow: hidden;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.35);
-        }
-
-        .feature-hotel-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(31, 25, 20, 0.12), rgba(31, 25, 20, 0.28));
-        }
-
-        .feature-hotel-tag,
-        .feature-hotel-price {
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        .feature-hotel-tag {
-            background: rgba(255, 255, 255, 0.8);
-            color: var(--text-graphite);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-
-        .feature-hotel-price {
-            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
-            color: #fff;
-            box-shadow: 0 8px 18px rgba(255, 152, 0, 0.35);
-        }
-
-        .feature-hotel-content {
-            padding: 1.5rem 1.25rem 1.25rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .feature-hotel-content h3 {
-            color: var(--text-graphite);
-            font-size: 1.3rem;
-            margin: 0;
-        }
-
-        .feature-hotel-location {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--text-blue-gray);
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-
-        .feature-hotel-content p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        .feature-hotel-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 44px;
-            text-decoration: none;
-            color: #fff;
-            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
-            border-radius: 50px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.35);
-            transition: var(--transition-bounce);
-        }
-
-        .feature-hotel-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
         }
 
         /* FAQ Section */
@@ -1189,10 +1063,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .featured-hotels-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
             .card-image,
             .hotel-image {
                 height: 220px;
@@ -1216,10 +1086,6 @@
             .social-grid,
             .cards-grid {
                 grid-template-columns: repeat(3, 1fr);
-            }
-
-            .featured-hotels-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
 
             .card-image,
@@ -1351,98 +1217,7 @@
             <h2>Where to Stay in Solvang</h2>
             <p class="section-subtitle">Browse cozy boutique stays and convenient lodging options near the heart of town.</p>
             <div class="stay22-map-wrap">
-                <iframe id="stay22-widget" width="100%" height="680" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&lat=34.5958&lng=-120.1376&address=Solvang,%20CA,%20USA" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured-hotels-section">
-        <div class="container">
-            <h2>Featured Solvang Stays & Boutique Inns</h2>
-            <div class="featured-hotels-grid">
-                <article class="feature-hotel-card">
-                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800" alt="The Landsby" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-                    <div class="feature-hotel-content">
-                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
-                            <span class="feature-hotel-tag">Boutique</span>
-                            <span class="feature-hotel-price">From $189/night</span>
-                        </div>
-                        <h3>The Landsby</h3>
-                        <div class="feature-hotel-location">📍 Downtown Solvang</div>
-                        <p>Scandinavian-inspired stay with warm interiors, plush linens, and a downtown location.</p>
-                        <a class="feature-hotel-button" href="https://www.stay22.com/search?location=Solvang%2C%20CA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-
-                <article class="feature-hotel-card">
-                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hotel Corque" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-                    <div class="feature-hotel-content">
-                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
-                            <span class="feature-hotel-tag">Luxury</span>
-                            <span class="feature-hotel-price">From $249/night</span>
-                        </div>
-                        <h3>Hotel Corque</h3>
-                        <div class="feature-hotel-location">📍 Downtown Solvang</div>
-                        <p>Refined guest rooms and a calm, upscale retreat near the village core.</p>
-                        <a class="feature-hotel-button" href="https://www.stay22.com/search?location=Solvang%2C%20CA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-
-                <article class="feature-hotel-card">
-                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Solvang Gardens Lodge" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-                    <div class="feature-hotel-content">
-                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
-                            <span class="feature-hotel-tag">Garden</span>
-                            <span class="feature-hotel-price">From $214/night</span>
-                        </div>
-                        <h3>Solvang Gardens Lodge</h3>
-                        <div class="feature-hotel-location">📍 Downtown Solvang</div>
-                        <p>Cozy suites surrounded by greenery and a relaxed, countryside feel.</p>
-                        <a class="feature-hotel-button" href="https://www.stay22.com/search?location=Solvang%2C%20CA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-
-                <article class="feature-hotel-card">
-                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mirabelle Inn" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-                    <div class="feature-hotel-content">
-                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
-                            <span class="feature-hotel-tag">Inn</span>
-                            <span class="feature-hotel-price">From $199/night</span>
-                        </div>
-                        <h3>Mirabelle Inn</h3>
-                        <div class="feature-hotel-location">📍 Downtown Solvang</div>
-                        <p>European-style rooms, warm hospitality, and easy access to the village.</p>
-                        <a class="feature-hotel-button" href="https://www.stay22.com/search?location=Solvang%2C%20CA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-
-                <article class="feature-hotel-card">
-                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=800" alt="King Frederik Inn" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-                    <div class="feature-hotel-content">
-                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
-                            <span class="feature-hotel-tag">Danish</span>
-                            <span class="feature-hotel-price">From $175/night</span>
-                        </div>
-                        <h3>King Frederik Inn</h3>
-                        <div class="feature-hotel-location">📍 Downtown Solvang</div>
-                        <p>Charming Danish-themed rooms in the center of the village walkable core.</p>
-                        <a class="feature-hotel-button" href="https://www.stay22.com/search?location=Solvang%2C%20CA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-
-                <article class="feature-hotel-card">
-                    <img class="feature-hotel-image" src="https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=800" alt="The Copenhagen House Stays" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-                    <div class="feature-hotel-content">
-                        <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem;">
-                            <span class="feature-hotel-tag">Historic</span>
-                            <span class="feature-hotel-price">From $182/night</span>
-                        </div>
-                        <h3>The Copenhagen House Stays</h3>
-                        <div class="feature-hotel-location">📍 Downtown Solvang</div>
-                        <p>Historic charm, cozy decor, and a warm welcome in the heart of Solvang.</p>
-                        <a class="feature-hotel-button" href="https://www.stay22.com/search?location=Solvang%2C%20CA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
+                <iframe id="stay22-widget" width="100%" height="800" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&lat=34.5958&lng=-120.1376&address=Solvang,%20CA,%20USA" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
