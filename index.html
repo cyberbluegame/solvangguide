@@ -733,6 +733,7 @@
         /* Where to Stay Section */
         .stay-section {
             background: transparent;
+            padding-top: 2.5rem;
         }
 
         .hotel-card {
@@ -746,6 +747,8 @@
             overflow: hidden;
             transition: var(--transition-bounce);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .hotel-card::before {
@@ -815,6 +818,9 @@
             padding: 2rem;
             position: relative;
             z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .hotel-content h3 {
@@ -822,6 +828,13 @@
             margin-bottom: 0.75rem;
             font-size: 1.25rem;
             letter-spacing: 0.02em;
+        }
+
+        .hotel-content p {
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            flex: 1;
+            letter-spacing: 0.01em;
         }
 
         .amenities {
@@ -1452,6 +1465,88 @@
             <p class="section-subtitle">Browse cozy boutique stays and convenient lodging options near the heart of town.</p>
             <div class="stay22-map-wrap">
                 <iframe id="stay22-widget" width="100%" height="800" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&lat=34.5958&lng=-120.1376&address=Solvang,%20CA,%20USA" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Hotels (Stay22 affiliate) -->
+    <section class="stay-section" id="featured-hotels" aria-labelledby="featured-hotels-heading">
+        <div class="container">
+            <h2 id="featured-hotels-heading">Featured Hotels in Solvang</h2>
+            <p class="section-subtitle">Handpicked downtown stays — compare live rates and book through Stay22.</p>
+            <div class="cards-grid">
+                <article class="hotel-card">
+                    <div class="hotel-content">
+                        <h3>The Landsby</h3>
+                        <p>Scandinavian boutique design &amp; modern luxury in downtown Solvang.</p>
+                        <div class="amenities">
+                            <span class="amenity">Boutique</span>
+                            <span class="amenity">Central</span>
+                            <span class="amenity">On-site Dining</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-content">
+                        <h3>Hotel Corque</h3>
+                        <p>Elegant wine-country hotel with spacious rooms and outdoor pool.</p>
+                        <div class="amenities">
+                            <span class="amenity">Luxury</span>
+                            <span class="amenity">Outdoor Pool</span>
+                            <span class="amenity">Walkable</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Corque&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-content">
+                        <h3>Mirabelle Inn</h3>
+                        <p>Intimate European-style bed &amp; breakfast near tasting rooms.</p>
+                        <div class="amenities">
+                            <span class="amenity">Romantic</span>
+                            <span class="amenity">Fine Dining</span>
+                            <span class="amenity">Historic</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Mirabelle%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-content">
+                        <h3>King Frederik Inn</h3>
+                        <p>Traditional Danish architecture with cozy rooms and heated pool.</p>
+                        <div class="amenities">
+                            <span class="amenity">Authentic</span>
+                            <span class="amenity">Heated Pool</span>
+                            <span class="amenity">Free Parking</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=King%20Frederik%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-content">
+                        <h3>Vinland Hotel &amp; Lounge</h3>
+                        <p>Contemporary hotel with craft cocktails and modern amenities.</p>
+                        <div class="amenities">
+                            <span class="amenity">Modern</span>
+                            <span class="amenity">Lounge &amp; Bar</span>
+                            <span class="amenity">Pet-Friendly</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Vinland%20Hotel%20%26%20Lounge&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-content">
+                        <h3>Solvang Inn &amp; Cottages</h3>
+                        <p>Charming traditional lodging surrounded by flower gardens.</p>
+                        <div class="amenities">
+                            <span class="amenity">Cozy Cottages</span>
+                            <span class="amenity">Family Friendly</span>
+                            <span class="amenity">Free Breakfast</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Solvang%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
