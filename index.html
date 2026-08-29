@@ -148,6 +148,57 @@
             scroll-behavior: smooth;
         }
 
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.86);
+            backdrop-filter: blur(20px) saturate(170%);
+            -webkit-backdrop-filter: blur(20px) saturate(170%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .site-nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 64px;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+        }
+
+        .site-nav-brand {
+            font-weight: 800;
+            color: var(--text-graphite);
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+
+        .site-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem 1.1rem;
+        }
+
+        .site-nav-links a {
+            color: var(--text-graphite);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .site-nav-links a:hover,
+        .site-nav-links a.is-active {
+            color: #d97706;
+        }
+
+        #featured-hotels,
+        #tours {
+            scroll-margin-top: 80px;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             background: linear-gradient(135deg, var(--bg-lilac) 0%, var(--bg-soft-blue) 35%, var(--bg-emerald) 70%, var(--bg-amethyst) 100%);
@@ -1783,6 +1834,16 @@
     </style>
 </head>
 <body>
+    <nav class="site-nav" aria-label="Primary">
+        <div class="container site-nav-inner">
+            <a class="site-nav-brand" href="index.html">Solvang Guide</a>
+            <div class="site-nav-links">
+                <a class="is-active" href="index.html" aria-current="page">Home</a>
+                <a href="wine-and-experiences.html">Wine &amp; Experiences</a>
+                <a href="index.html#featured-hotels">Hotels &amp; Lodging</a>
+            </div>
+        </div>
+    </nav>
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
