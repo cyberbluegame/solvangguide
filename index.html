@@ -780,6 +780,41 @@
             backdrop-filter: blur(10px);
         }
 
+        .hotel-media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #E3EDF7 0%, #FFF3D6 100%);
+            overflow: hidden;
+        }
+
+        .hotel-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+
+        .hotel-card:hover .hotel-media img {
+            transform: scale(1.045);
+        }
+
+        .hotel-location {
+            position: absolute;
+            left: 0.85rem;
+            bottom: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.94);
+            color: #b45309;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            border-radius: 9999px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
         .hotel-icon-bubble {
             display: inline-flex;
             align-items: center;
@@ -851,7 +886,7 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 6px;
-            margin: 12px 0;
+            margin: auto 0 12px;
         }
 
         .amenity {
@@ -867,6 +902,30 @@
             font-weight: 600;
             border: 1px solid rgba(217, 119, 6, 0.2);
             letter-spacing: 0.02em;
+        }
+
+        .amenity-lilac {
+            background: rgba(139, 92, 246, 0.12);
+            color: #6d28d9;
+            border-color: rgba(139, 92, 246, 0.28);
+        }
+
+        .amenity-sky {
+            background: rgba(14, 165, 233, 0.12);
+            color: #0369a1;
+            border-color: rgba(14, 165, 233, 0.28);
+        }
+
+        .amenity-emerald {
+            background: rgba(16, 185, 129, 0.12);
+            color: #047857;
+            border-color: rgba(16, 185, 129, 0.28);
+        }
+
+        .amenity-rose {
+            background: rgba(244, 63, 94, 0.12);
+            color: #be123c;
+            border-color: rgba(244, 63, 94, 0.28);
         }
 
         .availability-btn {
@@ -902,9 +961,9 @@
         }
 
         .availability-btn:hover {
-            filter: brightness(1.08);
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
+            filter: brightness(1.1);
+            transform: scale(1.03);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.38), 0 16px 32px rgba(255, 152, 0, 0.55);
             color: #FFFFFF;
             text-decoration: none;
         }
@@ -1802,82 +1861,298 @@
         </div>
     </section>
 
-    <!-- Featured Hotels (Stay22 affiliate) -->
+    <!-- Hotels & Places to Stay (Stay22 affiliate) -->
     <section class="stay-section" id="featured-hotels" aria-labelledby="featured-hotels-heading">
         <div class="container">
-            <h2 id="featured-hotels-heading">Featured Hotels in Solvang</h2>
-            <p class="section-subtitle">Handpicked downtown stays — compare live rates and book through Stay22.</p>
+            <h2 id="featured-hotels-heading">Hotels &amp; Places to Stay in Solvang</h2>
+            <p class="section-subtitle">Eighteen inns, boutiques, and nearby luxury resorts — compare live rates and book through Stay22.</p>
             <div class="cards-grid">
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Landsby_-_Solvang_-_Feb_2018_-_Sarah_Stierch.jpg?width=800" alt="The Landsby hotel exterior in downtown Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Mission Drive, Solvang</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3><span class="hotel-icon" aria-hidden="true">🏨</span>The Landsby</h3>
-                        <p>Scandinavian boutique design &amp; modern luxury in downtown Solvang.</p>
+                        <h3>The Landsby</h3>
+                        <p>Scandinavian boutique design and modern luxury on central Mission Drive.</p>
                         <div class="amenities">
-                            <span class="amenity">Boutique</span>
+                            <span class="amenity amenity-lilac">Boutique</span>
                             <span class="amenity">Central</span>
-                            <span class="amenity">On-site Dining</span>
+                            <span class="amenity amenity-rose">On-site Dining</span>
                         </div>
                         <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Houses_Solvang.jpg?width=800" alt="Half-timbered Danish buildings along a Solvang village street" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3><span class="hotel-icon" aria-hidden="true">🏨</span>Hotel Corque</h3>
-                        <p>Elegant wine-country hotel with spacious rooms and outdoor pool.</p>
+                        <h3>Hotel Corque</h3>
+                        <p>Luxury 4-star boutique hotel in downtown Solvang with spacious rooms and an outdoor pool.</p>
                         <div class="amenities">
                             <span class="amenity">Luxury</span>
-                            <span class="amenity">Outdoor Pool</span>
-                            <span class="amenity">Walkable</span>
+                            <span class="amenity amenity-sky">Outdoor Pool</span>
+                            <span class="amenity amenity-emerald">Walkable</span>
                         </div>
                         <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Corque&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Charming_Solvang_-_panoramio.jpg?width=800" alt="Charming pastel Danish storefronts in Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3><span class="hotel-icon" aria-hidden="true">🏨</span>Mirabelle Inn</h3>
-                        <p>Intimate European-style bed &amp; breakfast near tasting rooms.</p>
+                        <h3>The Winston Solvang</h3>
+                        <p>Exclusive high-end luxury boutique stay with polished rooms just steps from village shops.</p>
                         <div class="amenities">
-                            <span class="amenity">Romantic</span>
-                            <span class="amenity">Fine Dining</span>
-                            <span class="amenity">Historic</span>
+                            <span class="amenity">Luxury</span>
+                            <span class="amenity amenity-lilac">Boutique</span>
+                            <span class="amenity amenity-rose">Exclusive</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Mirabelle%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Winston%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Copenhagen_Street%2C_Solvang_CA_-_panoramio.jpg?width=800" alt="Copenhagen Street in Solvang with Danish village storefronts" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3><span class="hotel-icon" aria-hidden="true">🏨</span>King Frederik Inn</h3>
-                        <p>Traditional Danish architecture with cozy rooms and heated pool.</p>
+                        <h3>The Hadsten Solvang</h3>
+                        <p>Upscale contemporary hotel in the Tapestry Collection by Hilton, featuring an indoor pool.</p>
                         <div class="amenities">
+                            <span class="amenity amenity-sky">Indoor Pool</span>
+                            <span class="amenity">Upscale</span>
+                            <span class="amenity amenity-lilac">Hilton</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Hadsten%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Danish_bakery%2C_Solvang%2C_CA%2C_USA_%289503103424%29.jpg?width=800" alt="Danish bakery and cottage-style architecture in Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Wine Valley Inn &amp; Cottages</h3>
+                        <p>Charming Danish-style inn with cozy private cottages steps from tasting rooms.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-rose">Cottages</span>
+                            <span class="amenity amenity-lilac">Danish Style</span>
+                            <span class="amenity amenity-emerald">Free Parking</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Wine%20Valley%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Danish-land%21.jpg?width=800" alt="Traditional Danish half-timbered buildings in Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Heart of Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>King Frederik Inn</h3>
+                        <p>Traditional Danish architecture in the heart of town, with cozy rooms and a heated pool.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-sky">Heated Pool</span>
                             <span class="amenity">Authentic</span>
-                            <span class="amenity">Heated Pool</span>
-                            <span class="amenity">Free Parking</span>
+                            <span class="amenity amenity-emerald">Free Parking</span>
                         </div>
                         <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=King%20Frederik%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fake_Denmark.jpg?width=800" alt="Danish-inspired streetscape in Solvang, California" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3><span class="hotel-icon" aria-hidden="true">🏨</span>Vinland Hotel &amp; Lounge</h3>
-                        <p>Contemporary hotel with craft cocktails and modern amenities.</p>
+                        <h3>Vinland Hotel &amp; Lounge</h3>
+                        <p>Modern rooms with a pool, hot tub, and a cold brew bar — plus a lively lounge.</p>
                         <div class="amenities">
-                            <span class="amenity">Modern</span>
-                            <span class="amenity">Lounge &amp; Bar</span>
-                            <span class="amenity">Pet-Friendly</span>
+                            <span class="amenity amenity-lilac">Modern</span>
+                            <span class="amenity amenity-sky">Pool &amp; Hot Tub</span>
+                            <span class="amenity amenity-rose">Cold Brew Bar</span>
                         </div>
                         <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Vinland%20Hotel%20%26%20Lounge&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/City_of_Solvang_%288586060337%29.jpg?width=800" alt="Flower-lined Danish village street in Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3><span class="hotel-icon" aria-hidden="true">🏨</span>Solvang Inn &amp; Cottages</h3>
-                        <p>Charming traditional lodging surrounded by flower gardens.</p>
+                        <h3>Solvang Inn &amp; Cottages</h3>
+                        <p>Cozy cottages surrounded by flower gardens — a classic village stay.</p>
                         <div class="amenities">
-                            <span class="amenity">Cozy Cottages</span>
+                            <span class="amenity amenity-rose">Cottages</span>
+                            <span class="amenity amenity-emerald">Gardens</span>
                             <span class="amenity">Family Friendly</span>
-                            <span class="amenity">Free Breakfast</span>
                         </div>
                         <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Solvang%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mission_Drive_-_panoramio_-_Thomas_Camargo.jpg?width=800" alt="Mission Drive in Solvang with Danish village buildings" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Atterdag Inn</h3>
+                        <p>Bright, modern Danish design with a private courtyard just off the village streets.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-lilac">Modern</span>
+                            <span class="amenity amenity-emerald">Courtyard</span>
+                            <span class="amenity">Boutique</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Atterdag%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fountains%2C_Solvang%2C_CA%2C_USA_%289500358737%29.jpg?width=800" alt="Village fountains and Danish architecture in Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Royal Copenhagen Inn</h3>
+                        <p>Authentic Danish architecture with free breakfast and a warm pet-friendly welcome.</p>
+                        <div class="amenities">
+                            <span class="amenity">Free Breakfast</span>
+                            <span class="amenity amenity-emerald">Pet Friendly</span>
+                            <span class="amenity amenity-lilac">Authentic</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Royal%20Copenhagen%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_%2848298363287%29.jpg?width=800" alt="Garden paths and village buildings in Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Svendsgaard&#8217;s Danish Lodge</h3>
+                        <p>Spacious lodge rooms with an outdoor pool and garden paths through the grounds.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-sky">Outdoor Pool</span>
+                            <span class="amenity">Lodge</span>
+                            <span class="amenity amenity-emerald">Garden Paths</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Svendsgaard%27s%20Danish%20Lodge&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_%28California%29_003.jpg?width=800" alt="Solvang village street with Danish-inspired architecture" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>New Haven Inn</h3>
+                        <p>Boutique property featuring fire pits and private patios for quiet evenings.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-lilac">Boutique</span>
+                            <span class="amenity">Fire Pits</span>
+                            <span class="amenity amenity-rose">Private Patios</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=New%20Haven%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_California_Windmill.jpg?width=800" alt="Classic Solvang windmill and Danish village rooftops" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Kronborg Inn</h3>
+                        <p>Classic windmill views, spacious rooms, and an outdoor pool in the village.</p>
+                        <div class="amenities">
+                            <span class="amenity">Windmill Views</span>
+                            <span class="amenity amenity-sky">Outdoor Pool</span>
+                            <span class="amenity amenity-lilac">Spacious</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Kronborg%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=800" alt="Walkable downtown Solvang street with Danish storefronts" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Hamlet Inn</h3>
+                        <p>Trendy budget-friendly Scandinavian motel in the heart of downtown Solvang.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-emerald">Budget Friendly</span>
+                            <span class="amenity amenity-lilac">Scandinavian</span>
+                            <span class="amenity">Walkable</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Hamlet%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=800" alt="Quiet Solvang side street with Danish village charm" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Viking Inn</h3>
+                        <p>Charming boutique inn with a quiet atmosphere a short stroll from Mission Drive.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-lilac">Boutique</span>
+                            <span class="amenity amenity-sky">Quiet</span>
+                            <span class="amenity">Charming</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Viking%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_Charm_-_panoramio.jpg?width=800" alt="Spacious Solvang village buildings near downtown" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Near Downtown Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>WorldMark Solvang</h3>
+                        <p>Spacious suite resort near downtown — room to spread out after a day in the village.</p>
+                        <div class="amenities">
+                            <span class="amenity amenity-lilac">Suites</span>
+                            <span class="amenity">Resort</span>
+                            <span class="amenity amenity-emerald">Family Friendly</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=WorldMark%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Street_of_Solvang_%284131256161%29.jpg?width=800" alt="Historic wine-country street near Santa Ynez and Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Santa Ynez</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Genevieve</h3>
+                        <p>Luxury historic inn and spa in nearby Santa Ynez — a refined wine-country escape.</p>
+                        <div class="amenities">
+                            <span class="amenity">Luxury</span>
+                            <span class="amenity amenity-lilac">Historic</span>
+                            <span class="amenity amenity-rose">Spa</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Genevieve&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=800" alt="Wine-country village square near Santa Ynez and Solvang" width="800" height="500" loading="lazy" onerror="this.style.display='none'">
+                        <span class="hotel-location">📍 Santa Ynez</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Chumash Casino Resort</h3>
+                        <p>4-star luxury resort with a spa and rooftop pool just minutes from Solvang.</p>
+                        <div class="amenities">
+                            <span class="amenity">Luxury</span>
+                            <span class="amenity amenity-rose">Spa</span>
+                            <span class="amenity amenity-sky">Rooftop Pool</span>
+                        </div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Chumash%20Casino%20Resort&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
             </div>
