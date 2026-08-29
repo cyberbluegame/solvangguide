@@ -909,6 +909,187 @@
             text-decoration: none;
         }
 
+        /* Regional Tours (GetYourGuide) */
+        .tours-section {
+            background: transparent;
+            padding-top: 2.75rem;
+        }
+
+        .tours-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            max-width: 1100px;
+            margin: 0 auto 2rem;
+        }
+
+        .tours-tab {
+            appearance: none;
+            border: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.88);
+            color: var(--text-graphite);
+            border-radius: 999px;
+            padding: 0.7rem 1.15rem;
+            min-height: 44px;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 18px rgba(26, 29, 46, 0.06);
+        }
+
+        .tours-tab:hover {
+            border-color: rgba(217, 119, 6, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .tours-tab.is-active {
+            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
+            color: #FFFFFF;
+            border-color: transparent;
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.35);
+        }
+
+        .tours-panel {
+            display: none;
+        }
+
+        .tours-panel.is-active {
+            display: block;
+        }
+
+        .tour-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(22px) saturate(170%);
+            -webkit-backdrop-filter: blur(22px) saturate(170%);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 14px 32px rgba(26, 29, 46, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tour-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--amber-light) 0%, #d97706 50%, var(--amber-dark) 100%);
+            pointer-events: none;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(217, 119, 6, 0.35);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .tour-card-inner {
+            padding: 1.85rem 1.75rem 1.75rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tour-location {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            background: rgba(217, 119, 6, 0.1);
+            color: #b45309;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            border-radius: 9999px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.85rem;
+        }
+
+        .tour-card-inner h3 {
+            font-size: 1.28rem;
+            font-weight: 700;
+            color: var(--text-graphite);
+            line-height: 1.3;
+            margin-bottom: 0.7rem;
+        }
+
+        .tour-card-inner p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 0;
+            flex: 1;
+            line-height: 1.65;
+        }
+
+        .tour-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 12px 0;
+        }
+
+        .tour-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(217, 119, 6, 0.1);
+            color: #b45309;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+        }
+
+        .tour-book-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
+            color: #FFFFFF;
+            padding: 1.05rem 1.15rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            min-height: 48px;
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.02em;
+        }
+
+        .tour-book-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .tour-book-btn:hover {
+            filter: brightness(1.08);
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
         /* Stay22 Map Section */
         .stay22-section {
             background: transparent;
@@ -1363,14 +1544,16 @@
         @media (hover: none) {
             .social-card,
             .activity-card,
-            .hotel-card {
+            .hotel-card,
+            .tour-card {
                 transform: none;
             }
 
             .social-btn,
             .book-btn,
             .availability-btn,
-            .app-store-btn {
+            .app-store-btn,
+            .tour-book-btn {
                 padding: 1rem 2rem;
             }
         }
@@ -1470,6 +1653,205 @@
                         <p>Danish Maid dancing and aesthetic moments in Solvang.</p>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Tours & Things to Do (GetYourGuide partner_id=Y2EKWLC) -->
+    <section class="tours-section" id="regional-tours" aria-labelledby="regional-tours-heading">
+        <div class="container">
+            <h2 id="regional-tours-heading">Regional Tours &amp; Things to Do</h2>
+            <p class="section-subtitle">Book bakery walks, wine country days, e-bikes, and coastal kayaking around Solvang — all through GetYourGuide.</p>
+
+            <div class="tours-tabs" role="tablist" aria-label="Regional tour categories">
+                <button class="tours-tab is-active" type="button" role="tab" id="tab-solvang" aria-controls="panel-solvang" aria-selected="true">Solvang Village</button>
+                <button class="tours-tab" type="button" role="tab" id="tab-wine" aria-controls="panel-wine" aria-selected="false">Wine Country</button>
+                <button class="tours-tab" type="button" role="tab" id="tab-paso" aria-controls="panel-paso" aria-selected="false">Paso Robles</button>
+                <button class="tours-tab" type="button" role="tab" id="tab-scenic" aria-controls="panel-scenic" aria-selected="false">Scenic Tours</button>
+                <button class="tours-tab" type="button" role="tab" id="tab-coast" aria-controls="panel-coast" aria-selected="false">Santa Barbara Coast</button>
+            </div>
+
+            <div class="tours-panels">
+                <div class="tours-panel is-active" id="panel-solvang" role="tabpanel" aria-labelledby="tab-solvang">
+                    <div class="cards-grid">
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Solvang, CA</span>
+                                <h3>Bakery &amp; Cultural Walking Tours</h3>
+                                <p>Taste Danish pastries, stroll Copenhagen Drive, and hear village stories on a guided food-and-culture walk.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🥐 Bakery</span>
+                                    <span class="tour-pill">🏛️ Guided Tour</span>
+                                    <span class="tour-pill">📸 Culture</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Solvang%20food%20wine%20culture%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Solvang, CA</span>
+                                <h3>Danish Trolley &amp; Village Sightseeing</h3>
+                                <p>See windmills, bakeries, and storybook streets on a classic Solvang sightseeing outing through the Danish village.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🚋 Sightseeing</span>
+                                    <span class="tour-pill">🇩🇰 Danish Village</span>
+                                    <span class="tour-pill">👨‍👩‍👧 Family</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/solvang-l95363/?partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Solvang, CA</span>
+                                <h3>Historic Scavenger Hunts &amp; Architecture Tours</h3>
+                                <p>Hunt half-timbered facades, courtyards, and hidden landmarks on a playful historic walk through downtown Solvang.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🏛️ Architecture</span>
+                                    <span class="tour-pill">🗺️ Walking</span>
+                                    <span class="tour-pill">🧩 Interactive</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Solvang%20ghost%20tour%20architecture&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tours-panel" id="panel-wine" role="tabpanel" aria-labelledby="tab-wine" hidden>
+                    <div class="cards-grid">
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Santa Ynez Valley, CA</span>
+                                <h3>Wine Tasting &amp; Vineyard Tours</h3>
+                                <p>Sip Santa Ynez Valley wines with tastings, vineyard views, and optional lunch on a guided wine-country day.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🍷 Wine Tasting</span>
+                                    <span class="tour-pill">🚌 Day Tour</span>
+                                    <span class="tour-pill">🧺 Lunch</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20Valley%20wine%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Buellton, CA</span>
+                                <h3>Equestrian &amp; Ranch Experiences</h3>
+                                <p>Ride canyon and river trails near Buellton on a guided ranch outing through the Santa Rita Hills.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🐎 Horseback</span>
+                                    <span class="tour-pill">🌿 Outdoor</span>
+                                    <span class="tour-pill">🌄 Ranch</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20horseback%20riding&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Buellton, CA</span>
+                                <h3>Local Craft Beer &amp; Distillery Tastings</h3>
+                                <p>Sample Buellton-area breweries, tasting rooms, and craft spirits after a day in wine country.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🍺 Craft Beer</span>
+                                    <span class="tour-pill">🥃 Distillery</span>
+                                    <span class="tour-pill">🥂 Tasting</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Buellton%20brewery%20distillery%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tours-panel" id="panel-paso" role="tabpanel" aria-labelledby="tab-paso" hidden>
+                    <div class="cards-grid">
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Paso Robles, CA</span>
+                                <h3>Premium Paso Robles Winery Day Tours</h3>
+                                <p>Spend a day among Paso Robles estates with curated tastings, vineyard stops, and Central Coast views.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🍷 Wine Tasting</span>
+                                    <span class="tour-pill">🚐 Day Tour</span>
+                                    <span class="tour-pill">⭐ Premium</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20wine%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Paso Robles, CA</span>
+                                <h3>Olive Oil &amp; Vineyard Tastings</h3>
+                                <p>Pair estate olive oils with vineyard pours on a relaxed tasting day through the Paso Robles countryside.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🫒 Olive Oil</span>
+                                    <span class="tour-pill">🍷 Vineyard</span>
+                                    <span class="tour-pill">🧺 Tasting</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20olive%20oil%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tours-panel" id="panel-scenic" role="tabpanel" aria-labelledby="tab-scenic" hidden>
+                    <div class="cards-grid">
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Santa Ynez Valley, CA</span>
+                                <h3>Santa Barbara Wine Country E-Bike Tours</h3>
+                                <p>Pedal vineyard hills on an e-bike with winery tastings, olive oil, and Santa Ynez Valley views.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🚲 Outdoor</span>
+                                    <span class="tour-pill">🍷 Wine Tasting</span>
+                                    <span class="tour-pill">⚡ E-Bike</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/santa-barbara-l393/santa-barbara-e-bike-wine-tour-w-transport-tasting-lunch-t634615/?partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Santa Ynez Valley, CA</span>
+                                <h3>Private Chauffeur Vineyard Transfers</h3>
+                                <p>Ride between Santa Ynez tasting rooms with a private driver so everyone can sip without watching the clock.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🚗 Private</span>
+                                    <span class="tour-pill">🍷 Wine Country</span>
+                                    <span class="tour-pill">🥂 Luxury</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20private%20wine%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tours-panel" id="panel-coast" role="tabpanel" aria-labelledby="tab-coast" hidden>
+                    <div class="cards-grid">
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Santa Barbara, CA</span>
+                                <h3>Ocean Kayaking &amp; Coast Sightseeing</h3>
+                                <p>Paddle Santa Barbara Harbor on a wildlife kayak outing past sea lions, Stearns Wharf, and the open coast.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🛶 Kayak</span>
+                                    <span class="tour-pill">🌊 Coast</span>
+                                    <span class="tour-pill">🦭 Wildlife</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20Harbor%20Wildlife%20Kayak&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                        <article class="tour-card">
+                            <div class="tour-card-inner">
+                                <span class="tour-location">📍 Santa Barbara, CA</span>
+                                <h3>Historic &amp; Foodie Walking Tours</h3>
+                                <p>Taste Funk Zone bites and walk historic downtown Santa Barbara with a local food-and-city guide.</p>
+                                <div class="tour-pills">
+                                    <span class="tour-pill">🍽️ Foodie</span>
+                                    <span class="tour-pill">🚶 Walking</span>
+                                    <span class="tour-pill">🏛️ Historic</span>
+                                </div>
+                                <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20food%20walking%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour on GetYourGuide</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1887,6 +2269,31 @@
                 // Open clicked item if it wasn't already active
                 if (!isActive) {
                     faqItem.classList.add('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('.tours-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const panelId = tab.getAttribute('aria-controls');
+
+                document.querySelectorAll('.tours-tab').forEach(other => {
+                    other.classList.remove('is-active');
+                    other.setAttribute('aria-selected', 'false');
+                });
+
+                document.querySelectorAll('.tours-panel').forEach(panel => {
+                    panel.classList.remove('is-active');
+                    panel.hidden = true;
+                });
+
+                tab.classList.add('is-active');
+                tab.setAttribute('aria-selected', 'true');
+
+                const panel = document.getElementById(panelId);
+                if (panel) {
+                    panel.classList.add('is-active');
+                    panel.hidden = false;
                 }
             });
         });
