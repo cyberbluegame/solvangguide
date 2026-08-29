@@ -59,6 +59,61 @@
           "name": "Solvang Guide",
           "publisher": { "@id": "https://solvangguide.com/#organization" },
           "inLanguage": "en-US"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://solvangguide.com/#faq",
+          "url": "https://solvangguide.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Solvang famous for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Solvang is famous as the Danish Capital of America — a walkable Santa Ynez Valley village known for half-timbered architecture, windmills, authentic Danish bakeries (aebleskiver, kringle, and butter cookies), boutique hotels, and nearby wine tasting."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many days do you need in Solvang, CA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "One full day covers downtown walking, bakeries, and a few shops. A weekend (2 days) is ideal so you can add Santa Ynez Valley wine tasting, a trolley ride, and an overnight boutique stay."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the best places to stay in downtown Solvang?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Top downtown picks include The Landsby, Hotel Corque, The Hadsten Solvang, Wine Valley Inn & Cottages, and King Frederik Inn — all walkable to Mission Drive bakeries and shops. Compare live rates in the Solvang hotels section on this page."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there wine tasting tours available in Solvang?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Solvang sits in the Santa Ynez Valley wine country. You can book winery tours, picnic tastings, and day trips from Solvang, Buellton, and Santa Ynez through the wine tasting tours section on this guide."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Solvang walkable?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Downtown Solvang is compact and pedestrian-friendly. Most bakeries, shops, inns, and Mission Santa Inés are within a short walk; free street parking is available if you drive in."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where is Solvang located from Santa Barbara and Los Angeles?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Solvang is in Santa Barbara County, about 45 minutes (roughly 35 miles) northwest of Santa Barbara and about 2 to 2.5 hours (around 125 miles) northwest of Los Angeles via US-101."
+              }
+            }
+          ]
         }
       ]
     }
@@ -1250,7 +1305,96 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 800px;
+        }
+
+        /* SEO travel guides */
+        .guide-articles-section {
+            background: transparent;
+            padding-top: 2.75rem;
+            padding-bottom: 1rem;
+        }
+
+        .guide-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .guide-article {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(22px) saturate(170%);
+            -webkit-backdrop-filter: blur(22px) saturate(170%);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 14px 32px rgba(26, 29, 46, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 2rem 2.15rem;
+        }
+
+        .guide-article::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--amber-light) 0%, #d97706 50%, var(--amber-dark) 100%);
+        }
+
+        .guide-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(217, 119, 6, 0.1);
+            color: #b45309;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            border-radius: 9999px;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+
+        .guide-article h3 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-graphite);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .guide-article p {
+            font-size: 1.02rem;
+            color: #4b5563;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .guide-article p:last-child {
+            margin-bottom: 0;
+        }
+
+        .guide-article a {
+            color: #b45309;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .guide-article a:hover {
+            text-decoration: underline;
+        }
+
+        .rich-faq-section {
+            padding-bottom: 1.5rem;
         }
 
         .faq-answer p {
@@ -2426,6 +2570,81 @@
                     <button class="faq-question">Where can I get tourist maps and local guidance?</button>
                     <div class="faq-answer">
                         <p>The Solvang Visitor Center on Copenhagen Drive provides maps, brochures, and assistance from local staff.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-articles-section" id="solvang-guide-articles" aria-labelledby="solvang-guide-articles-heading">
+        <div class="container">
+            <h2 id="solvang-guide-articles-heading">Solvang Travel Guides: Bakeries, Weekend Plans &amp; Best Time to Visit</h2>
+            <p class="section-subtitle">Local, keyword-rich guides for planning Danish bakeries, Santa Ynez Valley wine weekends, and festival season in Solvang, California.</p>
+            <div class="guide-articles">
+                <article class="guide-article" id="danish-bakeries-solvang">
+                    <span class="guide-kicker">Guide 01 · Food</span>
+                    <h3>Top Authentic Danish Bakeries &amp; Pastries in Solvang</h3>
+                    <p>Solvang’s reputation as the Danish Capital of America is baked in — literally. The village’s most-searched food experiences are aebleskiver (spherical pancake puffs dusted with powdered sugar and served with raspberry jam) and kringle, a flaky almond-filled pastry that locals treat as a morning ritual. Start on Copenhagen Drive and Mission Drive, where the scent of butter, cardamom, and fresh pretzel-style bread pulls visitors off the sidewalk before the shops fully wake up.</p>
+                    <p>Two names come up in almost every “best bakery in Solvang” search. <strong>Olsen’s Bakery</strong> (Olsen’s Danish Village Bakery) is a classic stop for aebleskiver, kringles, and old-world cases of cookies and breads. <strong>Solvang Bakery</strong> is equally iconic for Danish butter cookies, seasonal cakes, and photo-ready village windows. Pair either with a coffee and you have the most authentic first hour in town — no reservation required, just an early arrival on busy weekends and Danish Days.</p>
+                    <p>If you are building a food-first itinerary, treat bakeries as a loop, not a single stop. Sample aebleskiver at one shop, kringle at another, then walk the half-timbered streets between windmills and courtyards. It is the easiest way to taste Solvang’s Danish heritage without a car, and it sits a short stroll from the <a href="#featured-hotels">boutique hotels in downtown Solvang</a>.</p>
+                </article>
+                <article class="guide-article" id="santa-ynez-weekend-itinerary">
+                    <span class="guide-kicker">Guide 02 · Itinerary</span>
+                    <h3>Ultimate Weekend Itinerary in Santa Ynez Valley</h3>
+                    <p>A two-day Solvang weekend is the sweet spot: one day for the Danish village on foot, one day for Santa Ynez Valley wine tasting and a slower dinner. Check into a downtown inn on Friday night if you can, so Saturday morning starts with pastries instead of highway traffic from Los Angeles or Santa Barbara.</p>
+                    <p><strong>Day 1 — Village walking.</strong> Begin with aebleskiver or kringle, then walk Copenhagen Drive and Mission Drive for windmills, courtyards, and Mission Santa Inés. Shop half-timbered boutiques, ride a trolley if you want a guided loop, and keep lunch in town so you stay walkable. Late afternoon is for more bakeries or a quiet hotel courtyard. Dinner downtown — Danish-American comfort food or a wine-country bistro — then an evening stroll under the lights.</p>
+                    <p><strong>Day 2 — Wine tasting and local dining.</strong> Use Saturday or Sunday for a Santa Ynez or Buellton tasting route: two or three wineries, a picnic lunch, and a golden-hour drive back to Solvang. Book a <a href="#regional-tours">Santa Ynez wine tasting tour</a> if you would rather not designate a driver. Close the weekend with one last pastry box for the road. This 2-day plan covers the three searches people actually make — things to do in Solvang, wine tasting near Solvang, and where to stay downtown — without rushing the village.</p>
+                </article>
+                <article class="guide-article" id="best-time-to-visit-solvang">
+                    <span class="guide-kicker">Guide 03 · Seasons</span>
+                    <h3>Best Time to Visit Solvang: Events &amp; Danish Heritage Days</h3>
+                    <p>Solvang has a Mediterranean climate: warm, dry summers and mild winters with occasional rain. Spring (March–May) and autumn (September–November) are the most comfortable for walking the Danish village — highs are typically pleasant, tasting rooms are lively, and hotel rates are easier than peak summer weekends. Summer is sunny and popular for wine-country day trips; winter is quieter except when the Christmas lights go on.</p>
+                    <p>The signature cultural date is <strong>Danish Days</strong>, Solvang’s September heritage festival (often called Danish Heritage Days). Expect folk dancing, parades, traditional music, aebleskiver stands, and the most crowded — and most photogenic — streets of the year. Book <a href="#featured-hotels">Solvang hotels</a> early if that weekend is your target; downtown inns fill first.</p>
+                    <p>From late November through December, Solvang turns into a Christmas village: festive lights on Copenhagen Drive, holiday windows, and Julefest-style evenings that pair perfectly with kringle and hot chocolate. If you want milder weather and fewer crowds, aim for April–early June or late September–October after the festival. If you want peak Danish heritage atmosphere, come for September’s Danish Days or the December lights. Either way, downtown stays walkable year-round.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section rich-faq-section" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+            <h2 id="faq-heading">Solvang FAQ: Hotels, Wine Tours &amp; How to Plan Your Visit</h2>
+            <p class="section-subtitle">Straight answers to the questions travelers and AI search engines ask most about Solvang, California.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">What is Solvang famous for?</button>
+                    <div class="faq-answer">
+                        <p>Solvang is famous as the Danish Capital of America — a walkable Santa Ynez Valley village known for half-timbered architecture, windmills, authentic Danish bakeries (aebleskiver, kringle, and butter cookies), boutique hotels, and nearby wine tasting.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">How many days do you need in Solvang, CA?</button>
+                    <div class="faq-answer">
+                        <p>One full day covers downtown walking, bakeries, and a few shops. A weekend (2 days) is ideal so you can add Santa Ynez Valley wine tasting, a trolley ride, and an overnight boutique stay.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">What are the best places to stay in downtown Solvang?</button>
+                    <div class="faq-answer">
+                        <p>Top downtown picks include The Landsby, Hotel Corque, The Hadsten Solvang, Wine Valley Inn &amp; Cottages, and King Frederik Inn — all walkable to Mission Drive bakeries and shops. Compare live rates in the Solvang hotels section on this page.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Are there wine tasting tours available in Solvang?</button>
+                    <div class="faq-answer">
+                        <p>Yes. Solvang sits in the Santa Ynez Valley wine country. You can book winery tours, picnic tastings, and day trips from Solvang, Buellton, and Santa Ynez through the wine tasting tours section on this guide.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Is Solvang walkable?</button>
+                    <div class="faq-answer">
+                        <p>Yes. Downtown Solvang is compact and pedestrian-friendly. Most bakeries, shops, inns, and Mission Santa Inés are within a short walk; free street parking is available if you drive in.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Where is Solvang located from Santa Barbara and Los Angeles?</button>
+                    <div class="faq-answer">
+                        <p>Solvang is in Santa Barbara County, about 45 minutes (roughly 35 miles) northwest of Santa Barbara and about 2 to 2.5 hours (around 125 miles) northwest of Los Angeles via US-101.</p>
                     </div>
                 </div>
             </div>
