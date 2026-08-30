@@ -20,21 +20,22 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg-lilac: #EBE5F9; --bg-soft-blue: #E3EDF7; --bg-emerald: #E1F4EC; --bg-amethyst: #F1E6FA;
-            --text-slate: #1A1D2E; --text-graphite: #2D1E2F; --text-wine: #7A1C29; --text-blue-gray: #5A6275;
+            --text-slate: #1E293B; --text-graphite: #1E293B; --text-wine: #9F1239; --text-blue-gray: #334155;
             --amber-light: #FFC107; --amber-dark: #FF9800;
         }
         html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-            background: linear-gradient(135deg, #1a2a22 0%, #3d1f24 28%, #EBE5F9 28.1%, #E3EDF7 55%, #E1F4EC 78%, #F1E6FA 100%);
-            color: var(--text-slate); line-height: 1.75; min-height: 100vh;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EBE5F9 28%, #E3EDF7 55%, #E1F4EC 78%, #F1E6FA 100%);
+            color: #1E293B; line-height: 1.75; min-height: 100vh;
         }
-        h1 { font-size: 2.15rem; line-height: 1.2; margin-bottom: 1rem; }
-        h2 { font-size: 1.875rem; margin-bottom: 1rem; text-align: center; color: var(--text-graphite); }
-        h3 { font-size: 1.25rem; color: var(--text-graphite); margin-bottom: 0.5rem; }
-        .section-subtitle { text-align: center; max-width: 780px; margin: 0 auto 2rem; color: var(--text-blue-gray); }
+        h1 { font-size: 2.15rem; line-height: 1.2; margin-bottom: 1rem; color: #F8FAFC; }
+        h2 { font-size: 1.875rem; margin-bottom: 1rem; text-align: center; color: #1E293B; }
+        h3 { font-size: 1.25rem; color: #1E293B; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; max-width: 780px; margin: 0 auto 2rem; color: #334155; font-weight: 600; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .prose { max-width: 820px; margin: 0 auto 1.25rem; color: #3f4658; font-size: 1.05rem; }
+        .prose { max-width: 820px; margin: 0 auto 1.25rem; color: #1E293B; font-size: 1.05rem; }
+        .prose strong { color: #9F1239; }
         .site-nav {
             position: sticky; top: 0; z-index: 100;
             background: rgba(255,255,255,0.86); backdrop-filter: blur(20px) saturate(170%);
@@ -66,19 +67,19 @@
         }
         .hero {
             position: relative; min-height: 70vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; color: #fff; overflow: hidden; padding: 5rem 1.5rem 4rem;
+            text-align: center; color: #F8FAFC; overflow: hidden; padding: 5rem 1.5rem 4rem;
         }
         .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        .hero-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,101,52,0.35) 0%, rgba(127,29,29,0.62) 100%); }
-        .hero-content { position: relative; z-index: 2; max-width: 920px; }
-        .hero-kicker { display: inline-block; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.4); border-radius: 9999px; padding: 0.35rem 0.9rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.78rem; margin-bottom: 1rem; }
-        .hero h1 { color: #fff; font-size: 2.25rem; text-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+        .hero-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.62) 0%, rgba(127,29,29,0.78) 100%); }
+        .hero-content { position: relative; z-index: 2; max-width: 920px; color: #F8FAFC; }
+        .hero-kicker { display: inline-block; background: rgba(15,23,42,0.55); border: 1px solid rgba(248,250,252,0.55); border-radius: 9999px; padding: 0.35rem 0.9rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.78rem; margin-bottom: 1rem; color: #F8FAFC; }
+        .hero h1 { color: #FFFFFF; font-size: 2.25rem; text-shadow: 0 4px 18px rgba(0,0,0,0.55); }
         .dates-banner {
             display: inline-block; margin: 0.85rem 0 0.75rem; padding: 0.7rem 1.25rem;
             background: linear-gradient(135deg, #166534, #b91c1c); border-radius: 9999px; font-weight: 800; font-size: 1.02rem;
-            box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.28); color: #FFFFFF;
         }
-        .hero-sub { font-size: 1.12rem; font-weight: 600; max-width: 720px; margin: 0 auto; opacity: 0.96; }
+        .hero-sub { font-size: 1.12rem; font-weight: 700; max-width: 720px; margin: 0 auto; color: #F8FAFC; text-shadow: 0 2px 10px rgba(0,0,0,0.45); }
         section { padding: 2.75rem 1.5rem; }
         .cards-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .hotel-card {
@@ -113,21 +114,40 @@
             background: rgba(255,255,255,0.82); border: 1px solid rgba(185,28,28,0.28); border-radius: 20px;
             color: #7A1C29; font-weight: 700;
         }
-        .day-accordion { max-width: 860px; margin: 0 auto; display: grid; gap: 1rem; }
-        details.day {
-            background: rgba(255,255,255,0.88); border: 1px solid #e2e8f0; border-radius: 22px; overflow: hidden;
-            box-shadow: 0 10px 24px rgba(26,29,46,0.08);
+        .schedule-days { max-width: 920px; margin: 0 auto; display: grid; gap: 1.75rem; }
+        .event-card {
+            background: #FFFFFF; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden;
+            box-shadow: 0 14px 32px rgba(26,29,46,0.1); position: relative;
         }
-        details.day[open] { border-color: rgba(22,101,52,0.4); }
-        details.day summary {
-            cursor: pointer; list-style: none; padding: 1.15rem 1.35rem; font-weight: 800; color: var(--text-graphite);
-            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+        .event-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; z-index: 2;
+            background: linear-gradient(90deg, #166534, #f59e0b, #b91c1c); }
+        .event-card-head { padding: 1.7rem 1.6rem 0.35rem; }
+        .event-card-head h3 { font-size: 1.35rem; margin-bottom: 0.4rem; color: #1E293B; }
+        .event-banner { margin: 1rem 1.45rem 0; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 10px 22px rgba(26,29,46,0.12); }
+        .event-banner img { width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; }
+        .event-banner figcaption {
+            position: absolute; left: 0.75rem; bottom: 0.75rem;
+            background: rgba(255,255,255,0.96); color: #9F1239; border-radius: 9999px;
+            padding: 4px 10px; font-size: 0.72rem; font-weight: 800;
         }
-        details.day summary::-webkit-details-marker { display: none; }
-        details.day summary::after { content: "＋"; color: #166534; font-size: 1.2rem; }
-        details.day[open] summary::after { content: "–"; }
-        .day-body { padding: 0 1.35rem 1.35rem; color: #3f4658; }
-        .day-body p { margin-bottom: 0.75rem; }
+        .slot-list { list-style: none; padding: 1.15rem 1.4rem 1.6rem; display: grid; gap: 0.85rem; }
+        .slot-item {
+            display: flex; gap: 0.9rem; align-items: flex-start;
+            background: #FFF7ED; border: 1px solid rgba(185,28,28,0.16);
+            border-radius: 18px; padding: 1rem 1.1rem;
+        }
+        .time-badge, .badge {
+            flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #166534, #b91c1c); color: #FFFFFF;
+            font-weight: 800; font-size: 0.78rem; letter-spacing: 0.01em;
+            padding: 0.42rem 0.72rem; border-radius: 9999px; white-space: nowrap;
+            box-shadow: 0 6px 14px rgba(127,29,29,0.28);
+        }
+        .slot-item h4 { font-size: 1.05rem; margin-bottom: 0.25rem; color: #1E293B; line-height: 1.35; }
+        .slot-item p { font-size: 0.95rem; color: #1E293B; margin: 0; }
+        .tip-card h3, .tip-card p { color: #1E293B; }
+        .hotel-content p { color: #1E293B; }
+        .callout { color: #9F1239; background: #FFFFFF; }
         .tip-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 1100px; margin: 0 auto; }
         .tip-card { background: rgba(255,255,255,0.86); border: 1px solid #e2e8f0; border-radius: 22px; padding: 1.4rem 1.5rem; }
         .stay22-map-wrap { background: rgba(255,255,255,0.7); border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; margin: 1.5rem 0 2rem; }
@@ -206,62 +226,170 @@
     <section id="schedule" aria-labelledby="schedule-heading">
         <div class="container">
             <h2 id="schedule-heading">Complete Festival Schedule &amp; Event Highlights</h2>
-            <p class="section-subtitle">Open each card for dates, times, and where to stand. Core festival dates are November 27, 2026 – January 3, 2027; the Tree Burn is January 8, 2027.</p>
-            <div class="day-accordion">
-                <details class="day" open>
-                    <summary>Solvang Tree Lighting Ceremony — Friday, December 4, 2026</summary>
-                    <div class="day-body">
-                        <p><strong>5:30 PM at Solvang Park.</strong> The official switch-on: live music, caroling, and Fossemalle Dance Studio ballerinas as the village tree and park lights come up. Arrive by 5:00 PM for a sightline near the gazebo. This is the first “full Julefest night” — pair it with dinner on Copenhagen Drive and a slow walk past the windmill.</p>
+            <p class="section-subtitle">Every event is open below — no clicking required. Core festival dates are November 27, 2026 – January 3, 2027; the Tree Burn is January 8, 2027.</p>
+            <div class="schedule-days">
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>🎄 Tree Lighting &amp; Ceremony</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Annual Julefest Parade — Saturday, December 5, 2026</summary>
-                    <div class="day-body">
-                        <p><strong>11:00 AM through downtown Solvang.</strong> Marching bands, Danish folk dancers, vintage floats, and Santa along Mission Drive and the village core. Claim a shaded curb by 10:15 AM. After the last float, Solvang Park fills for Santa photos and the first weekend rush of the maker’s-market energy.</p>
+                    <figure class="event-banner">
+                        <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Christmas tree ornaments and warm lights for the Solvang Julefest tree lighting" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1482517967863-00e15c9b44be?auto=format&amp;fit=crop&amp;w=1200&amp;q=80';">
+                        <figcaption>🎄 Solvang Park tree lighting</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Friday, Dec 4 · 5:30 PM</span>
+                            <div>
+                                <h4>🎄 Julefest Tree Lighting Ceremony</h4>
+                                <p>Solvang Park switch-on with live music, caroling, and Fossemalle Dance Studio ballerinas. Arrive by 5:00 PM for a gazebo sightline, then dinner on Copenhagen Drive and a walk past the windmill.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>🎁 Annual Julefest Parade</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Nisse Adventure — Daily, November 27, 2026 – January 3, 2027</summary>
-                    <div class="day-body">
-                        <p>A town-wide hunt for mischievous Danish Jule-Nisse gnomes hidden in shop windows, courtyards, and park nooks. <strong>Pick up clue sheets at the Solvang Visitor Center</strong>, then walk the village. Finishers can win official holiday prizes. This is the best free activity for families on a midweek stay — and a reason to duck into bakeries you would otherwise skip.</p>
+                    <figure class="event-banner">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Charming_Solvang_-_panoramio.jpg?width=1200" alt="Horse-drawn trolley and festive Solvang village street for the Julefest Parade" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=1200';">
+                        <figcaption>🎁 Downtown parade route</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Saturday, Dec 5 · 11:00 AM</span>
+                            <div>
+                                <h4>🎁 Annual Julefest Parade</h4>
+                                <p>Marching bands, Danish folk dancers, vintage floats, and Santa through downtown Solvang. Claim a shaded curb by 10:15 AM. After the last float, Solvang Park fills for Santa photos.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>🧙‍♂️ Nisse Adventure Gnome Hunt</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Julefest Maker’s Market — Wednesday twilights in Solvang Park</summary>
-                    <div class="day-body">
-                        <p>European-style night market: local artisan crafts, pastries, hot drinks, and gifts under the park lights. Wednesday evenings are calmer than Saturday — go if you want conversation with makers and a shorter gløgg line. Confirm weekly hours at the Visitor Center; weather can shift an outdoor market.</p>
+                    <figure class="event-banner">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Houses_Solvang.jpg?width=1200" alt="Half-timbered Solvang shopfronts where Jule-Nisse gnomes hide during the village hunt" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=1200';">
+                        <figcaption>🧙‍♂️ Hidden gnomes in the village</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Daily · Nov 27 – Jan 3</span>
+                            <div>
+                                <h4>🧙‍♂️ Nisse Adventure (Gnome Hunt)</h4>
+                                <p>Find mischievous Danish Jule-Nisse in shop windows, courtyards, and park nooks. Pick up clue sheets at the Solvang Visitor Center — finishers win official holiday prizes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>🍷 Gløgg &amp; Maker's Market</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Nightly Light &amp; Music Show — 5:00 PM – 9:00 PM daily</summary>
-                    <div class="day-body">
-                        <p>Hourly light displays in Solvang Park from 5:00 PM to 9:00 PM. After Christmas Day the soundtrack shifts toward New Year’s themes. Bring a thermos and a warm layer — valley nights drop fast. The park tree plus Copenhagen Drive storefronts is the classic photo loop.</p>
+                    <figure class="event-banner">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Wine glasses for gløgg and Julefest Maker’s Market toasts" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80';">
+                        <figcaption>🍷 Gløgg, stalls &amp; æbleskiver</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Wednesdays · twilight</span>
+                            <div>
+                                <h4>🍷 Julefest Maker’s Market</h4>
+                                <p>European night market in Solvang Park: artisan crafts, pastries, hot drinks, and gifts. Wednesday evenings are calmer than Saturday — shorter gløgg lines. Confirm weekly hours at the Visitor Center.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>✨ Nightly Light &amp; Music Show</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Santa’s Village — Saturdays &amp; Sundays, 12:00 PM – 4:00 PM</summary>
-                    <div class="day-body">
-                        <p>Free photos with Santa Claus in Solvang Park on weekend afternoons. Lines peak the two weekends after Thanksgiving and the Saturday of the Julefest Parade. If you have small kids, do Santa first, then æbleskiver, then the Nisse hunt.</p>
+                    <figure class="event-banner">
+                        <img src="https://images.unsplash.com/photo-1464047736614-af63643285bf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Warm evening string lights for the nightly Julefest light and music show" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=1200';">
+                        <figcaption>✨ Solvang Park after dark</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">5:00 PM – 9:00 PM</span>
+                            <div>
+                                <h4>✨ Nightly Light &amp; Music Show</h4>
+                                <p>Hourly light displays in Solvang Park daily. After Christmas Day the soundtrack shifts toward New Year’s themes. The park tree plus Copenhagen Drive storefronts is the classic photo loop.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>🎅 Santa’s Village &amp; Family Fun</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Hygge Candlelight Tours — evenings through the season</summary>
-                    <div class="day-body">
-                        <p>Guided evening walking tours led by costumed locals: Danish holiday folklore, music, and a treat stop. These sell out on parade weekend and New Year’s week. Book a Friday or Sunday if you can. Wear real shoes — brick and evening damp are not the moment for dress heels.</p>
+                    <figure class="event-banner">
+                        <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Christmas tree lights and stockings for Santa’s Village in Solvang Park" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80';">
+                        <figcaption>🎅 Free photos with Santa</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Sat &amp; Sun · 12:00 PM – 4:00 PM</span>
+                            <div>
+                                <h4>🎅 Santa’s Village</h4>
+                                <p>Free photos with Santa Claus in Solvang Park. Lines peak after Thanksgiving and on parade Saturday. Do Santa first, then æbleskiver, then the Nisse hunt.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>🕯️ Hygge Candlelight Walking Tour</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Copenhagen Countdown — Thursday, December 31, 2026</summary>
-                    <div class="day-body">
-                        <p><strong>2:00 PM – 4:00 PM at Solvang Park.</strong> Ring in the Danish New Year at <strong>3:00 PM local time — midnight in Copenhagen</strong> — with live music and champagne. It is a family-friendly afternoon countdown, not a midnight street party. Dinner reservations in the village still vanish; book a table or plan Buellton / Los Olivos.</p>
+                    <figure class="event-banner">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_California_Windmill.jpg?width=1200" alt="Solvang windmill illuminated for evening Hygge candlelight walking tours" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=1200';">
+                        <figcaption>🕯️ Evening village walk</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Evenings · through the season</span>
+                            <div>
+                                <h4>🕯️ Hygge Candlelight Tours</h4>
+                                <p>Guided walks with costumed locals, Danish holiday folklore, music, and a treat stop. These sell out on parade weekend and New Year’s week — book a Friday or Sunday, and wear real shoes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>✨ Copenhagen Countdown</h3>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Annual Solvang Christmas Tree Burn — Friday, January 8, 2027</summary>
-                    <div class="day-body">
-                        <p><strong>5:00 PM at the Old Mission Santa Inés fields.</strong> The Central Coast’s community bonfire: collected trees, live entertainment, and safety demos supervised by the Santa Barbara County Fire Department. Dress for open-field wind. This is the true last night of the season — after this, the village returns to winter-quiet wine country.</p>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Thu, Dec 31 · 2:00 PM – 4:00 PM</span>
+                            <div>
+                                <h4>✨ Danish New Year at 3:00 PM</h4>
+                                <p>Ring in midnight in Copenhagen at 3:00 PM local time in Solvang Park — live music and champagne. Family-friendly afternoon countdown; book dinner early or plan Buellton / Los Olivos.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card-head">
+                        <h3>🎄 Annual Solvang Christmas Tree Burn</h3>
                     </div>
-                </details>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="badge">Friday, Jan 8 · 5:00 PM</span>
+                            <div>
+                                <h4>🎄 Grand Tree Burn</h4>
+                                <p>Old Mission Santa Inés fields — community bonfire, live entertainment, and safety demos supervised by the Santa Barbara County Fire Department. Dress for open-field wind; this is the last night of the season.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
