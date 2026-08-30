@@ -85,136 +85,87 @@
           ]
         },
         {
-          "@type": "EventSeries",
-          "@id": "https://solvangguide.com/#event-series",
-          "name": "Solvang Annual Festivals & Celebrations",
-          "url": "https://solvangguide.com/",
-          "description": "Annual Solvang and Santa Ynez Valley festivals: Danish Days, Julefest Christmas, Taste of Solvang, and the Wine Country Marathon.",
-          "image": ["https://solvangguide.com/instagram-preview.jpg"],
-          "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/"},
-          "organizer": {
-            "@type": "Organization",
-            "name": "Solvang Conference & Visitors Bureau",
-            "url": "https://solvangguide.com/"
-          },
-          "performer": {
-            "@type": "PerformingGroup",
-            "name": "Solvang Village Performers & Musicians"
-          },
-          "subEvent": [
-            {
-              "@type": "Festival",
-              "name": "Solvang Danish Days 2026",
-              "url": "https://solvangguide.com/danish-days.html",
-              "startDate": "2026-09-18",
-              "endDate": "2026-09-20",
-              "location": { "@type": "Place", "name": "Downtown Solvang", "address": "Solvang, CA 93463" },
-              "image": ["https://solvangguide.com/images/danish-days-banner.jpg"],
-              "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/danish-days.html"},
-              "organizer": {"@type":"Organization","name":"Solvang Danish Days Foundation","url":"https://solvangguide.com/"},
-              "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
-            },
-            {
-              "@type": "Festival",
-              "name": "Solvang Julefest Christmas 2026",
-              "url": "https://solvangguide.com/christmas.html",
-              "startDate": "2026-11-27",
-              "endDate": "2027-01-08",
-              "location": { "@type": "Place", "name": "Solvang Village", "address": "Solvang, CA 93463" },
-              "image": ["https://solvangguide.com/images/julefest-banner.jpg"],
-              "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/christmas.html"},
-              "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
-              "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
-            },
-            {
-              "@type": "FoodEvent",
-              "name": "Taste of Solvang 2027",
-              "url": "https://solvangguide.com/taste-of-solvang-2027.html",
-              "startDate": "2027-03-19",
-              "endDate": "2027-03-21",
-              "location": { "@type": "Place", "name": "Solvang Wine Country", "address": "Solvang, CA 93463" },
-              "image": ["https://solvangguide.com/images/taste-of-solvang-banner.jpg"],
-              "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/taste-of-solvang-2027.html"},
-              "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
-              "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
-            },
-            {
-              "@type": "SportsEvent",
-              "name": "Santa Ynez Valley Wine Marathon 2027",
-              "url": "https://solvangguide.com/solvang-wine-marathon-2027.html",
-              "startDate": "2027-05-08",
-              "location": { "@type": "Place", "name": "Solvang & Santa Ynez Valley", "address": "Solvang, CA 93463" },
-              "image": ["https://solvangguide.com/images/wine-marathon-banner.jpg"],
-              "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/solvang-wine-marathon-2027.html"},
-              "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
-              "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
-            }
-          ]
-        },
-        {
-          "@type": "Event",
-          "@id": "https://solvangguide.com/danish-days.html#event",
-          "name": "89th Annual Solvang Danish Days 2026",
+          "@type": "Festival",
+          "@id": "https://solvangguide.com/#danish-days-2026",
+          "name": "Solvang Danish Days 2026",
+          "alternateName": "89th Annual Solvang Danish Days 2026",
+          "url": "https://solvangguide.com/danish-days.html",
+          "description": "The 89th Annual Solvang Danish Days festival celebrates Danish heritage in downtown Solvang with æbleskiver breakfasts, folk dancing, Viking living history, and three parades. Free public street admission runs Friday, September 18 through Sunday, September 20, 2026, Pacific Time.",
           "startDate": "2026-09-18",
           "endDate": "2026-09-20",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "eventStatus": "https://schema.org/EventScheduled",
-          "url": "https://solvangguide.com/danish-days.html",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "isAccessibleForFree": true,
-          "location": { "@id": "https://solvangguide.com/#destination" },
-          "description": "Free-admission Danish heritage festival in downtown Solvang with æbleskiver breakfasts, Viking encampment, and three parades. Times in Pacific Time.",
-          "image": ["https://solvangguide.com/images/danish-days-banner.jpg","https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_California_Windmill.jpg?width=1600"],
-          "offers": {"@type":"Offer","name":"Free public street festival admission","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/danish-days.html","validFrom":"2026-01-01"},
+          "location": {
+            "@type": "Place",
+            "name": "Downtown Solvang Village",
+            "address": {"@type":"PostalAddress","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}
+          },
+          "image": ["https://solvangguide.com/images/danish-days-banner.jpg"],
           "organizer": {"@type":"Organization","name":"Solvang Danish Days Foundation","url":"https://solvangguide.com/"},
-          "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
+          "performer": {"@type":"PerformingGroup","name":"Solvang Folk Dancers & Musicians"},
+          "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/danish-days.html"}
         },
         {
-          "@type": "Event",
-          "@id": "https://solvangguide.com/christmas.html#event",
-          "name": "Solvang Julefest 2026–2027",
+          "@type": "Festival",
+          "@id": "https://solvangguide.com/#julefest-2026",
+          "name": "Solvang Julefest Christmas 2026",
+          "url": "https://solvangguide.com/christmas.html",
+          "description": "Solvang Julefest is the village’s Danish Christmas season, with a tree lighting, candlelight tours, the Julefest Parade, nightly lights, and a holiday market. The celebration runs November 27, 2026 through January 8, 2027, including the community Tree Burn at Old Mission Santa Inés fields.",
           "startDate": "2026-11-27",
           "endDate": "2027-01-08",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "eventStatus": "https://schema.org/EventScheduled",
-          "url": "https://solvangguide.com/christmas.html",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "isAccessibleForFree": true,
-          "location": { "@id": "https://solvangguide.com/#destination" },
-          "description": "Danish Christmas season in Solvang with tree lighting, Julefest Parade, Nisse gnome hunt, nightly lights, and the January 8, 2027 Tree Burn.",
-          "image": ["https://solvangguide.com/images/julefest-banner.jpg","https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_California_Windmill.jpg?width=1600"],
-          "offers": {"@type":"Offer","name":"Free public street festival admission","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/christmas.html","validFrom":"2026-01-01"},
-          "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
-          "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
+          "location": {
+            "@type": "Place",
+            "name": "Solvang Park & Village",
+            "address": {"@type":"PostalAddress","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}
+          },
+          "image": ["https://solvangguide.com/images/julefest-banner.jpg"],
+          "organizer": {"@type":"Organization","name":"City of Solvang","url":"https://solvangguide.com/"},
+          "performer": {"@type":"PerformingGroup","name":"Fossemalle Dance Studio & Carolers"},
+          "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/christmas.html"}
         },
         {
-          "@type": "Event",
-          "@id": "https://solvangguide.com/taste-of-solvang-2027.html#event",
+          "@type": "FoodEvent",
+          "@id": "https://solvangguide.com/#taste-of-solvang-2027",
           "name": "Taste of Solvang 2027",
+          "url": "https://solvangguide.com/taste-of-solvang-2027.html",
+          "description": "Taste of Solvang is the village’s premier food and wine weekend, highlighting local chefs, Santa Ynez wineries, and Danish bakeries. The 2027 culinary weekend is planned for Friday, March 19 through Sunday, March 21, with pastry walks, chef demonstrations, and evening wine strolls in downtown Solvang.",
           "startDate": "2027-03-19",
           "endDate": "2027-03-21",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "eventStatus": "https://schema.org/EventScheduled",
-          "url": "https://solvangguide.com/taste-of-solvang-2027.html",
-          "location": { "@id": "https://solvangguide.com/#destination" },
-          "description": "March culinary weekend in downtown Solvang with Danish pastry walks, chef demonstrations, local wine pairings, and bakery routes. Times in Pacific Time.",
-          "image": ["https://solvangguide.com/images/taste-of-solvang-banner.jpg"],
-          "offers": {"@type":"Offer","name":"Village street access and tasting-pass information","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/taste-of-solvang-2027.html","validFrom":"2026-11-01"},
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Solvang Wine Country",
+            "address": {"@type":"PostalAddress","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}
+          },
+          "image": ["https://solvangguide.com/images/taste-of-solvang.jpg"],
           "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
-          "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
+          "performer": {"@type":"Organization","name":"Santa Ynez Valley Wineries & Local Chefs"},
+          "offers": {"@type":"Offer","price":"50","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/taste-of-solvang-2027.html"}
         },
         {
           "@type": "SportsEvent",
-          "@id": "https://solvangguide.com/solvang-wine-marathon-2027.html#event",
-          "name": "Santa Barbara Wine Country Half Marathon 2027",
-          "startDate": "2027-05-08",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "eventStatus": "https://schema.org/EventScheduled",
+          "@id": "https://solvangguide.com/#wine-marathon-2027",
+          "name": "Santa Ynez Valley Wine Country Marathon 2027",
           "url": "https://solvangguide.com/solvang-wine-marathon-2027.html",
-          "location": { "@id": "https://solvangguide.com/#destination" },
-          "description": "Wine-country half marathon on Saturday, May 8, 2027 with a Solvang Park post-race wine festival. Times in Pacific Time.",
-          "image": ["https://solvangguide.com/images/wine-marathon-banner.jpg"],
-          "offers": {"@type":"Offer","name":"Race registration and spectator information","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/solvang-wine-marathon-2027.html","validFrom":"2026-09-01"},
-          "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
-          "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}
+          "description": "A scenic half marathon and vineyard run starting and finishing in downtown Solvang through Santa Ynez Valley wine country. Race day is Saturday, May 8, 2027, with a post-race wine festival in Solvang Park for finishers and spectators.",
+          "startDate": "2027-05-08",
+          "endDate": "2027-05-08",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Downtown Solvang & Santa Ynez Valley Vineyards",
+            "address": {"@type":"PostalAddress","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}
+          },
+          "image": ["https://solvangguide.com/images/wine-marathon.jpg"],
+          "organizer": {"@type":"Organization","name":"Santa Ynez Valley Wine Country Runs","url":"https://solvangguide.com/"},
+          "performer": {"@type":"Organization","name":"Santa Ynez Valley Runners"},
+          "offers": {"@type":"Offer","price":"110","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/solvang-wine-marathon-2027.html"}
         },
         {
           "@type": "WebSite",
