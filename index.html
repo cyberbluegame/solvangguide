@@ -222,6 +222,8 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         .site-nav {
@@ -447,9 +449,11 @@
 
         /* Container */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 16px;
+            box-sizing: border-box;
             position: relative;
             z-index: 1;
         }
@@ -1871,6 +1875,49 @@
             box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
             text-decoration: none;
             color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            .site-nav-inner {
+                flex-direction: column;
+                align-items: stretch;
+                flex-wrap: nowrap;
+                gap: 0.25rem;
+                min-height: 0;
+                padding: 0.45rem 0 0.3rem;
+            }
+            .site-nav-brand { font-size: 0.95rem; }
+            .site-nav-links {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                gap: 0.4rem;
+                padding: 4px 2px 8px;
+                scrollbar-width: none;
+            }
+            .site-nav-links::-webkit-scrollbar { display: none; }
+            .site-nav-links a {
+                flex: 0 0 auto;
+                white-space: nowrap;
+                font-size: 0.72rem;
+                padding: 0.4rem 0.7rem;
+                box-shadow: 0 4px 10px rgba(217, 119, 6, 0.22);
+            }
+            .site-nav-links a .festive-badge {
+                padding: 0;
+                border: 0;
+                background: transparent;
+                font-size: 0.8rem;
+            }
+            .cards-grid,
+            .social-grid {
+                grid-template-columns: 1fr !important;
+            }
+            section { padding-left: 16px; padding-right: 16px; }
+            .hero h1 { font-size: 1.7rem; }
+            .stay22-map-wrap iframe { min-height: 480px; }
         }
 
         /* Tablet Breakpoint (768px+) */

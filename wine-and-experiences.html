@@ -29,18 +29,18 @@
             --glass-bg: rgba(255, 255, 255, 0.65); --glass-border: rgba(255, 255, 255, 0.9);
             --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             background: linear-gradient(135deg, var(--bg-lilac) 0%, var(--bg-soft-blue) 35%, var(--bg-emerald) 70%, var(--bg-amethyst) 100%);
-            color: var(--text-slate); line-height: 1.75; min-height: 100vh;
+            color: var(--text-slate); line-height: 1.75; min-height: 100vh; overflow-x: hidden; max-width: 100%;
         }
         h1 { font-size: 2.25rem; line-height: 1.2; margin-bottom: 1.5rem;
             background: linear-gradient(45deg, var(--text-graphite), var(--text-wine));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         h2 { font-size: 1.875rem; margin-bottom: 1rem; text-align: center; color: var(--text-graphite); }
         .section-subtitle { text-align: center; max-width: 760px; margin: 0 auto 2rem; color: var(--text-blue-gray); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
         .site-nav {
             position: sticky; top: 0; z-index: 100;
             background: rgba(255,255,255,0.86); backdrop-filter: blur(20px) saturate(170%);
@@ -138,7 +138,20 @@
         .gyg-widget-wrap { margin-top: 2rem; background: rgba(255,255,255,0.7); border-radius: 28px; padding: 1rem; }
         footer { text-align: center; padding: 2.5rem 1.5rem; color: var(--text-blue-gray); border-top: 1px solid rgba(226,232,240,0.9); }
         footer a { color: #b45309; font-weight: 700; text-decoration: none; }
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
+            .site-nav-inner { flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 0.25rem; min-height: 0; padding: 0.45rem 0 0.3rem; }
+            .site-nav-brand { font-size: 0.95rem; }
+            .site-nav-links { display: flex; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; gap: 0.4rem; padding: 4px 2px 8px; scrollbar-width: none; }
+            .site-nav-links::-webkit-scrollbar { display: none; }
+            .site-nav-links a { flex: 0 0 auto; white-space: nowrap; font-size: 0.72rem; padding: 0.4rem 0.7rem; box-shadow: 0 4px 10px rgba(217,119,6,0.22); }
+            .site-nav-links a .festive-badge { padding: 0; border: 0; background: transparent; font-size: 0.8rem; }
+            .cards-grid { grid-template-columns: 1fr !important; }
+            section { padding-left: 16px; padding-right: 16px; }
+            .hero { padding: 2.5rem 16px 2rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .stay22-map-wrap iframe { min-height: 480px; }
+        }
+        @media (min-width: 769px) {
             .cards-grid { grid-template-columns: repeat(2, 1fr); }
             .hero h1 { font-size: 2.75rem; }
         }
