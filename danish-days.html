@@ -117,7 +117,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             background: linear-gradient(135deg, var(--bg-lilac) 0%, var(--bg-soft-blue) 35%, var(--bg-emerald) 70%, var(--bg-amethyst) 100%);
             color: var(--text-slate); line-height: 1.75; min-height: 100vh;
-        }
+         padding-top: 72px; }
         h1 { font-size: 2.25rem; line-height: 1.2; margin-bottom: 1rem;
             background: linear-gradient(45deg, var(--text-graphite), var(--text-wine));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -139,8 +139,7 @@
         .prose { max-width: 820px; margin: 0 auto 1.25rem; color: #3f4658; font-size: 1.05rem; }
         .prose + .prose { margin-top: 0; }
         .site-nav {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(255,255,255,0.86); backdrop-filter: blur(20px) saturate(170%);
+            position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 9999; background: rgba(255,255,255,0.94); backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
             border-bottom: 1px solid #e2e8f0;
         }
         .site-nav-inner { display: flex; justify-content: center; align-items: center; min-height: 56px; gap: 0.45rem; flex-wrap: wrap; padding-top: 0.4rem; padding-bottom: 0.4rem; }
@@ -149,7 +148,7 @@
         .site-nav-links { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
         .site-nav-links a {
             display: inline-flex; align-items: center; justify-content: center;
-            color: #fff; font-weight: 800; text-decoration: none; font-size: 0.82rem;
+            color: #fff; font-weight: 800; text-decoration: none; font-size: 0.9rem;
             letter-spacing: 0.01em; padding: 0.5rem 0.9rem; border-radius: 9999px;
             background: linear-gradient(135deg, #f59e0b, #d97706);
             box-shadow: 0 8px 18px rgba(217, 119, 6, 0.35);
@@ -246,14 +245,17 @@
         .day-card.day-saturday::before { background: linear-gradient(90deg, #f59e0b, #d97706, #e11d48); }
         .day-card.day-sunday::before { background: linear-gradient(90deg, #8b5cf6, #0ea5e9, #f59e0b); }
         .day-card-head { padding: 1.85rem 1.7rem 0.35rem; }
-        .day-pill {
+        .day-pill,
+        .day-card-head .day-pill {
             display: inline-flex; align-items: center; gap: 0.35rem;
-            background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #FFFFFF !important;
+            -webkit-text-fill-color: #FFFFFF;
             font-weight: 800; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
             border-radius: 9999px; padding: 0.35rem 0.85rem; margin-bottom: 0.75rem;
         }
-        .day-card.day-friday .day-pill { background: linear-gradient(135deg, #7A1C29, #d97706); }
-        .day-card.day-sunday .day-pill { background: linear-gradient(135deg, #7c3aed, #0ea5e9); }
+        .day-card.day-friday .day-pill { background: linear-gradient(135deg, #7A1C29, #9a3412); color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF; }
+        .day-card.day-sunday .day-pill { background: linear-gradient(135deg, #5b21b6, #1e3a8a); color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF; }
         .day-card-head h3 { font-size: 1.45rem; margin-bottom: 0.45rem; }
         .day-card-head p { color: #4b5563; font-size: 1.02rem; }
         .day-banner { margin: 1rem 1.5rem 0; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 10px 22px rgba(26,29,46,0.12); }
@@ -274,7 +276,7 @@
         }
         .time-badge {
             flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff;
+            background: linear-gradient(135deg, #f59e0b, #d97706); color: #FFFFFF; -webkit-text-fill-color: #FFFFFF;
             font-weight: 800; font-size: 0.78rem; letter-spacing: 0.01em;
             padding: 0.42rem 0.72rem; border-radius: 9999px; white-space: nowrap;
             box-shadow: 0 6px 14px rgba(217,119,6,0.28);
@@ -296,10 +298,11 @@
         footer { text-align: center; padding: 2.5rem 1.5rem; color: var(--text-blue-gray); border-top: 1px solid rgba(226,232,240,0.9); }
         footer a { color: #b45309; font-weight: 700; text-decoration: none; }
         @media (max-width: 768px) {
+            body { padding-top: 104px; }
             .site-nav-inner { display: block; min-height: 0; padding: 0.32rem 0; }
             .site-nav-brand { display: none; }
             .site-nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.28rem; overflow: visible; white-space: normal; padding: 0; }
-            .site-nav-links a { flex: unset; white-space: normal; font-size: 0.58rem; padding: 0.3rem 0.2rem; line-height: 1.15; justify-content: center; text-align: center; box-shadow: 0 3px 8px rgba(217,119,6,0.2); min-width: 0; }
+            .site-nav-links a { flex: unset; white-space: normal; font-size: 0.84rem; padding: 0.5rem 0.3rem; line-height: 1.2; justify-content: center; text-align: center; box-shadow: 0 3px 8px rgba(217,119,6,0.2); min-width: 0; }
             .nav-full { display: none; }
             .nav-short { display: inline; }
             .site-nav-links a .festive-badge { padding: 0; border: 0; background: transparent; font-size: 0.68rem; }
@@ -330,10 +333,10 @@
             <div class="site-nav-links">
                 <a href="index.html">Home</a>
                 <a href="wine-and-experiences.html"><span class="nav-full">Wine &amp; Experiences</span><span class="nav-short">Wine</span></a>
-                <a class="nav-festive is-active" href="danish-days.html" aria-current="page"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span> <span class="festive-badge" aria-hidden="true">🇩🇰</span></a>
-                <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span> <span class="festive-badge" aria-hidden="true">🎄</span></a>
-                <a class="nav-taste" href="taste-of-solvang-2027.html"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span> <span class="festive-badge" aria-hidden="true">🍷</span></a>
-                <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span> <span class="festive-badge" aria-hidden="true">🏃</span></a>
+                <a class="nav-festive is-active" href="danish-days.html" aria-current="page"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span></a>
+                <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span></a>
+                <a class="nav-taste" href="taste-of-solvang-2027.html"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span></a>
+                <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span></a>
             </div>
         </div>
     </nav>
@@ -619,7 +622,7 @@
                 </article>
                 <article class="hotel-card">
                     <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Wine glasses raised at a Santa Ynez Valley tasting" width="800" height="500" loading="lazy">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vineyards_in_the_Santa_Ynez_Valley.jpg?width=800" alt="Sunlit vineyard rows in the Santa Ynez Valley" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Vinedos_en_el_Valle_de_Santa_Ynez.jpg?width=800';">
                         <span class="hotel-location">📍 Santa Ynez Valley</span>
                     </div>
                     <div class="hotel-content">
@@ -641,7 +644,7 @@
                 </article>
             </div>
             <div class="gyg-widget-wrap">
-                <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Solvang bakery walking wine tasting"></div>
+                <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Solvang bakery village tour Santa Ynez vineyard"></div>
             </div>
         </div>
     </section>

@@ -60,7 +60,7 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --text-slate: #1E293B; --amber-light: #FFC107; --amber-dark: #FF9800; }
         html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #F8FAFC 0%, #F3E8FF 40%, #E1F4EC 100%); color: #1E293B; line-height: 1.75; min-height: 100vh; overflow-x: hidden; max-width: 100%; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #F8FAFC 0%, #F3E8FF 40%, #E1F4EC 100%); color: #1E293B; line-height: 1.75; min-height: 100vh; overflow-x: hidden; max-width: 100%;  padding-top: 72px; }
         h2 { font-size: 1.875rem; margin-bottom: 1rem; text-align: center; color: #1E293B; }
         h3 { font-size: 1.25rem; color: #1E293B; margin-bottom: 0.5rem; }
         .section-subtitle { text-align: center; max-width: 780px; margin: 0 auto 2rem; color: #334155; font-weight: 600; }
@@ -73,12 +73,15 @@
         .ai-quick-facts .fact { display: grid; grid-template-columns: 9rem 1fr; gap: 0.65rem; }
         .ai-quick-facts dt { font-weight: 800; }
         .ai-quick-facts dd { margin: 0; }
-        .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.86); backdrop-filter: blur(20px); border-bottom: 1px solid #e2e8f0; }
+        .site-nav {
+            position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 9999; background: rgba(255,255,255,0.94); backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
+            border-bottom: 1px solid #e2e8f0;
+        }
         .site-nav-inner { display: flex; justify-content: center; align-items: center; min-height: 56px; gap: 0.45rem; flex-wrap: wrap; padding: 0.4rem 0; }
         .site-nav-brand { display: none; }
         .nav-short { display: none; }
         .site-nav-links { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
-        .site-nav-links a { display: inline-flex; align-items: center; color: #fff; font-weight: 800; text-decoration: none; font-size: 0.82rem; padding: 0.5rem 0.9rem; border-radius: 9999px; background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 8px 18px rgba(217,119,6,0.32); gap: 0.3rem; }
+        .site-nav-links a { display: inline-flex; align-items: center; color: #fff; font-weight: 800; text-decoration: none; font-size: 0.9rem; padding: 0.5rem 0.9rem; border-radius: 9999px; background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 8px 18px rgba(217,119,6,0.32); gap: 0.3rem; }
         .site-nav-links a.is-active { box-shadow: 0 0 0 3px #fff, 0 0 18px rgba(245,158,11,0.8); }
         .site-nav-links a.nav-festive { background: linear-gradient(135deg, #e11d48, #f59e0b); }
         .site-nav-links a.nav-yule { background: linear-gradient(135deg, #166534, #b91c1c); }
@@ -102,7 +105,7 @@
         .event-banner figcaption { position: absolute; left: 0.75rem; bottom: 0.75rem; background: #fff; color: #9F1239; border-radius: 9999px; padding: 4px 10px; font-size: 0.72rem; font-weight: 800; }
         .slot-list { list-style: none; padding: 1.15rem 1.4rem 1.6rem; display: grid; gap: 0.85rem; }
         .slot-item { display: flex; align-items: flex-start; gap: 0.9rem; background: #FDF4FF; border: 1px solid rgba(124,58,237,0.16); border-radius: 18px; padding: 1rem 1.1rem; }
-        .badge { flex-shrink: 0; align-self: flex-start; height: fit-content; background: linear-gradient(135deg, #7c3aed, #be185d); color: #fff; font-weight: 800; font-size: 0.78rem; padding: 0.42rem 0.72rem; border-radius: 9999px; white-space: nowrap; }
+        .badge { flex-shrink: 0; align-self: flex-start; height: fit-content; background: linear-gradient(135deg, #7c3aed, #be185d); color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; font-weight: 800; font-size: 0.78rem; padding: 0.42rem 0.72rem; border-radius: 9999px; white-space: nowrap; }
         .slot-item h4 { font-size: 1.05rem; margin-bottom: 0.25rem; }
         .slot-item p { font-size: 0.95rem; margin: 0; }
         .cards-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
@@ -125,10 +128,11 @@
         footer { text-align: center; padding: 2.5rem 1.5rem; color: #334155; border-top: 1px solid #e2e8f0; }
         footer a { color: #9F1239; font-weight: 700; text-decoration: none; }
         @media (max-width: 768px) {
+            body { padding-top: 104px; }
             .site-nav-inner { display: block; min-height: 0; padding: 0.32rem 0; }
             .site-nav-brand { display: none; }
             .site-nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.28rem; overflow: visible; white-space: normal; padding: 0; }
-            .site-nav-links a { flex: unset; white-space: normal; font-size: 0.58rem; padding: 0.3rem 0.2rem; line-height: 1.15; justify-content: center; text-align: center; box-shadow: 0 3px 8px rgba(217,119,6,0.2); min-width: 0; }
+            .site-nav-links a { flex: unset; white-space: normal; font-size: 0.84rem; padding: 0.5rem 0.3rem; line-height: 1.2; justify-content: center; text-align: center; box-shadow: 0 3px 8px rgba(217,119,6,0.2); min-width: 0; }
             .nav-full { display: none; }
             .nav-short { display: inline; }
             .festive-badge { padding: 0; border: 0; background: transparent; font-size: 0.68rem; }
@@ -152,10 +156,10 @@
             <div class="site-nav-links">
                 <a href="index.html">Home</a>
                 <a href="wine-and-experiences.html"><span class="nav-full">Wine &amp; Experiences</span><span class="nav-short">Wine</span></a>
-                <a class="nav-festive" href="danish-days.html"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span> <span class="festive-badge" aria-hidden="true">🇩🇰</span></a>
-                <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span> <span class="festive-badge" aria-hidden="true">🎄</span></a>
-                <a class="nav-taste is-active" href="taste-of-solvang-2027.html" aria-current="page"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span> <span class="festive-badge" aria-hidden="true">🍷</span></a>
-                <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span> <span class="festive-badge" aria-hidden="true">🏃</span></a>
+                <a class="nav-festive" href="danish-days.html"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span></a>
+                <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span></a>
+                <a class="nav-taste is-active" href="taste-of-solvang-2027.html" aria-current="page"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span></a>
+                <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span></a>
             </div>
         </div>
     </nav>
@@ -322,7 +326,7 @@
                 </article>
             </div>
             <div class="gyg-widget-wrap">
-                <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Solvang food wine bakery tasting"></div>
+                <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Solvang bakery food tasting Santa Ynez vineyard picnic"></div>
             </div>
         </div>
     </section>

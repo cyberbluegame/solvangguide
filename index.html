@@ -227,12 +227,7 @@
         }
 
         .site-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.86);
-            backdrop-filter: blur(20px) saturate(170%);
-            -webkit-backdrop-filter: blur(20px) saturate(170%);
+            position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 9999; background: rgba(255,255,255,0.94); backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
             border-bottom: 1px solid #e2e8f0;
         }
 
@@ -264,7 +259,7 @@
             color: #fff;
             font-weight: 800;
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             letter-spacing: 0.01em;
             padding: 0.5rem 0.9rem;
             border-radius: 9999px;
@@ -362,6 +357,7 @@
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
+            padding-top: 72px;
         }
 
         /* Animated Ambient Blur Circles */
@@ -1875,6 +1871,7 @@
         }
 
         @media (max-width: 768px) {
+            body { padding-top: 104px; }
             .site-nav-inner { display: block; min-height: 0; padding: 0.32rem 0; }
             .site-nav-brand { display: none; }
             .site-nav-links {
@@ -1888,9 +1885,9 @@
             .site-nav-links a {
                 flex: unset;
                 white-space: normal;
-                font-size: 0.58rem;
-                padding: 0.3rem 0.2rem;
-                line-height: 1.15;
+                font-size: 0.84rem;
+                padding: 0.5rem 0.3rem;
+                line-height: 1.2;
                 justify-content: center;
                 text-align: center;
                 box-shadow: 0 3px 8px rgba(217, 119, 6, 0.2);
@@ -2035,10 +2032,10 @@
             <div class="site-nav-links">
                 <a class="is-active" href="index.html" aria-current="page">Home</a>
                 <a href="wine-and-experiences.html"><span class="nav-full">Wine &amp; Experiences</span><span class="nav-short">Wine</span></a>
-                <a class="nav-festive" href="danish-days.html"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span> <span class="festive-badge" aria-hidden="true">🇩🇰</span></a>
-                <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span> <span class="festive-badge" aria-hidden="true">🎄</span></a>
-                <a class="nav-taste" href="taste-of-solvang-2027.html"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span> <span class="festive-badge" aria-hidden="true">🍷</span></a>
-                <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span> <span class="festive-badge" aria-hidden="true">🏃</span></a>
+                <a class="nav-festive" href="danish-days.html"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span></a>
+                <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span></a>
+                <a class="nav-taste" href="taste-of-solvang-2027.html"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span></a>
+                <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span></a>
             </div>
         </div>
     </nav>
@@ -2324,7 +2321,7 @@
 
             <h3 class="tours-cat-title">Browse every Solvang-area activity</h3>
             <div class="gyg-widget-wrap">
-                <div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="171561" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="Y2EKWLC"></div>
+                <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Santa Ynez Valley vineyard winery tasting tour"></div>
             </div>
         </div>
     </section>
