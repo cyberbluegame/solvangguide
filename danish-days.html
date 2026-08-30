@@ -125,23 +125,57 @@
             background: rgba(255,255,255,0.78); border: 1px solid rgba(217,119,6,0.28); border-radius: 20px;
             color: #7A1C29; font-weight: 700;
         }
-        .day-accordion { max-width: 860px; margin: 0 auto; display: grid; gap: 1rem; }
-        details.day {
-            background: rgba(255,255,255,0.88); border: 1px solid #e2e8f0; border-radius: 22px; overflow: hidden;
-            box-shadow: 0 10px 24px rgba(26,29,46,0.08);
+        .schedule-days { max-width: 920px; margin: 0 auto; display: grid; gap: 2rem; }
+        .day-card {
+            background: rgba(255,255,255,0.92); backdrop-filter: blur(18px) saturate(160%);
+            border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden;
+            box-shadow: 0 14px 32px rgba(26,29,46,0.1); position: relative;
         }
-        details.day[open] { border-color: rgba(217,119,6,0.35); }
-        details.day summary {
-            cursor: pointer; list-style: none; padding: 1.15rem 1.35rem; font-weight: 800; color: var(--text-graphite);
-            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+        .day-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; z-index: 2; }
+        .day-card.day-friday::before { background: linear-gradient(90deg, #7A1C29, #f59e0b); }
+        .day-card.day-saturday::before { background: linear-gradient(90deg, #f59e0b, #d97706, #e11d48); }
+        .day-card.day-sunday::before { background: linear-gradient(90deg, #8b5cf6, #0ea5e9, #f59e0b); }
+        .day-card-head { padding: 1.85rem 1.7rem 0.35rem; }
+        .day-pill {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff;
+            font-weight: 800; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+            border-radius: 9999px; padding: 0.35rem 0.85rem; margin-bottom: 0.75rem;
         }
-        details.day summary::-webkit-details-marker { display: none; }
-        details.day summary::after { content: "＋"; color: #d97706; font-size: 1.2rem; }
-        details.day[open] summary::after { content: "–"; }
-        .day-body { padding: 0 1.35rem 1.35rem; }
-        .day-body ol { margin-left: 1.15rem; color: #3f4658; }
-        .day-body li { margin-bottom: 0.85rem; }
-        .day-body li strong { color: var(--text-wine); }
+        .day-card.day-friday .day-pill { background: linear-gradient(135deg, #7A1C29, #d97706); }
+        .day-card.day-sunday .day-pill { background: linear-gradient(135deg, #7c3aed, #0ea5e9); }
+        .day-card-head h3 { font-size: 1.45rem; margin-bottom: 0.45rem; }
+        .day-card-head p { color: #4b5563; font-size: 1.02rem; }
+        .day-banner { margin: 1rem 1.5rem 0; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 10px 22px rgba(26,29,46,0.12); }
+        .day-banner img { width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; }
+        .day-banner figcaption, .day-photo figcaption {
+            position: absolute; left: 0.75rem; bottom: 0.75rem;
+            background: rgba(255,255,255,0.94); color: #7A1C29; border-radius: 9999px;
+            padding: 4px 10px; font-size: 0.72rem; font-weight: 800;
+        }
+        .day-photo-row { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1rem 1.5rem 0; }
+        .day-photo { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 18px rgba(26,29,46,0.1); }
+        .day-photo img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 16/10; }
+        .slot-list { list-style: none; padding: 1.25rem 1.4rem 1.75rem; display: grid; gap: 0.9rem; }
+        .slot-item {
+            display: flex; gap: 0.9rem; align-items: flex-start;
+            background: rgba(255,251,235,0.72); border: 1px solid rgba(217,119,6,0.16);
+            border-radius: 18px; padding: 1rem 1.1rem;
+        }
+        .time-badge {
+            flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff;
+            font-weight: 800; font-size: 0.78rem; letter-spacing: 0.01em;
+            padding: 0.42rem 0.72rem; border-radius: 9999px; white-space: nowrap;
+            box-shadow: 0 6px 14px rgba(217,119,6,0.28);
+        }
+        .slot-item h4 { font-size: 1.05rem; margin-bottom: 0.25rem; color: var(--text-graphite); line-height: 1.35; }
+        .slot-item p { font-size: 0.95rem; color: #4b5563; margin: 0; }
+        @media (min-width: 768px) {
+            .day-photo-row { grid-template-columns: repeat(2, 1fr); }
+            .day-photo-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .day-card-head h3 { font-size: 1.65rem; }
+        }
         .tip-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 1100px; margin: 0 auto; }
         .tip-card { background: rgba(255,255,255,0.86); border: 1px solid #e2e8f0; border-radius: 22px; padding: 1.4rem 1.5rem; }
         .stay22-map-wrap { background: rgba(255,255,255,0.7); border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; margin: 1.5rem 0 2rem; }
@@ -203,44 +237,149 @@
     <section id="schedule" aria-labelledby="schedule-heading">
         <div class="container">
             <h2 id="schedule-heading">Complete 3-Day Festival Schedule</h2>
-            <p class="section-subtitle">Open each day for the full hour-by-hour plan. Times are local Pacific Time and may shift slightly — arrive early for parades and the æbleskiver breakfast.</p>
-            <div class="day-accordion">
-                <details class="day" open>
-                    <summary>Friday, September 18, 2026 — Opening Night</summary>
-                    <div class="day-body">
-                        <p class="prose" style="margin-bottom:1rem;">Friday is the ceremonial start: marketplace stalls, the first concert, the 2026 Danish Days Maid, and the torchlight parade that turns Copenhagen Drive into a river of lanterns.</p>
-                        <ol>
-                            <li><strong>4:00 PM — Festival opening &amp; Artisan Marketplace</strong> on Copenhagen Drive. Woodworkers, textile artists, and Danish-import booths open as the street closes to through traffic. This is the quietest hour to browse before Saturday crowds.</li>
-                            <li><strong>5:00 PM — Free Concert &amp; Opening Ceremony</strong> at Midtbyen Stage. Welcome remarks, folk-dance demonstration, and introduction of the 2026 Danish Days Maid. Bring a light layer — mid-September evenings cool quickly in the valley.</li>
-                            <li><strong>7:30 PM — Torchlight Parade (Viking Torchlight Procession).</strong> Costumed walkers, shields, and lanterns move through midtown. Claim a curb on Copenhagen Drive or Mission Drive by 7:00 PM. This is the most photogenic night of the weekend.</li>
-                        </ol>
+            <p class="section-subtitle">The full hour-by-hour plan is open below — no clicking required. Times are local Pacific Time and may shift slightly; arrive early for parades and the æbleskiver breakfast.</p>
+            <div class="schedule-days">
+                <article class="day-card day-friday">
+                    <div class="day-card-head">
+                        <p class="day-pill">🇩🇰 Opening Night</p>
+                        <h3>Friday, September 18, 2026</h3>
+                        <p>Marketplace stalls, the first concert, the 2026 Danish Days Maid, and the torchlight parade that turns Copenhagen Drive into a river of lanterns.</p>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Saturday, September 19, 2026 — Main Festival Day</summary>
-                    <div class="day-body">
-                        <p class="prose" style="margin-bottom:1rem;">Saturday is the full village day: breakfast queues, Viking living history, eating contests, the grand parade, then a beer-and-wine garden under the oaks.</p>
-                        <ol>
-                            <li><strong>8:30 AM – 12:30 PM — World-Famous Æbleskiver Breakfast</strong> at the corner of Copenhagen Drive &amp; Alisal Road. Cast-iron spheres, raspberry jam, and powdered sugar. Lines move, but the first sitting is the shortest wait.</li>
-                            <li><strong>10:00 AM – 5:00 PM — Viking Encampment &amp; Living History Exhibit</strong> in Solvang Park. Forge demos, period tents, and hands-on history for kids who have already eaten three æbleskiver.</li>
-                            <li><strong>11:30 AM &amp; 2:30 PM — Free Æbleskiver Eating Contests.</strong> Five rounds of fierce, powdered-sugar competition. Spectators pack the rails — stand on the Alisal side for a clear view.</li>
-                            <li><strong>2:30 PM — Solvang Danish Days Parade.</strong> Floats, marching bands, Danish folk dancers, and equestrian units along the village core. This is the weekend’s signature procession. Arrive 30–45 minutes early for a shaded curb.</li>
-                            <li><strong>5:00 PM – 9:00 PM — Evening Concerts, Beer &amp; Wine Garden.</strong> Local Santa Ynez wines poured beside Carlsberg and festival food. Adult evening energy after the family parade hour.</li>
-                        </ol>
+                    <figure class="day-banner">
+                        <img src="https://images.unsplash.com/photo-1464047736614-af63643285bf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Warm festival string lights and bunting for Danish Days opening night" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=1200';">
+                        <figcaption>Evening lights · Copenhagen Drive</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="time-badge">4:00 PM</span>
+                            <div>
+                                <h4>🇩🇰 Velkommen / Danish Days Artisan Marketplace</h4>
+                                <p>Woodworkers, textile artists, and Danish-import booths open on Copenhagen Drive as the street closes to through traffic. This is the quietest hour to browse before Saturday crowds.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">5:00 PM</span>
+                            <div>
+                                <h4>🎺 Free Concert &amp; Opening Ceremony</h4>
+                                <p>Midtbyen Stage welcome, folk-dance demonstration, and introduction of the 2026 Danish Days Maid. Bring a light layer — mid-September evenings cool quickly in the valley.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">7:30 PM</span>
+                            <div>
+                                <h4>🔥 Torchlight Procession</h4>
+                                <p>Costumed walkers, shields, and lanterns move through midtown. Claim a curb on Copenhagen Drive or Mission Drive by 7:00 PM. This is the most photogenic night of the weekend.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="day-card day-saturday">
+                    <div class="day-card-head">
+                        <p class="day-pill">🎺 Main Festival Day</p>
+                        <h3>Saturday, September 19, 2026</h3>
+                        <p>Breakfast queues, Viking living history, eating contests, the grand parade, then a beer-and-wine garden under the oaks.</p>
                     </div>
-                </details>
-                <details class="day">
-                    <summary>Sunday, September 20, 2026 — Grand Finale</summary>
-                    <div class="day-body">
-                        <p class="prose" style="margin-bottom:1rem;">Sunday is gentler: another æbleskiver breakfast, a kids’ zone, the children’s parade, and closing raffles before the village exhales.</p>
-                        <ol>
-                            <li><strong>8:30 AM – 12:30 PM — Sunday Æbleskiver Breakfast.</strong> Same corner, slightly shorter lines than Saturday if you arrive at open.</li>
-                            <li><strong>10:00 AM – 4:00 PM — Kid’s Korner &amp; Lego Activity Area.</strong> Free crafts, storytelling, and a place for small legs to rest between parades.</li>
-                            <li><strong>2:00 PM — Children’s Parade.</strong> Costumes, decorated bikes, and pets. The sweetest, slowest parade of the weekend — stand near Solvang Park.</li>
-                            <li><strong>3:30 PM — Closing Ceremonies &amp; Raffle Winner Announcements.</strong> Midtbyen Stage wrap-up. If you are driving home to Santa Barbara or Los Angeles, give yourself extra time — Mission Drive stays busy until late afternoon.</li>
-                        </ol>
+                    <div class="day-photo-row cols-3">
+                        <figure class="day-photo">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Golden pastry dusted with sugar for the æbleskiver breakfast" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Danish_bakery%2C_Solvang%2C_CA%2C_USA_%289503103424%29.jpg?width=800';">
+                            <figcaption>🥞 Æbleskiver breakfast</figcaption>
+                        </figure>
+                        <figure class="day-photo">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Charming_Solvang_-_panoramio.jpg?width=800" alt="Horse-drawn trolley on a Solvang village street during festival season" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=800';">
+                            <figcaption>🎺 Village parade route</figcaption>
+                        </figure>
+                        <figure class="day-photo">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="White horse in golden light — equestrian units on the Danish Days parade" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Houses_Solvang.jpg?width=800';">
+                            <figcaption>⚔️ Parade &amp; encampment day</figcaption>
+                        </figure>
                     </div>
-                </details>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="time-badge">8:30 AM – 12:30 PM</span>
+                            <div>
+                                <h4>🥞 Æbleskiver Breakfast</h4>
+                                <p>World-famous breakfast at Copenhagen Drive &amp; Alisal Road. Cast-iron spheres, raspberry jam, and powdered sugar. Lines move, but the first sitting is the shortest wait.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">10:00 AM – 5:00 PM</span>
+                            <div>
+                                <h4>⚔️ Viking Encampment &amp; Forge Demos</h4>
+                                <p>Living-history exhibit in Solvang Park — forge demos, period tents, and hands-on history for kids who have already eaten three æbleskiver.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">11:30 AM &amp; 2:30 PM</span>
+                            <div>
+                                <h4>🥞 Æbleskiver Breakfast &amp; Eating Contests</h4>
+                                <p>Five rounds of fierce, powdered-sugar competition. Spectators pack the rails — stand on the Alisal side for a clear view.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">2:30 PM</span>
+                            <div>
+                                <h4>🎺 Danish Days Grand Parade (Floats &amp; Folk Dancers)</h4>
+                                <p>Floats, marching bands, Danish folk dancers, and equestrian units along the village core. Arrive 30–45 minutes early for a shaded curb.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">5:00 PM – 9:00 PM</span>
+                            <div>
+                                <h4>🍷 Beer &amp; Wine Garden &amp; Live Concerts</h4>
+                                <p>Local Santa Ynez wines poured beside Carlsberg and festival food. Adult evening energy after the family parade hour.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="day-card day-sunday">
+                    <div class="day-card-head">
+                        <p class="day-pill">🚲 Grand Finale</p>
+                        <h3>Sunday, September 20, 2026</h3>
+                        <p>Another æbleskiver breakfast, a kids’ zone, the children’s parade, and closing raffles before the village exhales.</p>
+                    </div>
+                    <div class="day-photo-row">
+                        <figure class="day-photo">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Colorful heart balloons for the children’s parade and family festival day" width="900" height="560" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=900';">
+                            <figcaption>🚲 Children’s parade day</figcaption>
+                        </figure>
+                        <figure class="day-photo">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=900" alt="Families in Solvang’s Tivoli Square during a festival weekend" width="900" height="560" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=900';">
+                            <figcaption>🇩🇰 Family festival in the village</figcaption>
+                        </figure>
+                    </div>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="time-badge">8:30 AM – 12:30 PM</span>
+                            <div>
+                                <h4>🥞 Æbleskiver Breakfast</h4>
+                                <p>Same Copenhagen &amp; Alisal corner, slightly shorter lines than Saturday if you arrive at open.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">10:00 AM – 4:00 PM</span>
+                            <div>
+                                <h4>🚲 Children’s Parade &amp; Family Activities</h4>
+                                <p>Kid’s Korner &amp; Lego Activity Area — free crafts, storytelling, and a place for small legs to rest between parades.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">2:00 PM</span>
+                            <div>
+                                <h4>🚲 Children’s Parade</h4>
+                                <p>Costumes, decorated bikes, and pets. The sweetest, slowest parade of the weekend — stand near Solvang Park.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">3:30 PM</span>
+                            <div>
+                                <h4>🇩🇰 Closing Ceremonies &amp; Raffle Winners</h4>
+                                <p>Midtbyen Stage wrap-up. If you are driving home to Santa Barbara or Los Angeles, give yourself extra time — Mission Drive stays busy until late afternoon.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
