@@ -44,11 +44,15 @@
           "@type": "EventSeries",
           "@id": "https://solvangguide.com/#event-series",
           "name": "Solvang Annual Festivals & Celebrations",
+          "image": ["https://solvangguide.com/images/wine-marathon-banner.jpg"],
+          "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/"},
+          "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
+          "performer": {"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"},
           "subEvent": [
-            {"@type":"Festival","name":"Solvang Danish Days 2026","url":"https://solvangguide.com/danish-days.html","location":{"@type":"Place","name":"Downtown Solvang","address":"Solvang, CA 93463"}},
-            {"@type":"Festival","name":"Solvang Julefest Christmas 2026","url":"https://solvangguide.com/christmas.html","location":{"@type":"Place","name":"Solvang Village","address":"Solvang, CA 93463"}},
-            {"@type":"FoodEvent","name":"Taste of Solvang 2027","url":"https://solvangguide.com/taste-of-solvang-2027.html","location":{"@type":"Place","name":"Solvang Wine Country","address":"Solvang, CA 93463"}},
-            {"@type":"SportsEvent","name":"Santa Ynez Valley Wine Marathon 2027","url":"https://solvangguide.com/solvang-wine-marathon-2027.html","location":{"@type":"Place","name":"Solvang & Santa Ynez Valley","address":"Solvang, CA 93463"}}
+            {"@type":"Festival","name":"Solvang Danish Days 2026","url":"https://solvangguide.com/danish-days.html","location":{"@type":"Place","name":"Downtown Solvang","address":"Solvang, CA 93463"},"image":["https://solvangguide.com/images/danish-days-banner.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/danish-days.html"},"organizer":{"@type":"Organization","name":"Solvang Danish Days Foundation","url":"https://solvangguide.com/"},"performer":{"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}},
+            {"@type":"Festival","name":"Solvang Julefest Christmas 2026","url":"https://solvangguide.com/christmas.html","location":{"@type":"Place","name":"Solvang Village","address":"Solvang, CA 93463"},"image":["https://solvangguide.com/images/julefest-banner.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://solvangguide.com/christmas.html"},"organizer":{"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},"performer":{"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}},
+            {"@type":"FoodEvent","name":"Taste of Solvang 2027","url":"https://solvangguide.com/taste-of-solvang-2027.html","location":{"@type":"Place","name":"Solvang Wine Country","address":"Solvang, CA 93463"},"image":["https://solvangguide.com/images/taste-of-solvang-banner.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/taste-of-solvang-2027.html"},"organizer":{"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},"performer":{"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}},
+            {"@type":"SportsEvent","name":"Santa Ynez Valley Wine Marathon 2027","url":"https://solvangguide.com/solvang-wine-marathon-2027.html","location":{"@type":"Place","name":"Solvang & Santa Ynez Valley","address":"Solvang, CA 93463"},"image":["https://solvangguide.com/images/wine-marathon-banner.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/solvang-wine-marathon-2027.html"},"organizer":{"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},"performer":{"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}}
           ]
         },
         {
@@ -61,11 +65,33 @@
           "eventStatus": "https://schema.org/EventScheduled",
           "url": "https://solvangguide.com/solvang-wine-marathon-2027.html",
           "description": "Wine-country half marathon through the Solvang and Santa Ynez Valley corridor with a post-race wine festival in Solvang Park. Race day Saturday, May 8, 2027. Times in Pacific Time.",
+          "image": [
+            "https://solvangguide.com/images/wine-marathon-banner.jpg",
+            "https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&w=1600&q=80"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "name": "Race registration and spectator information",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/PreOrder",
+            "url": "https://solvangguide.com/solvang-wine-marathon-2027.html",
+            "validFrom": "2026-09-01"
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "Solvang Conference & Visitors Bureau",
+            "url": "https://solvangguide.com/"
+          },
+          "performer": {
+            "@type": "PerformingGroup",
+            "name": "Solvang Village Performers & Musicians"
+          },
           "location": {"@type":"Place","name":"Solvang, CA","address":{"@type":"PostalAddress","streetAddress":"Alisal Road & Solvang Park","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
           "subEvent": [
-            {"@type":"Event","name":"Pre-race expo","startDate":"2027-05-07T12:00:00-07:00","endDate":"2027-05-07T19:00:00-07:00","location":{"@type":"Place","name":"Downtown Solvang"}},
-            {"@type":"SportsEvent","name":"Half marathon start","startDate":"2027-05-08T07:00:00-07:00","location":{"@type":"Place","name":"Solvang race start, Alisal corridor"}},
-            {"@type":"Event","name":"Solvang Park post-race wine festival","startDate":"2027-05-08T11:00:00-07:00","endDate":"2027-05-08T16:00:00-07:00","location":{"@type":"Place","name":"Solvang Park"}}
+            {"@type":"Event","name":"Pre-race expo","startDate":"2027-05-07T12:00:00-07:00","endDate":"2027-05-07T19:00:00-07:00","location":{"@type":"Place","name":"Downtown Solvang"},"image":["https://solvangguide.com/images/wine-marathon-banner.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/solvang-wine-marathon-2027.html"},"organizer":{"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},"performer":{"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}},
+            {"@type":"SportsEvent","name":"Half marathon start","startDate":"2027-05-08T07:00:00-07:00","location":{"@type":"Place","name":"Solvang race start, Alisal corridor"},"image":["https://solvangguide.com/images/wine-marathon-banner.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/solvang-wine-marathon-2027.html"},"organizer":{"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},"performer":{"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}},
+            {"@type":"Event","name":"Solvang Park post-race wine festival","startDate":"2027-05-08T11:00:00-07:00","endDate":"2027-05-08T16:00:00-07:00","location":{"@type":"Place","name":"Solvang Park"},"image":["https://solvangguide.com/images/wine-marathon-banner.jpg"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://solvangguide.com/solvang-wine-marathon-2027.html"},"organizer":{"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},"performer":{"@type":"PerformingGroup","name":"Solvang Village Performers & Musicians"}}
           ]
         },
         {
