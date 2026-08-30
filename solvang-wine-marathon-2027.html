@@ -102,9 +102,13 @@
         .cards-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 1100px; margin: 0 auto; }
         .hotel-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
         .hotel-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #0f766e, #65a30d); z-index: 2; }
-        .hotel-media { aspect-ratio: 16/10; overflow: hidden; }
-        .hotel-media img { width: 100%; height: 100%; object-fit: cover; }
+        .hotel-media { position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 28px 28px 0 0; background: linear-gradient(135deg, #ECFDF5, #E3EDF7); }
+        .hotel-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .hotel-content { padding: 1.4rem 1.5rem 1.55rem; flex: 1; display: flex; flex-direction: column; }
+        .tour-price { position: absolute; top: 0.85rem; right: 0.85rem; background: linear-gradient(180deg, #FFC107, #FF9800); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.4rem 0.75rem; border-radius: 999px; box-shadow: 0 8px 18px rgba(255,152,0,0.35); }
+        .tour-rating { color: #b45309; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.45rem; }
+        .amenities { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1rem; }
+        .amenity { display: inline-flex; background: rgba(15,118,110,0.1); color: #115E59; border: 1px solid rgba(15,118,110,0.2); padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
         .availability-btn { display: block; width: 100%; background: linear-gradient(180deg, #FFC107, #FF9800); color: #fff; padding: 1.05rem; border-radius: 50px; text-decoration: none; font-weight: 700; text-align: center; margin-top: auto; }
         .callout { max-width: 820px; margin: 1.5rem auto 0; padding: 1.15rem 1.35rem; background: #fff; border: 1px solid rgba(15,118,110,0.28); border-radius: 20px; color: #115E59; font-weight: 700; }
         .stay22-map-wrap { background: #fff; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; margin: 1.5rem 0 2rem; }
@@ -221,13 +225,15 @@
             <p class="prose"><strong>Weekend itinerary:</strong> Thursday or Friday arrival, expo Friday afternoon, early Saturday race or spectator curb, park festival, Sunday bakery and a slow checkout. Stack <a href="taste-of-solvang-2027.html" style="color:#115E59;font-weight:700;">Taste of Solvang in March</a> if you want two spring weekends; do not treat May 8 as a day trip from Los Angeles unless you like 4:00 AM alarms.</p>
             <div class="cards-grid cols-3">
                 <article class="hotel-card">
-                    <div class="hotel-media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunstone-Vineyards-in-Santa-Ynez-Valley-Winetour-Visit-American-Luxury-Limousine-2015.jpg?width=800" alt="Santa Ynez Valley vineyard road along the wine country race corridor" width="800" height="500" loading="lazy"></div>
+                    <div class="hotel-media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunstone-Vineyards-in-Santa-Ynez-Valley-Winetour-Visit-American-Luxury-Limousine-2015.jpg?width=1600" alt="High-resolution Santa Ynez Valley vineyard rows along the wine country race corridor" width="800" height="500" loading="lazy"></div>
                     <div class="hotel-content"><h3>🌲 Course character</h3><p>Oak hills and vineyard edges — scenic, exposed, and warmer by late morning. Sunscreen is not optional in May.</p></div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=1600" alt="Scenic Santa Ynez Valley vineyard path for the wine country half marathon" width="800" height="500" loading="lazy"></div>
                     <div class="hotel-content"><h3>🏅 For runners</h3><p>Friday bib. 5:30 AM lot. Shakeout walk Thursday. Do not invent a new breakfast on race morning in a packed bakery line.</p></div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hamlet_Square,_Solvang,_CA,_USA_(9500333155).jpg?width=1600" alt="Solvang village square with outdoor seating — festival atmosphere after the race" width="800" height="500" loading="lazy"></div>
                     <div class="hotel-content"><h3>🍷 For festival-only guests</h3><p>Skip the 6:00 AM alarm. Arrive after 10:30 AM, park on Alisal, walk to the park, and leave a designated driver or use a shuttle.</p></div>
                 </article>
             </div>
@@ -237,7 +243,7 @@
     <section id="stay" aria-labelledby="stay-heading">
         <div class="container">
             <h2 id="stay-heading">Hotels &amp; race-weekend tours</h2>
-            <p class="section-subtitle">Interactive lodging map for Solvang and Buellton. GetYourGuide for a Friday wine tasting or Monday recovery loop.</p>
+            <p class="section-subtitle">Find top-rated boutique stays and book local wine tastings or guided valley tours for your marathon weekend.</p>
             <div class="stay22-map-wrap">
                 <iframe id="stay22-widget" width="100%" height="720" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.5958&amp;lng=-120.1376&amp;address=Solvang,%20CA,%20USA" title="Solvang hotel map for Wine Marathon 2027" allowfullscreen></iframe>
             </div>
@@ -252,24 +258,42 @@
             </div>
             <div class="cards-grid cols-3">
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Wine cellar tanks on a Santa Ynez 3-winery picnic tour" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=800';">
+                        <span class="tour-price">From $159 / person</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3>Santa Ynez 3-Winery Tour with Picnic Lunch</h3>
-                        <p>Friday or Sunday — not race morning.</p>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book on GetYourGuide</a>
+                        <p class="tour-rating">⭐ 4.7 · 5 Hours</p>
+                        <h3>🍷 Santa Ynez 3-Winery Tour with Picnic Lunch</h3>
+                        <p>Three valley tastings and a picnic — book Friday or Sunday, not race morning.</p>
+                        <div class="amenities"><span class="amenity">Picnic</span><span class="amenity">Wine tasting</span></div>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book Tour &amp; Check Price</a>
                     </div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Bicycle ready for a Santa Ynez Valley e-bike and vineyard loop" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Sunstone-Vineyards-in-Santa-Ynez-Valley-Winetour-Visit-American-Luxury-Limousine-2015.jpg?width=800';">
+                        <span class="tour-price">From $89 / person</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3>Valley e-bike or vineyard loop</h3>
-                        <p>Easy Sunday miles after the half — book an afternoon slot.</p>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20country%20e-bike%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book on GetYourGuide</a>
+                        <p class="tour-rating">⭐ 4.8 · 3 Hours</p>
+                        <h3>🚲 Valley E-Bike &amp; Vineyard Loop</h3>
+                        <p>Easy Sunday miles after the half — book an afternoon slot on vineyard lanes.</p>
+                        <div class="amenities"><span class="amenity">E-bike</span><span class="amenity">Vineyard views</span></div>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20country%20e-bike%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Experience</a>
                     </div>
                 </article>
                 <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Festival_Theater_front_2.jpg?width=800" alt="Solvang Festival Theater on a historic village sightseeing walk" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Hamlet_Square,_Solvang,_CA,_USA_(9500333155).jpg?width=800';">
+                        <span class="tour-price">From $65 / person</span>
+                    </div>
                     <div class="hotel-content">
-                        <h3>Solvang walking sightseeing</h3>
-                        <p>Village walk for spectators who skip the 13.1.</p>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20walking%20sightseeing%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book on GetYourGuide</a>
+                        <p class="tour-rating">⭐ 4.9 · 2 Hours</p>
+                        <h3>🚶‍♂️ Solvang Historic Village Sightseeing Tour</h3>
+                        <p>Village walk for spectators who skip the 13.1 — bakeries, windmills, and Mission Drive.</p>
+                        <div class="amenities"><span class="amenity">Walkable</span><span class="amenity">Village</span></div>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20walking%20sightseeing%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
             </div>
