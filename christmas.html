@@ -134,9 +134,10 @@
             background: rgba(255,255,255,0.86); backdrop-filter: blur(20px) saturate(170%);
             border-bottom: 1px solid #e2e8f0;
         }
-        .site-nav-inner { display: flex; justify-content: space-between; align-items: center; min-height: 64px; gap: 1rem; flex-wrap: wrap; padding-top: 0.4rem; padding-bottom: 0.4rem; }
-        .site-nav-brand { font-weight: 800; color: var(--text-graphite); text-decoration: none; font-size: 1.05rem; }
-        .site-nav-links { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+        .site-nav-inner { display: flex; justify-content: center; align-items: center; min-height: 56px; gap: 0.45rem; flex-wrap: wrap; padding-top: 0.4rem; padding-bottom: 0.4rem; }
+        .site-nav-brand { display: none; }
+        .nav-short { display: none; }
+        .site-nav-links { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
         .site-nav-links a {
             display: inline-flex; align-items: center; justify-content: center;
             color: #fff; font-weight: 800; text-decoration: none; font-size: 0.82rem;
@@ -253,12 +254,13 @@
         footer { text-align: center; padding: 2.5rem 1.5rem; color: var(--text-blue-gray); border-top: 1px solid rgba(226,232,240,0.9); background: rgba(255,255,255,0.45); }
         footer a { color: #991b1b; font-weight: 700; text-decoration: none; }
         @media (max-width: 768px) {
-            .site-nav-inner { flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 0.25rem; min-height: 0; padding: 0.45rem 0 0.3rem; }
-            .site-nav-brand { font-size: 0.95rem; }
-            .site-nav-links { display: flex; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; gap: 0.4rem; padding: 4px 2px 8px; scrollbar-width: none; }
-            .site-nav-links::-webkit-scrollbar { display: none; }
-            .site-nav-links a { flex: 0 0 auto; white-space: nowrap; font-size: 0.72rem; padding: 0.4rem 0.7rem; box-shadow: 0 4px 10px rgba(217,119,6,0.22); }
-            .festive-badge { padding: 0; border: 0; background: transparent; font-size: 0.8rem; }
+            .site-nav-inner { display: block; min-height: 0; padding: 0.32rem 0; }
+            .site-nav-brand { display: none; }
+            .site-nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.28rem; overflow: visible; white-space: normal; padding: 0; }
+            .site-nav-links a { flex: unset; white-space: normal; font-size: 0.58rem; padding: 0.3rem 0.2rem; line-height: 1.15; justify-content: center; text-align: center; box-shadow: 0 3px 8px rgba(217,119,6,0.2); min-width: 0; }
+            .nav-full { display: none; }
+            .nav-short { display: inline; }
+            .festive-badge { padding: 0; border: 0; background: transparent; font-size: 0.68rem; }
             .slot-item { flex-direction: column; align-items: stretch; gap: 0.45rem; }
             .time-badge, .badge { align-self: flex-start; width: max-content; max-width: 100%; font-size: 0.7rem; padding: 0.28rem 0.62rem; line-height: 1.2; }
             .cards-grid, .cards-grid.cols-3, .tip-grid { grid-template-columns: 1fr !important; }
@@ -283,14 +285,13 @@
 <body>
     <nav class="site-nav" aria-label="Primary">
         <div class="container site-nav-inner">
-            <a class="site-nav-brand" href="index.html">Solvang Guide</a>
             <div class="site-nav-links">
                 <a href="index.html">Home</a>
-                <a href="wine-and-experiences.html">Wine &amp; Experiences</a>
-                <a class="nav-festive" href="danish-days.html">Danish Days 2026 <span class="festive-badge" aria-hidden="true">🇩🇰</span></a>
-                <a class="nav-yule is-active" href="christmas.html" aria-current="page">Christmas 2026 <span class="festive-badge" aria-hidden="true">🎄</span></a>
-                <a class="nav-taste" href="taste-of-solvang-2027.html">Taste of Solvang 2027 <span class="festive-badge" aria-hidden="true">🍷</span></a>
-                <a class="nav-run" href="solvang-wine-marathon-2027.html">Wine Marathon 2027 <span class="festive-badge" aria-hidden="true">🏃</span></a>
+                <a href="wine-and-experiences.html"><span class="nav-full">Wine &amp; Experiences</span><span class="nav-short">Wine</span></a>
+                <a class="nav-festive" href="danish-days.html"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span> <span class="festive-badge" aria-hidden="true">🇩🇰</span></a>
+                <a class="nav-yule is-active" href="christmas.html" aria-current="page"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span> <span class="festive-badge" aria-hidden="true">🎄</span></a>
+                <a class="nav-taste" href="taste-of-solvang-2027.html"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span> <span class="festive-badge" aria-hidden="true">🍷</span></a>
+                <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span> <span class="festive-badge" aria-hidden="true">🏃</span></a>
             </div>
         </div>
     </nav>
