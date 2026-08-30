@@ -2009,13 +2009,6 @@
 
         /* Touch-friendly adjustments */
         @media (hover: none) {
-            .social-card,
-            .activity-card,
-            .hotel-card,
-            .tour-card {
-                transform: none;
-            }
-
             .social-btn,
             .book-btn,
             .availability-btn,
@@ -2024,6 +2017,62 @@
                 padding: 1rem 2rem;
             }
         }
+
+        /* Card hover zoom + diagonal shimmer (desktop, iPad, mobile) */
+        .hotel-card,
+        .tour-card {
+            overflow: hidden;
+            border-radius: 28px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .hotel-card:hover,
+        .hotel-card:focus-within,
+        .hotel-card:active,
+        .tour-card:hover,
+        .tour-card:focus-within,
+        .tour-card:active {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+        .hotel-media,
+        .tour-media {
+            overflow: hidden;
+            position: relative;
+        }
+        .hotel-media img,
+        .tour-media img {
+            transition: transform 0.4s ease;
+        }
+        .hotel-card:hover .hotel-media img,
+        .hotel-card:focus-within .hotel-media img,
+        .hotel-card:active .hotel-media img,
+        .tour-card:hover .tour-media img,
+        .tour-card:focus-within .tour-media img,
+        .tour-card:active .tour-media img {
+            transform: scale(1.04);
+        }
+        .hotel-media::after,
+        .tour-media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.38) 50%, transparent 60%);
+            transform: translateX(-130%);
+            transition: transform 0.65s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .hotel-card:hover .hotel-media::after,
+        .hotel-card:focus-within .hotel-media::after,
+        .hotel-card:active .hotel-media::after,
+        .tour-card:hover .tour-media::after,
+        .tour-card:focus-within .tour-media::after,
+        .tour-card:active .tour-media::after {
+            transform: translateX(130%);
+        }
+        .hotel-location,
+        .tour-location,
+        .tour-price { z-index: 3; }
     </style>
 </head>
 <body>
@@ -2160,7 +2209,7 @@
 
                 <article class="tour-card">
                     <div class="tour-media">
-                        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80" alt="Open-road motorcycle ride through golden Santa Ynez hills" width="640" height="400" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barriques.jpg?width=800" alt="Rustic wine barrel cellar in Santa Ynez Valley wine country" width="640" height="400" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
                         <span class="tour-price">From $89 / person</span>
                         <span class="tour-location">📍 Santa Ynez Valley</span>
                     </div>
@@ -2316,7 +2365,7 @@
 
             <h3 class="tours-cat-title">Santa Barbara — kayaking, e-bikes &amp; foodie walks</h3>
             <div class="gyg-widget-wrap">
-                <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Santa Barbara kayak e-bike food walking"></div>
+                <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Santa Barbara harbor kayak yacht cruise"></div>
             </div>
 
             <h3 class="tours-cat-title">Browse every Solvang-area activity</h3>

@@ -161,6 +161,61 @@
             .cards-grid { grid-template-columns: repeat(3, 1fr); }
             .hero h1 { font-size: 3.15rem; }
         }
+        /* Card hover zoom + diagonal shimmer (desktop, iPad, mobile) */
+        .hotel-card,
+        .tour-card {
+            overflow: hidden;
+            border-radius: 28px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .hotel-card:hover,
+        .hotel-card:focus-within,
+        .hotel-card:active,
+        .tour-card:hover,
+        .tour-card:focus-within,
+        .tour-card:active {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+        .hotel-media,
+        .tour-media {
+            overflow: hidden;
+            position: relative;
+        }
+        .hotel-media img,
+        .tour-media img {
+            transition: transform 0.4s ease;
+        }
+        .hotel-card:hover .hotel-media img,
+        .hotel-card:focus-within .hotel-media img,
+        .hotel-card:active .hotel-media img,
+        .tour-card:hover .tour-media img,
+        .tour-card:focus-within .tour-media img,
+        .tour-card:active .tour-media img {
+            transform: scale(1.04);
+        }
+        .hotel-media::after,
+        .tour-media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.38) 50%, transparent 60%);
+            transform: translateX(-130%);
+            transition: transform 0.65s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .hotel-card:hover .hotel-media::after,
+        .hotel-card:focus-within .hotel-media::after,
+        .hotel-card:active .hotel-media::after,
+        .tour-card:hover .tour-media::after,
+        .tour-card:focus-within .tour-media::after,
+        .tour-card:active .tour-media::after {
+            transform: translateX(130%);
+        }
+        .hotel-location,
+        .tour-location,
+        .tour-price { z-index: 3; }
     </style>
 </head>
 <body>
