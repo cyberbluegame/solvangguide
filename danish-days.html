@@ -144,11 +144,11 @@
         }
         .site-nav-inner { display: flex; justify-content: space-between; align-items: center; min-height: 64px; gap: 1rem; flex-wrap: wrap; padding-top: 0.4rem; padding-bottom: 0.4rem; }
         .site-nav-brand { font-weight: 800; color: var(--text-graphite); text-decoration: none; font-size: 1.05rem; }
-        .site-nav-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .site-nav-links { display: flex; flex-wrap: wrap; gap: 0.45rem; }
         .site-nav-links a {
             display: inline-flex; align-items: center; justify-content: center;
-            color: #fff; font-weight: 800; text-decoration: none; font-size: 0.95rem;
-            letter-spacing: 0.01em; padding: 0.65rem 1.35rem; border-radius: 9999px;
+            color: #fff; font-weight: 800; text-decoration: none; font-size: 0.82rem;
+            letter-spacing: 0.01em; padding: 0.5rem 0.9rem; border-radius: 9999px;
             background: linear-gradient(135deg, #f59e0b, #d97706);
             box-shadow: 0 8px 18px rgba(217, 119, 6, 0.35);
             transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
@@ -170,6 +170,15 @@
             gap: 0.4rem;
         }
         .site-nav-links a.nav-yule .festive-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em;
+            background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.45);
+            border-radius: 9999px; padding: 0.12rem 0.45rem; line-height: 1;
+        }
+        .site-nav-links a.nav-taste { background: linear-gradient(135deg, #7c3aed, #be185d); gap: 0.4rem; }
+        .site-nav-links a.nav-run { background: linear-gradient(135deg, #0f766e, #65a30d); gap: 0.4rem; }
+        .site-nav-links a.nav-taste .festive-badge,
+        .site-nav-links a.nav-run .festive-badge {
             display: inline-flex; align-items: center; justify-content: center;
             font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em;
             background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.45);
@@ -307,6 +316,8 @@
                 <a href="wine-and-experiences.html">Wine &amp; Experiences</a>
                 <a class="nav-festive is-active" href="danish-days.html" aria-current="page">Danish Days 2026 <span class="festive-badge" aria-hidden="true">🇩🇰</span></a>
                 <a class="nav-yule" href="christmas.html">Christmas 2026 <span class="festive-badge" aria-hidden="true">🎄</span></a>
+                <a class="nav-taste" href="taste-of-solvang-2027.html">Taste of Solvang 2027 <span class="festive-badge" aria-hidden="true">🍷</span></a>
+                <a class="nav-run" href="solvang-wine-marathon-2027.html">Wine Marathon 2027 <span class="festive-badge" aria-hidden="true">🏃</span></a>
             </div>
         </div>
     </nav>
@@ -642,7 +653,7 @@
     </section>
 
     <footer>
-        <p><a href="index.html">Home</a> · <a href="wine-and-experiences.html">Wine &amp; Experiences</a> · <a href="danish-days.html">Danish Days 2026</a> · <a href="christmas.html">Christmas 2026</a></p>
+        <p><a href="index.html">Home</a> · <a href="wine-and-experiences.html">Wine &amp; Experiences</a> · <a href="danish-days.html">Danish Days 2026</a> · <a href="christmas.html">Christmas 2026</a> · <a href="taste-of-solvang-2027.html">Taste of Solvang 2027</a> · <a href="solvang-wine-marathon-2027.html">Wine Marathon 2027</a></p>
         <p>&copy; 2026 Solvang Guide. All rights reserved.</p>
     </footer>
     <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="Y2EKWLC"></script>
