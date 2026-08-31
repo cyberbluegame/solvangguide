@@ -2119,6 +2119,254 @@
         .hotel-location,
         .tour-location,
         .tour-price { z-index: 3; }
+
+        /* Danish Days 2026 embed (unique copy only — no hotel maps or tour widgets) */
+        .danish-days-home .tours-cat-title {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+        #danish-days-2026 {
+            scroll-margin-top: 88px;
+        }
+        .dd-kicker {
+            display: block;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            color: #7A1C29;
+            margin-bottom: 0.65rem;
+        }
+        .festival-dates-banner {
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+            margin: 0 auto 0.85rem;
+            padding: 0.7rem 1.25rem;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            border-radius: 9999px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 10px 24px rgba(217, 119, 6, 0.28);
+        }
+        .dd-location {
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-blue-gray);
+            margin-bottom: 1.75rem;
+        }
+        .prose {
+            max-width: 820px;
+            margin: 0 auto 1.25rem;
+            color: #3f4658;
+            font-size: 1.05rem;
+        }
+        .prose a {
+            color: #b45309;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .prose a:hover { text-decoration: underline; }
+        .callout {
+            max-width: 820px;
+            margin: 1.5rem auto 0;
+            padding: 1.15rem 1.35rem;
+            background: rgba(255,255,255,0.78);
+            border: 1px solid rgba(217,119,6,0.28);
+            border-radius: 20px;
+            color: #7A1C29;
+            font-weight: 700;
+        }
+        .ai-quick-facts { padding: 0 0 0.25rem; }
+        .ai-quick-facts h2 { font-size: 1.45rem; margin-bottom: 1rem; }
+        .ai-quick-facts dl {
+            max-width: 920px;
+            margin: 0 auto;
+            display: grid;
+            gap: 0.7rem;
+            background: #FFFFFF;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 1.35rem 1.5rem;
+            box-shadow: 0 10px 24px rgba(26,29,46,0.08);
+            color: #1E293B;
+        }
+        .ai-quick-facts .fact {
+            display: grid;
+            grid-template-columns: 9rem 1fr;
+            gap: 0.65rem;
+            align-items: start;
+        }
+        .ai-quick-facts dt { font-weight: 800; color: #1E293B; }
+        .ai-quick-facts dd { margin: 0; color: #1E293B; }
+        .ai-quick-facts dd a { color: #b45309; font-weight: 700; text-decoration: none; }
+        .history-media {
+            max-width: 820px;
+            margin: 0 auto 1.75rem;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 14px 32px rgba(26,29,46,0.12);
+        }
+        .history-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        .schedule-days { max-width: 920px; margin: 0 auto; display: grid; gap: 2rem; }
+        .day-card {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(18px) saturate(160%);
+            border: 1px solid #e2e8f0;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 14px 32px rgba(26,29,46,0.1);
+            position: relative;
+        }
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            z-index: 2;
+        }
+        .day-card.day-friday::before { background: linear-gradient(90deg, #7A1C29, #f59e0b); }
+        .day-card.day-saturday::before { background: linear-gradient(90deg, #f59e0b, #d97706, #e11d48); }
+        .day-card.day-sunday::before { background: linear-gradient(90deg, #8b5cf6, #0ea5e9, #f59e0b); }
+        .day-card-head { padding: 1.85rem 1.7rem 0.35rem; }
+        .day-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            padding: 0.35rem 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+        .day-card.day-friday .day-pill { background: linear-gradient(135deg, #7A1C29, #9a3412); }
+        .day-card.day-sunday .day-pill { background: linear-gradient(135deg, #5b21b6, #1e3a8a); }
+        .day-card-head h3 { font-size: 1.45rem; margin-bottom: 0.45rem; }
+        .day-card-head p { color: #4b5563; font-size: 1.02rem; }
+        .day-banner {
+            margin: 1rem 1.5rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 22px rgba(26,29,46,0.12);
+        }
+        .day-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        .day-banner figcaption,
+        .day-photo figcaption {
+            position: absolute;
+            left: 0.75rem;
+            bottom: 0.75rem;
+            background: rgba(255,255,255,0.94);
+            color: #7A1C29;
+            border-radius: 9999px;
+            padding: 4px 10px;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+        .day-photo-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.85rem;
+            margin: 1rem 1.5rem 0;
+        }
+        .day-photo {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(26,29,46,0.1);
+        }
+        .day-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            aspect-ratio: 16/10;
+        }
+        .slot-list {
+            list-style: none;
+            padding: 1.25rem 1.4rem 1.75rem;
+            display: grid;
+            gap: 0.9rem;
+        }
+        .slot-item {
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            background: rgba(255,251,235,0.72);
+            border: 1px solid rgba(217,119,6,0.16);
+            border-radius: 18px;
+            padding: 1rem 1.1rem;
+        }
+        .time-badge {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 0.78rem;
+            padding: 0.42rem 0.72rem;
+            border-radius: 9999px;
+            white-space: nowrap;
+            box-shadow: 0 6px 14px rgba(217,119,6,0.28);
+        }
+        .slot-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-graphite);
+            line-height: 1.35;
+        }
+        .slot-item p { font-size: 0.95rem; color: #4b5563; margin: 0; }
+        .tip-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .tip-card {
+            background: rgba(255,255,255,0.86);
+            border: 1px solid #e2e8f0;
+            border-radius: 22px;
+            padding: 1.4rem 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .day-photo-row { grid-template-columns: repeat(2, 1fr); }
+            .day-photo-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .day-card-head h3 { font-size: 1.65rem; }
+            .tip-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            #danish-days-2026 { scroll-margin-top: 112px; }
+            .ai-quick-facts .fact { grid-template-columns: 1fr; gap: 0.15rem; }
+            .slot-item { flex-direction: column; align-items: stretch; gap: 0.45rem; }
+            .time-badge { align-self: flex-start; width: max-content; max-width: 100%; font-size: 0.7rem; padding: 0.28rem 0.62rem; }
+            .festival-dates-banner { font-size: 0.88rem; padding: 0.55rem 0.9rem; }
+            .tip-grid,
+            .day-photo-row,
+            .day-photo-row.cols-3 { grid-template-columns: 1fr !important; }
+        }
     </style>
 </head>
 <body>
@@ -2231,24 +2479,264 @@
         </div>
     </section>
 
+    <section class="danish-days-home" id="danish-days-2026" aria-labelledby="dd-home-heading">
+        <div class="container">
+            <p class="dd-kicker">Velkommen · Free admission</p>
+            <h2 id="dd-home-heading">89th Annual Solvang Danish Days 2026</h2>
+            <p class="festival-dates-banner">Friday, September 18 – Sunday, September 20, 2026</p>
+            <p class="dd-location">Downtown Solvang, CA — Mission Drive, Copenhagen Drive &amp; Midtown</p>
+        </div>
+
+        <div class="container ai-quick-facts" aria-labelledby="dd-quick-facts-heading">
+            <h3 id="dd-quick-facts-heading" class="tours-cat-title">Danish Days 2026 at a glance</h3>
+            <dl>
+                <div class="fact"><dt>Dates</dt><dd>Friday, September 18 – Sunday, September 20, 2026</dd></div>
+                <div class="fact"><dt>Hours</dt><dd>Pacific Time. Friday opens 4:00 PM; Saturday æbleskiver 8:30 AM–12:30 PM; Grand Parade 2:30 PM; Sunday children’s parade 2:00 PM.</dd></div>
+                <div class="fact"><dt>Location</dt><dd>Downtown Solvang, CA 93463 — Mission Drive, Copenhagen Drive &amp; Solvang Park</dd></div>
+                <div class="fact"><dt>Top highlights</dt><dd>Æbleskiver breakfast, Viking encampment &amp; forge demos, three parades, torchlight procession, folk dance, bakeries</dd></div>
+                <div class="fact"><dt>Admission</dt><dd>Free. Food, drinks, and some tours are extra.</dd></div>
+                <div class="fact"><dt>Parking tips</dt><dd>Use free lots on the Alisal Road edge and behind Mission Drive, then walk. Do not circle Copenhagen Drive on parade Saturday. Hotel or Buellton shuttles help from 1:00–4:00 PM Saturday.</dd></div>
+                <div class="fact"><dt>Where to Stay</dt><dd>Book early on the <a href="#featured-hotels">Solvang hotels map</a> further down this page. Walkable inns sell out first.</dd></div>
+            </dl>
+        </div>
+
+        <div class="container" id="dd-overview">
+            <h3 id="overview-heading" class="tours-cat-title">Velkommen til Danish Days!</h3>
+            <p class="section-subtitle">A three-day heritage festival in the Danish Capital of America — pastries, parades, Viking living history, and Santa Ynez Valley wine.</p>
+            <figure class="history-media">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Houses_Solvang.jpg?width=1200" alt="Half-timbered Danish houses along a Solvang village street" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=1200';">
+            </figure>
+            <p class="prose">Solvang was founded in 1911 by Danish-American educators and church leaders who wanted a college town that felt like home. They planted a Danish folk school on the Santa Ynez Valley floor, then built half-timbered shops, storks, and windmills that still define Mission Drive. What began as a farming village became California’s most recognizable Scandinavian streetscape — and Danish Days is the weekend the village tells that story out loud.</p>
+            <p class="prose">The festival has run since 1936, when locals first dressed in folk costume, rolled æbleskiver in the street, and invited the valley to celebrate Danish heritage. The 89th Annual Solvang Danish Days, September 18–20, 2026, keeps that compact, walkable format: free admission, three major parades, a Viking encampment in Solvang Park, folk music on the Midtbyen Stage, and pastry lines that start before the bakeries unlock the doors.</p>
+            <p class="prose">What makes it special is how local it still feels. You will hear Danish spoken at the æbleskiver tents, see folk dancers in embroidered bodices, and watch a torchlight Viking procession after dusk on Friday. You will also eat like a valley regular: jam-filled pancake balls, medisterpølse, kringle from the old bakeries, and Santa Ynez wines poured a few steps from Copenhagen Drive. Book lodging early — Danish Days is one of the few weekends that truly sells Solvang out. Compare walkable inns on the <a href="#featured-hotels">Solvang hotels map</a> below, or pair festival hours with <a href="#tours">Santa Ynez Valley tours</a> already listed on this page.</p>
+            <p class="callout">Free admission all weekend. The village is compact: park once, walk Mission Drive and Copenhagen Drive, and plan breakfast lines on Saturday and Sunday.</p>
+        </div>
+
+        <div class="container" id="dd-schedule">
+            <h3 id="schedule-heading" class="tours-cat-title">Complete 3-Day Festival Schedule</h3>
+            <p class="section-subtitle">The full hour-by-hour plan is open below — no clicking required. Times are local Pacific Time and may shift slightly; arrive early for parades and the æbleskiver breakfast.</p>
+            <div class="schedule-days">
+                <article class="day-card day-friday">
+                    <div class="day-card-head">
+                        <p class="day-pill">🇩🇰 Opening Night</p>
+                        <h3>Friday, September 18, 2026</h3>
+                        <p>Marketplace stalls, the first concert, the 2026 Danish Days Maid, and the torchlight parade that turns Copenhagen Drive into a river of lanterns.</p>
+                    </div>
+                    <figure class="day-banner">
+                        <img src="https://images.unsplash.com/photo-1464047736614-af63643285bf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Warm festival string lights and bunting for Danish Days opening night" width="1200" height="675" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=1200';">
+                        <figcaption>Evening lights · Copenhagen Drive</figcaption>
+                    </figure>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="time-badge">4:00 PM</span>
+                            <div>
+                                <h4>🇩🇰 Velkommen / Danish Days Artisan Marketplace</h4>
+                                <p>Woodworkers, textile artists, and Danish-import booths open on Copenhagen Drive as the street closes to through traffic. This is the quietest hour to browse before Saturday crowds.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">5:00 PM</span>
+                            <div>
+                                <h4>🎺 Free Concert &amp; Opening Ceremony</h4>
+                                <p>Midtbyen Stage welcome, folk-dance demonstration, and introduction of the 2026 Danish Days Maid. Bring a light layer — mid-September evenings cool quickly in the valley.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">7:30 PM</span>
+                            <div>
+                                <h4>🔥 Torchlight Procession</h4>
+                                <p>Costumed walkers, shields, and lanterns move through midtown. Claim a curb on Copenhagen Drive or Mission Drive by 7:00 PM. This is the most photogenic night of the weekend.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="day-card day-saturday">
+                    <div class="day-card-head">
+                        <p class="day-pill">🎺 Main Festival Day</p>
+                        <h3>Saturday, September 19, 2026</h3>
+                        <p>Breakfast queues, Viking living history, eating contests, the grand parade, then a beer-and-wine garden under the oaks.</p>
+                    </div>
+                    <div class="day-photo-row cols-3">
+                        <figure class="day-photo">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Golden pastry dusted with sugar for the æbleskiver breakfast" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Danish_bakery%2C_Solvang%2C_CA%2C_USA_%289503103424%29.jpg?width=800';">
+                            <figcaption>🥞 Æbleskiver breakfast</figcaption>
+                        </figure>
+                        <figure class="day-photo">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Charming_Solvang_-_panoramio.jpg?width=800" alt="Horse-drawn trolley on a Solvang village street during festival season" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=800';">
+                            <figcaption>🎺 Village parade route</figcaption>
+                        </figure>
+                        <figure class="day-photo">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="White horse in golden light — equestrian units on the Danish Days parade" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Houses_Solvang.jpg?width=800';">
+                            <figcaption>⚔️ Parade &amp; encampment day</figcaption>
+                        </figure>
+                    </div>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="time-badge">8:30 AM – 12:30 PM</span>
+                            <div>
+                                <h4>🥞 Æbleskiver Breakfast</h4>
+                                <p>World-famous breakfast at Copenhagen Drive &amp; Alisal Road. Cast-iron spheres, raspberry jam, and powdered sugar. Lines move, but the first sitting is the shortest wait.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">10:00 AM – 5:00 PM</span>
+                            <div>
+                                <h4>⚔️ Viking Encampment &amp; Forge Demos</h4>
+                                <p>Living-history exhibit in Solvang Park — forge demos, period tents, and hands-on history for kids who have already eaten three æbleskiver.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">11:30 AM &amp; 2:30 PM</span>
+                            <div>
+                                <h4>🥞 Æbleskiver Breakfast &amp; Eating Contests</h4>
+                                <p>Five rounds of fierce, powdered-sugar competition. Spectators pack the rails — stand on the Alisal side for a clear view.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">2:30 PM</span>
+                            <div>
+                                <h4>🎺 Danish Days Grand Parade (Floats &amp; Folk Dancers)</h4>
+                                <p>Floats, marching bands, Danish folk dancers, and equestrian units along the village core. Arrive 30–45 minutes early for a shaded curb.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">5:00 PM – 9:00 PM</span>
+                            <div>
+                                <h4>🍷 Beer &amp; Wine Garden &amp; Live Concerts</h4>
+                                <p>Local Santa Ynez wines poured beside Carlsberg and festival food. Adult evening energy after the family parade hour.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="day-card day-sunday">
+                    <div class="day-card-head">
+                        <p class="day-pill">🚲 Grand Finale</p>
+                        <h3>Sunday, September 20, 2026</h3>
+                        <p>Another æbleskiver breakfast, a kids’ zone, the children’s parade, and closing raffles before the village exhales.</p>
+                    </div>
+                    <div class="day-photo-row">
+                        <figure class="day-photo">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Colorful heart balloons for the children’s parade and family festival day" width="900" height="560" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=900';">
+                            <figcaption>🚲 Children’s parade day</figcaption>
+                        </figure>
+                        <figure class="day-photo">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=900" alt="Families in Solvang’s Tivoli Square during a festival weekend" width="900" height="560" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=900';">
+                            <figcaption>🇩🇰 Family festival in the village</figcaption>
+                        </figure>
+                    </div>
+                    <ul class="slot-list">
+                        <li class="slot-item">
+                            <span class="time-badge">8:30 AM – 12:30 PM</span>
+                            <div>
+                                <h4>🥞 Æbleskiver Breakfast</h4>
+                                <p>Same Copenhagen &amp; Alisal corner, slightly shorter lines than Saturday if you arrive at open.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">10:00 AM – 4:00 PM</span>
+                            <div>
+                                <h4>🚲 Children’s Parade &amp; Family Activities</h4>
+                                <p>Kid’s Korner &amp; Lego Activity Area — free crafts, storytelling, and a place for small legs to rest between parades.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">2:00 PM</span>
+                            <div>
+                                <h4>🚲 Children’s Parade</h4>
+                                <p>Costumes, decorated bikes, and pets. The sweetest, slowest parade of the weekend — stand near Solvang Park.</p>
+                            </div>
+                        </li>
+                        <li class="slot-item">
+                            <span class="time-badge">3:30 PM</span>
+                            <div>
+                                <h4>🇩🇰 Closing Ceremonies &amp; Raffle Winners</h4>
+                                <p>Midtbyen Stage wrap-up. If you are driving home to Santa Barbara or Los Angeles, give yourself extra time — Mission Drive stays busy until late afternoon.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+
+        <div class="container" id="dd-food">
+            <h3 id="food-heading" class="tours-cat-title">Must-Try Culinary Highlights &amp; Pastry Guide</h3>
+            <p class="section-subtitle">Eat like a local: spherical pancakes, Danish sausage, pretzel-shaped kringle, and the village bakeries that have been here for generations.</p>
+            <div class="cards-grid">
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Golden pastry dusted with sugar, the festival æbleskiver style" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Danish_bakery%2C_Solvang%2C_CA%2C_USA_%289503103424%29.jpg?width=800';">
+                        <span class="hotel-location">📍 Copenhagen &amp; Alisal</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Æbleskiver</h3>
+                        <p>Puffed Danish pancake spheres cooked in a special pan, served with raspberry jam and a snowdrift of powdered sugar. The official festival breakfast — and the eating-contest fuel.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Breakfast</span><span class="amenity">Jam &amp; Sugar</span><span class="amenity amenity-sky">Iconic</span></div>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=800" alt="Solvang village square near festival food stalls" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Street_of_Solvang_%284131256161%29.jpg?width=800';">
+                        <span class="hotel-location">📍 Village stalls</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Medisterpølse</h3>
+                        <p>The classic Danish sausage — spiced, grilled, and usually tucked in a bun at a midtown stall. Pair it with a cold Carlsberg after the Saturday parade.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Savory</span><span class="amenity">Street Food</span><span class="amenity amenity-sky">Danish</span></div>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Fresh bakery loaves and pastry for Solvang kringle" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Danish_bakery%2C_Solvang%2C_CA%2C_USA_%289503103424%29.jpg?width=800';">
+                        <span class="hotel-location">📍 Village bakeries</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Kringle</h3>
+                        <p>The pretzel-shaped Danish pastry filled with almond paste or fruit. Buy a whole ring to share on a Mission Drive bench before the children’s parade.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Almond</span><span class="amenity">Bakery</span><span class="amenity amenity-sky">Shareable</span></div>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Danish_bakery%2C_Solvang%2C_CA%2C_USA_%289503103424%29.jpg?width=800" alt="Danish bakery pastry case in downtown Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=800';">
+                        <span class="hotel-location">📍 Solvang bakeries</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Solvang Bakery Treats</h3>
+                        <p>Olsen’s, Solvang Bakery, and the village cases fill with kringler, butter cookies, and seasonal Danish Days trays. Go early Saturday — the best pans empty by late morning.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Village</span><span class="amenity">Butter Cookies</span><span class="amenity amenity-sky">Take Home</span></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="container" id="dd-tips">
+            <h3 id="tips-heading" class="tours-cat-title">Insider Tips for Visitors</h3>
+            <p class="section-subtitle">September in the Santa Ynez Valley is warm afternoons, cool nights, and a village that is easier on foot than in a car.</p>
+            <div class="tip-grid">
+                <article class="tip-card">
+                    <h3>Parking &amp; shuttles</h3>
+                    <p>Use free public lots on the edge of downtown (Alisal Road corridor and lots behind Mission Drive) and walk in. Do not circle Copenhagen Drive looking for a parade-day space. If a festival shuttle is posted at your hotel or the Buellton park-and-ride, take it — Saturday from 1:00–4:00 PM is the hardest hour to park.</p>
+                </article>
+                <article class="tip-card">
+                    <h3>What to wear</h3>
+                    <p>Mid-September days often sit in the mid-70s to low-80s °F, with evenings in the 50s. Wear walking shoes, sun protection for the parade curb, and a light jacket for the Friday torchlight procession. Folk costume is welcome; sneakers are more useful than heels on brick and cobble.</p>
+                </article>
+                <article class="tip-card">
+                    <h3>Family day vs. adult night</h3>
+                    <p>Mornings are for æbleskiver, the Viking encampment, Kid’s Korner, and the children’s parade. After 5:00 PM Saturday the wine-and-beer garden and concerts take over. If you have small kids, plan a hotel with a pool and an early dinner, then a quiet Sunday breakfast before the 2:00 PM children’s parade.</p>
+                </article>
+            </div>
+            <p class="prose" style="margin-top:1.75rem;">Pair the festival with Los Olivos tasting rooms (a 10-minute drive) or a Buellton pinot stop on the way home. For a full valley plan, use our <a href="wine-and-experiences.html">Wine &amp; Experiences</a> page — then come back to downtown when the windmill lights come on. Book a walkable inn on the <a href="#featured-hotels">Solvang hotels map</a> below, and add a tasting from the <a href="#tours">Santa Ynez Valley tours</a> already on this page.</p>
+        </div>
+    </section>
+
     <section class="events-section" id="upcoming-events" aria-labelledby="upcoming-events-heading">
         <div class="container">
             <h2 id="upcoming-events-heading">Upcoming Solvang Events</h2>
-            <p class="section-subtitle">Festival weekends sell out first — lock Danish Days, Julefest, Taste of Solvang, and the Wine Country Marathon before you book the rest of the trip.</p>
+            <p class="section-subtitle">After Danish Days, lock Julefest, Taste of Solvang, and the Wine Country Marathon before you book the rest of the trip.</p>
             <div class="cards-grid">
-                <article class="tour-card">
-                    <div class="tour-media">
-                        <img src="images/danish-days-banner.jpg" alt="Solvang Danish Days festival street parade in the Danish village" width="640" height="400" loading="lazy">
-                        <span class="tour-price">Sep 18–20, 2026</span>
-                        <span class="tour-location">📍 Downtown Solvang</span>
-                    </div>
-                    <div class="tour-card-inner">
-                        <p class="tour-rating">★ Free street festival</p>
-                        <h3>Danish Days 2026</h3>
-                        <p>The 89th annual heritage weekend — æbleskiver breakfasts, Viking living history, folk dancing, and three parades.</p>
-                        <a class="tour-book-btn" href="danish-days.html">View Event Guide</a>
-                    </div>
-                </article>
                 <article class="tour-card">
                     <div class="tour-media">
                         <img src="images/julefest-banner.jpg" alt="Solvang Julefest Christmas lights and Danish village rooftops" width="640" height="400" loading="lazy">
