@@ -91,7 +91,7 @@
           "@id": "https://solvangguide.com/#danish-days-2026",
           "name": "Solvang Danish Days 2026",
           "alternateName": "89th Annual Solvang Danish Days 2026",
-          "url": "https://solvangguide.com/danish-days.html",
+          "url": "https://solvangguide.com/#danish-days-2026",
           "description": "The 89th Annual Solvang Danish Days festival celebrates Danish heritage in downtown Solvang with æbleskiver breakfasts, folk dancing, Viking living history, and three parades. Free public street admission runs Friday, September 18 through Sunday, September 20, 2026, Pacific Time.",
           "startDate": "2026-09-18",
           "endDate": "2026-09-20",
@@ -106,7 +106,7 @@
           "image": ["https://solvangguide.com/images/danish-days-banner.jpg"],
           "organizer": {"@type":"Organization","name":"Solvang Danish Days Foundation","url":"https://solvangguide.com/"},
           "performer": {"@type":"PerformingGroup","name":"Solvang Folk Dancers & Musicians"},
-          "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/danish-days.html"}
+          "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/#danish-days-2026"}
         },
         {
           "@type": "Festival",
@@ -1349,6 +1349,7 @@
             right: 0.85rem;
             background: linear-gradient(180deg, var(--amber-light) 0%, var(--amber-dark) 100%);
             color: #FFFFFF;
+            -webkit-text-fill-color: #FFFFFF;
             font-size: 0.78rem;
             font-weight: 700;
             padding: 0.4rem 0.75rem;
@@ -2148,7 +2149,8 @@
             border-radius: 9999px;
             font-weight: 800;
             font-size: 1.05rem;
-            color: #fff;
+            color: #FFFFFF;
+            -webkit-text-fill-color: #FFFFFF;
             text-align: center;
             box-shadow: 0 10px 24px rgba(217, 119, 6, 0.28);
         }
@@ -2239,12 +2241,14 @@
         .day-card.day-saturday::before { background: linear-gradient(90deg, #f59e0b, #d97706, #e11d48); }
         .day-card.day-sunday::before { background: linear-gradient(90deg, #8b5cf6, #0ea5e9, #f59e0b); }
         .day-card-head { padding: 1.85rem 1.7rem 0.35rem; }
-        .day-pill {
+        .day-pill,
+        .day-card-head p.day-pill {
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
             background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #FFFFFF;
+            -webkit-text-fill-color: #FFFFFF;
             font-weight: 800;
             font-size: 0.78rem;
             letter-spacing: 0.06em;
@@ -2253,10 +2257,11 @@
             padding: 0.35rem 0.85rem;
             margin-bottom: 0.75rem;
         }
-        .day-card.day-friday .day-pill { background: linear-gradient(135deg, #7A1C29, #9a3412); }
-        .day-card.day-sunday .day-pill { background: linear-gradient(135deg, #5b21b6, #1e3a8a); }
+        .day-card.day-friday .day-pill { background: linear-gradient(135deg, #7A1C29, #9a3412); color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; }
+        .day-card.day-sunday .day-pill { background: linear-gradient(135deg, #5b21b6, #1e3a8a); color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; }
         .day-card-head h3 { font-size: 1.45rem; margin-bottom: 0.45rem; }
         .day-card-head p { color: #4b5563; font-size: 1.02rem; }
+        .day-card-head p.day-pill { color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; }
         .day-banner {
             margin: 1rem 1.5rem 0;
             border-radius: 20px;
@@ -2324,6 +2329,7 @@
             justify-content: center;
             background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #FFFFFF;
+            -webkit-text-fill-color: #FFFFFF;
             font-weight: 800;
             font-size: 0.78rem;
             padding: 0.42rem 0.72rem;
@@ -2375,7 +2381,6 @@
             <div class="site-nav-links">
                 <a class="is-active" href="index.html" aria-current="page">Home</a>
                 <a href="wine-and-experiences.html"><span class="nav-full">Wine &amp; Experiences</span><span class="nav-short">Wine</span></a>
-                <a class="nav-festive" href="danish-days.html"><span class="nav-full">Danish Days 2026</span><span class="nav-short">Danish Days</span></a>
                 <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span></a>
                 <a class="nav-taste" href="taste-of-solvang-2027.html"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span></a>
                 <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span></a>
@@ -2739,7 +2744,7 @@
             <div class="cards-grid">
                 <article class="tour-card">
                     <div class="tour-media">
-                        <img src="images/julefest-banner.jpg" alt="Solvang Julefest Christmas lights and Danish village rooftops" width="640" height="400" loading="lazy">
+                        <img src="images/julefest-banner.jpg?v=unique1" alt="Festive winter greenery and berries for Solvang Julefest Christmas" width="640" height="400" loading="lazy">
                         <span class="tour-price">Nov 27, 2026 – Jan 8, 2027</span>
                         <span class="tour-location">📍 Solvang Park &amp; Village</span>
                     </div>
@@ -2752,7 +2757,7 @@
                 </article>
                 <article class="tour-card">
                     <div class="tour-media">
-                        <img src="images/taste-of-solvang.jpg" alt="Taste of Solvang food and wine festival in the Danish village" width="640" height="400" loading="lazy">
+                        <img src="images/taste-of-solvang.jpg?v=unique1" alt="Plated seafood and white wine at a Taste of Solvang food and wine tasting" width="640" height="400" loading="lazy">
                         <span class="tour-price">Mar 19–21, 2027</span>
                         <span class="tour-location">📍 Solvang Wine Country</span>
                     </div>
@@ -2765,7 +2770,7 @@
                 </article>
                 <article class="tour-card">
                     <div class="tour-media">
-                        <img src="images/wine-marathon.jpg" alt="Santa Ynez Valley wine country half marathon through Solvang vineyards" width="640" height="400" loading="lazy">
+                        <img src="images/wine-marathon.jpg?v=unique1" alt="Runner in training for the Santa Ynez Valley Wine Country Marathon" width="640" height="400" loading="lazy">
                         <span class="tour-price">May 8, 2027</span>
                         <span class="tour-location">📍 Solvang &amp; Santa Ynez Valley</span>
                     </div>
@@ -3638,7 +3643,7 @@
 
     <!-- Footer -->
     <footer>
-        <p><a href="index.html">Home</a> · <a href="wine-and-experiences.html">Wine &amp; Experiences</a> · <a href="danish-days.html">Danish Days 2026</a> · <a href="christmas.html">Christmas 2026</a> · <a href="taste-of-solvang-2027.html">Taste of Solvang 2027</a> · <a href="solvang-wine-marathon-2027.html">Wine Marathon 2027</a></p>
+        <p><a href="index.html">Home</a> · <a href="wine-and-experiences.html">Wine &amp; Experiences</a> · <a href="christmas.html">Christmas 2026</a> · <a href="taste-of-solvang-2027.html">Taste of Solvang 2027</a> · <a href="solvang-wine-marathon-2027.html">Wine Marathon 2027</a></p>
         <p>&copy; 2026 Solvang Guide. All rights reserved.</p>
     </footer>
 
