@@ -84,6 +84,13 @@
     }
     </script>
     <style>
+        .site-nav,
+        .site-nav a,
+        footer a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg-lilac: #EBE5F9; --bg-soft-blue: #E3EDF7; --bg-emerald: #E1F4EC; --bg-amethyst: #F1E6FA;
@@ -130,7 +137,10 @@
             box-shadow: 0 8px 18px rgba(217, 119, 6, 0.35);
             transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
         }
-        .site-nav-links a:hover { color: #fff; transform: translateY(-2px); filter: brightness(1.08); }
+        @media (hover: hover) and (pointer: fine) {
+.site-nav-links a:hover { color: #fff; transform: translateY(-2px); filter: brightness(1.08); }
+}
+
         .site-nav-links a.is-active {
             color: #fff; filter: brightness(1.12);
             box-shadow: 0 0 0 3px rgba(255,255,255,0.95), 0 0 22px rgba(245,158,11,0.85), 0 10px 22px rgba(217,119,6,0.5);
@@ -171,7 +181,10 @@
         }
         .hotel-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
             background: linear-gradient(90deg, #166534, #f59e0b, #b91c1c); z-index: 3; }
-        .hotel-card:hover { transform: translateY(-6px); }
+        @media (hover: hover) and (pointer: fine) {
+.hotel-card:hover { transform: translateY(-6px); }
+}
+
         .hotel-media { position: relative; aspect-ratio: 16/10; background: linear-gradient(135deg,#1a2a22,#3d1f24); overflow: hidden; }
         .hotel-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .hotel-location { position: absolute; left: 0.85rem; bottom: 0.85rem; background: rgba(255,255,255,0.94);
@@ -189,7 +202,10 @@
             color: #fff; padding: 1.05rem; border-radius: 50px; text-decoration: none; font-weight: 700; text-align: center;
             box-shadow: 0 10px 20px rgba(255,152,0,0.35); margin-top: auto;
         }
-        .availability-btn:hover { filter: brightness(1.1); color: #fff; }
+        @media (hover: hover) and (pointer: fine) {
+.availability-btn:hover { filter: brightness(1.1); color: #fff; }
+}
+
         .callout {
             max-width: 820px; margin: 1.5rem auto 0; padding: 1.15rem 1.35rem;
             background: rgba(255,255,255,0.82); border: 1px solid rgba(185,28,28,0.28); border-radius: 20px;
@@ -273,15 +289,21 @@
             border-radius: 28px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .hotel-card:hover,
         .hotel-card:focus-within,
-        .hotel-card:active,
-        .tour-card:hover,
-        .tour-card:focus-within,
-        .tour-card:active {
+.hotel-card:active,
+.tour-card:focus-within,
+.tour-card:active {
             transform: translateY(-4px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover,
+.tour-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+}
+
         .hotel-media,
         .tour-media {
             overflow: hidden;
@@ -291,14 +313,19 @@
         .tour-media img {
             transition: transform 0.4s ease;
         }
-        .hotel-card:hover .hotel-media img,
         .hotel-card:focus-within .hotel-media img,
-        .hotel-card:active .hotel-media img,
-        .tour-card:hover .tour-media img,
-        .tour-card:focus-within .tour-media img,
-        .tour-card:active .tour-media img {
+.hotel-card:active .hotel-media img,
+.tour-card:focus-within .tour-media img,
+.tour-card:active .tour-media img {
             transform: scale(1.04);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media img,
+.tour-card:hover .tour-media img {
+            transform: scale(1.04);
+        }
+}
+
         .hotel-media::after,
         .tour-media::after {
             content: '';
@@ -310,14 +337,19 @@
             pointer-events: none;
             z-index: 2;
         }
-        .hotel-card:hover .hotel-media::after,
         .hotel-card:focus-within .hotel-media::after,
-        .hotel-card:active .hotel-media::after,
-        .tour-card:hover .tour-media::after,
-        .tour-card:focus-within .tour-media::after,
-        .tour-card:active .tour-media::after {
+.hotel-card:active .hotel-media::after,
+.tour-card:focus-within .tour-media::after,
+.tour-card:active .tour-media::after {
             transform: translateX(130%);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media::after,
+.tour-card:hover .tour-media::after {
+            transform: translateX(130%);
+        }
+}
+
         .hotel-location,
         .tour-location { z-index: 3; }
         .tour-price {

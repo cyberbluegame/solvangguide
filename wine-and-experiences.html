@@ -157,6 +157,13 @@
     }
     </script>
     <style>
+        .site-nav,
+        .site-nav a,
+        footer a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg-lilac: #EBE5F9; --bg-soft-blue: #E3EDF7; --bg-emerald: #E1F4EC; --bg-amethyst: #F1E6FA;
@@ -193,10 +200,13 @@
             box-shadow: 0 8px 18px rgba(217, 119, 6, 0.35);
             transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
         }
-        .site-nav-links a:hover {
+        @media (hover: hover) and (pointer: fine) {
+.site-nav-links a:hover {
             color: #fff; transform: translateY(-2px); filter: brightness(1.08);
             box-shadow: 0 12px 24px rgba(217, 119, 6, 0.48);
         }
+}
+
         .site-nav-links a.is-active {
             color: #fff; filter: brightness(1.12);
             box-shadow: 0 0 0 3px rgba(255,255,255,0.95), 0 0 22px rgba(245,158,11,0.85), 0 10px 22px rgba(217,119,6,0.5);
@@ -244,10 +254,16 @@
         }
         .hotel-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
             background: linear-gradient(90deg, var(--amber-light), #d97706, var(--amber-dark)); z-index: 3; }
-        .hotel-card:hover { transform: translateY(-6px); border-color: rgba(217,119,6,0.35); }
+        @media (hover: hover) and (pointer: fine) {
+.hotel-card:hover { transform: translateY(-6px); border-color: rgba(217,119,6,0.35); }
+}
+
         .hotel-media { position: relative; aspect-ratio: 16/10; background: linear-gradient(135deg,#E3EDF7,#FFF3D6); overflow: hidden; }
         .hotel-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease; }
-        .hotel-card:hover .hotel-media img { transform: scale(1.045); }
+        @media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media img { transform: scale(1.045); }
+}
+
         .hotel-location { position: absolute; left: 0.85rem; bottom: 0.85rem; background: rgba(255,255,255,0.94);
             color: #b45309; border: 1px solid rgba(217,119,6,0.2); border-radius: 9999px; padding: 4px 10px;
             font-size: 0.75rem; font-weight: 700; }
@@ -268,8 +284,11 @@
         }
         .availability-btn::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
             background: linear-gradient(180deg, rgba(255,255,255,0.4), transparent); pointer-events: none; }
-        .availability-btn:hover { filter: brightness(1.1); transform: scale(1.03);
+        @media (hover: hover) and (pointer: fine) {
+.availability-btn:hover { filter: brightness(1.1); transform: scale(1.03);
             box-shadow: 0 0 0 3px rgba(255,193,7,0.38), 0 16px 32px rgba(255,152,0,0.55); color: #fff; text-decoration: none; }
+}
+
         .stay22-map-wrap { background: rgba(255,255,255,0.7); border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; margin-bottom: 2rem; }
         .stay22-map-wrap iframe { display: block; width: 100%; min-height: 640px; border: 0; }
         .gyg-widget-wrap { margin-top: 2rem; background: rgba(255,255,255,0.7); border-radius: 28px; padding: 1rem; }
@@ -305,15 +324,21 @@
             border-radius: 28px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .hotel-card:hover,
         .hotel-card:focus-within,
-        .hotel-card:active,
-        .tour-card:hover,
-        .tour-card:focus-within,
-        .tour-card:active {
+.hotel-card:active,
+.tour-card:focus-within,
+.tour-card:active {
             transform: translateY(-4px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover,
+.tour-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+}
+
         .hotel-media,
         .tour-media {
             overflow: hidden;
@@ -323,14 +348,19 @@
         .tour-media img {
             transition: transform 0.4s ease;
         }
-        .hotel-card:hover .hotel-media img,
         .hotel-card:focus-within .hotel-media img,
-        .hotel-card:active .hotel-media img,
-        .tour-card:hover .tour-media img,
-        .tour-card:focus-within .tour-media img,
-        .tour-card:active .tour-media img {
+.hotel-card:active .hotel-media img,
+.tour-card:focus-within .tour-media img,
+.tour-card:active .tour-media img {
             transform: scale(1.04);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media img,
+.tour-card:hover .tour-media img {
+            transform: scale(1.04);
+        }
+}
+
         .hotel-media::after,
         .tour-media::after {
             content: '';
@@ -342,14 +372,19 @@
             pointer-events: none;
             z-index: 2;
         }
-        .hotel-card:hover .hotel-media::after,
         .hotel-card:focus-within .hotel-media::after,
-        .hotel-card:active .hotel-media::after,
-        .tour-card:hover .tour-media::after,
-        .tour-card:focus-within .tour-media::after,
-        .tour-card:active .tour-media::after {
+.hotel-card:active .hotel-media::after,
+.tour-card:focus-within .tour-media::after,
+.tour-card:active .tour-media::after {
             transform: translateX(130%);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media::after,
+.tour-card:hover .tour-media::after {
+            transform: translateX(130%);
+        }
+}
+
         .hotel-location,
         .tour-location { z-index: 3; }
         .tour-price {
@@ -409,13 +444,25 @@
             border-radius: 9999px; padding: 4px 12px;
             font-size: 0.72rem; font-weight: 800; letter-spacing: 0.02em;
         }
-        .winery-gallery-item:hover img,
         .winery-gallery-item:focus-within img {
             transform: scale(1.1); filter: saturate(1.15) brightness(1.05);
             animation-play-state: paused;
         }
-        .winery-gallery-item:hover::before { opacity: 0.35; }
-        .winery-gallery-item:hover::after { animation-duration: 1.8s; }
+@media (hover: hover) and (pointer: fine) {
+.winery-gallery-item:hover img {
+            transform: scale(1.1); filter: saturate(1.15) brightness(1.05);
+            animation-play-state: paused;
+        }
+}
+
+        @media (hover: hover) and (pointer: fine) {
+.winery-gallery-item:hover::before { opacity: 0.35; }
+}
+
+        @media (hover: hover) and (pointer: fine) {
+.winery-gallery-item:hover::after { animation-duration: 1.8s; }
+}
+
         .winery-gallery-item.delay-2 img { animation-delay: -3s; }
         .winery-gallery-item.delay-3 img { animation-delay: -6s; }
         .winery-gallery-item.delay-4 img { animation-delay: -9s; }

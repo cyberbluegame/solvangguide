@@ -108,6 +108,13 @@
     }
     </script>
     <style>
+        .site-nav,
+        .site-nav a,
+        footer a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --wine: #9F1239; --rose: #BE185D; }
         html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
@@ -166,7 +173,10 @@
         .hotel-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #9f1239, #f59e0b); z-index: 2; }
         .hotel-media { position: relative; aspect-ratio: 16/10; overflow: hidden; background: linear-gradient(135deg, #FCE7F3, #FFF7ED); }
         .hotel-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-        .hotel-card:hover .hotel-media img { transform: scale(1.04); }
+        @media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media img { transform: scale(1.04); }
+}
+
         .hotel-content { padding: 1.4rem 1.5rem 1.55rem; flex: 1; display: flex; flex-direction: column; }
         .tour-price { position: absolute; top: 0.85rem; right: 0.85rem; z-index: 3; background: linear-gradient(180deg, #FFC107, #FF9800); color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; font-size: 0.78rem; font-weight: 800; padding: 0.4rem 0.75rem; border-radius: 999px; }
         .amenities { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1rem; }

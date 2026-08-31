@@ -299,6 +299,13 @@
     </script>
 
     <style>
+        .site-nav,
+        .site-nav a,
+        footer a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         /* CSS Reset & Base Styles */
         *, *::before, *::after {
             margin: 0;
@@ -371,12 +378,15 @@
             transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
         }
 
-        .site-nav-links a:hover {
+        @media (hover: hover) and (pointer: fine) {
+.site-nav-links a:hover {
             color: #fff;
             transform: translateY(-2px);
             filter: brightness(1.08);
             box-shadow: 0 12px 24px rgba(217, 119, 6, 0.48);
         }
+}
+
 
         .site-nav-links a.is-active {
             color: #fff;
@@ -585,15 +595,21 @@
             pointer-events: none;
         }
 
-        .liquid-glass:hover::before {
+        @media (hover: hover) and (pointer: fine) {
+.liquid-glass:hover::before {
             left: 100%;
         }
+}
 
-        .liquid-glass:hover {
+
+        @media (hover: hover) and (pointer: fine) {
+.liquid-glass:hover {
             transform: translateY(-6px) scale(1.01);
             box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18), 
                         inset 0 2px 4px rgba(255, 255, 255, 1);
         }
+}
+
 
         /* Hero Section */
         .hero {
@@ -697,30 +713,45 @@
             z-index: 1;
         }
 
-        .social-card:hover::before {
+        @media (hover: hover) and (pointer: fine) {
+.social-card:hover::before {
             left: 100%;
         }
+}
 
-        .social-card:hover {
+
+        @media (hover: hover) and (pointer: fine) {
+.social-card:hover {
             transform: translateY(-6px) scale(1.01);
             box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18), 
                         inset 0 2px 4px rgba(255, 255, 255, 1);
         }
+}
 
-        .social-card.youtube-card:hover {
+
+        @media (hover: hover) and (pointer: fine) {
+.social-card.youtube-card:hover {
             box-shadow: 0 20px 45px rgba(255, 0, 0, 0.15), 
                         inset 0 2px 4px rgba(255, 255, 255, 1);
         }
+}
 
-        .social-card.tiktok-card:hover {
+
+        @media (hover: hover) and (pointer: fine) {
+.social-card.tiktok-card:hover {
             box-shadow: 0 20px 45px rgba(255, 215, 0, 0.2), 
                         inset 0 2px 4px rgba(255, 255, 255, 1);
         }
+}
 
-        .social-card.instagram-card:hover {
+
+        @media (hover: hover) and (pointer: fine) {
+.social-card.instagram-card:hover {
             box-shadow: 0 20px 45px rgba(225, 48, 108, 0.18), 
                         inset 0 2px 4px rgba(255, 255, 255, 1);
         }
+}
+
 
         .social-card-header {
             display: flex;
@@ -909,13 +940,19 @@
             background: linear-gradient(135deg, #E1306C, #C13584);
         }
 
-        .social-card:hover .video-preview-thumb img {
+        @media (hover: hover) and (pointer: fine) {
+.social-card:hover .video-preview-thumb img {
             transform: scale(1.05);
         }
+}
 
-        .social-card:hover .play-button {
+
+        @media (hover: hover) and (pointer: fine) {
+.social-card:hover .play-button {
             transform: scale(1.1);
         }
+}
+
 
         .social-card-content {
             padding: 1.5rem;
@@ -970,10 +1007,13 @@
             pointer-events: none;
         }
 
-        .social-btn:hover {
+        @media (hover: hover) and (pointer: fine) {
+.social-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
         }
+}
+
 
         /* Things to Do Section */
         .things-section {
@@ -1014,15 +1054,21 @@
             z-index: 1;
         }
 
-        .activity-card:hover::before {
+        @media (hover: hover) and (pointer: fine) {
+.activity-card:hover::before {
             left: 100%;
         }
+}
 
-        .activity-card:hover {
+
+        @media (hover: hover) and (pointer: fine) {
+.activity-card:hover {
             transform: translateY(-6px) scale(1.01);
             box-shadow: 0 20px 45px rgba(230, 160, 140, 0.18), 
                         inset 0 2px 4px rgba(255, 255, 255, 1);
         }
+}
+
 
         .card-image {
             width: 100%;
@@ -1115,10 +1161,13 @@
             pointer-events: none;
         }
 
-        .book-btn:hover {
+        @media (hover: hover) and (pointer: fine) {
+.book-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
         }
+}
+
 
         /* Where to Stay Section */
         .stay-section {
@@ -1153,11 +1202,14 @@
             z-index: 3;
         }
 
-        .hotel-card:hover {
+        @media (hover: hover) and (pointer: fine) {
+.hotel-card:hover {
             transform: translateY(-6px);
             border-color: rgba(217, 119, 6, 0.35);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+}
+
 
         .hotel-image {
             width: 100%;
@@ -1186,9 +1238,12 @@
             transition: transform 0.45s ease;
         }
 
-        .hotel-card:hover .hotel-media img {
+        @media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media img {
             transform: scale(1.045);
         }
+}
+
 
         .hotel-location {
             position: absolute;
@@ -1350,13 +1405,16 @@
             pointer-events: none;
         }
 
-        .availability-btn:hover {
+        @media (hover: hover) and (pointer: fine) {
+.availability-btn:hover {
             filter: brightness(1.1);
             transform: scale(1.03);
             box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.38), 0 16px 32px rgba(255, 152, 0, 0.55);
             color: #FFFFFF;
             text-decoration: none;
         }
+}
+
 
         /* Regional Tours (GetYourGuide) */
         .tours-section {
@@ -1390,11 +1448,14 @@
             flex-direction: column;
         }
 
-        .tour-card:hover {
+        @media (hover: hover) and (pointer: fine) {
+.tour-card:hover {
             transform: translateY(-6px);
             border-color: rgba(217, 119, 6, 0.35);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+}
+
 
         .tour-media {
             position: relative;
@@ -1499,13 +1560,16 @@
             pointer-events: none;
         }
 
-        .tour-book-btn:hover {
+        @media (hover: hover) and (pointer: fine) {
+.tour-book-btn:hover {
             filter: brightness(1.08);
             transform: scale(1.02);
             box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
             color: #FFFFFF;
             text-decoration: none;
         }
+}
+
 
         .gyg-widget-wrap {
             max-width: 1100px;
@@ -1572,9 +1636,12 @@
             transition: var(--transition-bounce);
         }
 
-        .faq-item:hover {
+        @media (hover: hover) and (pointer: fine) {
+.faq-item:hover {
             border-color: rgba(255, 193, 7, 0.4);
         }
+}
+
 
         .faq-question {
             width: 100%;
@@ -1595,9 +1662,12 @@
             letter-spacing: 0.02em;
         }
 
-        .faq-question:hover {
+        @media (hover: hover) and (pointer: fine) {
+.faq-question:hover {
             color: var(--amber-dark);
         }
+}
+
 
         .faq-question::after {
             content: '▼';
@@ -1707,9 +1777,12 @@
             text-decoration: none;
         }
 
-        .guide-article a:hover {
+        @media (hover: hover) and (pointer: fine) {
+.guide-article a:hover {
             text-decoration: underline;
         }
+}
+
 
         .guide-cta {
             display: inline-flex;
@@ -1726,13 +1799,16 @@
             transition: var(--transition-bounce);
         }
 
-        .guide-cta:hover {
+        @media (hover: hover) and (pointer: fine) {
+.guide-cta:hover {
             color: #FFFFFF;
             text-decoration: none;
             filter: brightness(1.1);
             transform: scale(1.03);
             box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.38), 0 16px 32px rgba(255, 152, 0, 0.55);
         }
+}
+
 
         .rich-faq-section {
             padding-bottom: 1.5rem;
@@ -1771,9 +1847,12 @@
             font-weight: 600;
         }
 
-        footer a:hover {
+        @media (hover: hover) and (pointer: fine) {
+footer a:hover {
             text-decoration: underline;
         }
+}
+
 
         .footer-disclaimer {
             font-size: 0.8rem;
@@ -1977,12 +2056,15 @@
             z-index: 1;
         }
 
-        .app-store-btn:hover {
+        @media (hover: hover) and (pointer: fine) {
+.app-store-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 30px rgba(255, 152, 0, 0.45);
             text-decoration: none;
             color: #FFFFFF;
         }
+}
+
 
         @media (max-width: 768px) {
             body { padding-top: 104px; }
@@ -2139,15 +2221,21 @@
             border-radius: 28px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .hotel-card:hover,
         .hotel-card:focus-within,
-        .hotel-card:active,
-        .tour-card:hover,
-        .tour-card:focus-within,
-        .tour-card:active {
+.hotel-card:active,
+.tour-card:focus-within,
+.tour-card:active {
             transform: translateY(-4px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover,
+.tour-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+}
+
         .hotel-media,
         .tour-media {
             overflow: hidden;
@@ -2157,14 +2245,19 @@
         .tour-media img {
             transition: transform 0.4s ease;
         }
-        .hotel-card:hover .hotel-media img,
         .hotel-card:focus-within .hotel-media img,
-        .hotel-card:active .hotel-media img,
-        .tour-card:hover .tour-media img,
-        .tour-card:focus-within .tour-media img,
-        .tour-card:active .tour-media img {
+.hotel-card:active .hotel-media img,
+.tour-card:focus-within .tour-media img,
+.tour-card:active .tour-media img {
             transform: scale(1.04);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media img,
+.tour-card:hover .tour-media img {
+            transform: scale(1.04);
+        }
+}
+
         .hotel-media::after,
         .tour-media::after {
             content: '';
@@ -2176,14 +2269,19 @@
             pointer-events: none;
             z-index: 2;
         }
-        .hotel-card:hover .hotel-media::after,
         .hotel-card:focus-within .hotel-media::after,
-        .hotel-card:active .hotel-media::after,
-        .tour-card:hover .tour-media::after,
-        .tour-card:focus-within .tour-media::after,
-        .tour-card:active .tour-media::after {
+.hotel-card:active .hotel-media::after,
+.tour-card:focus-within .tour-media::after,
+.tour-card:active .tour-media::after {
             transform: translateX(130%);
         }
+@media (hover: hover) and (pointer: fine) {
+.hotel-card:hover .hotel-media::after,
+.tour-card:hover .tour-media::after {
+            transform: translateX(130%);
+        }
+}
+
         .hotel-location,
         .tour-location,
         .tour-price { z-index: 3; }
@@ -2239,7 +2337,10 @@
             font-weight: 700;
             text-decoration: none;
         }
-        .prose a:hover { text-decoration: underline; }
+        @media (hover: hover) and (pointer: fine) {
+.prose a:hover { text-decoration: underline; }
+}
+
         .callout {
             max-width: 820px;
             margin: 1.5rem auto 0;
