@@ -170,6 +170,37 @@
           "offers": {"@type":"Offer","price":"110","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/solvang-wine-marathon-2027.html"}
         },
         {
+          "@type": "Event",
+          "@id": "https://solvangguide.com/#spring-wine-festival-2027",
+          "name": "Solvang Spring Wine & Food Festival 2027",
+          "alternateName": "Spring Wine Fest 2027",
+          "url": "https://solvangguide.com/solvang-spring-wine-festival-2027.html",
+          "description": "Solvang Spring Wine & Food Festival 2027 is a public tasting day in Solvang Park on Saturday, May 8, 2027. Santa Ynez Valley wineries pour pinot, chardonnay, and Rhône blends under the oaks, with cheese pairings, live music, and walkable village lodging on Mission Drive.",
+          "startDate": "2027-05-08T11:00:00-07:00",
+          "endDate": "2027-05-08T17:00:00-07:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "inLanguage": "en-US",
+          "isAccessibleForFree": false,
+          "location": {
+            "@type": "Place",
+            "name": "Solvang Park",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1693 Mission Drive",
+              "addressLocality": "Solvang",
+              "addressRegion": "CA",
+              "postalCode": "93463",
+              "addressCountry": "US"
+            },
+            "geo": {"@type":"GeoCoordinates","latitude":34.5958,"longitude":-120.1376}
+          },
+          "image": ["https://solvangguide.com/images/taste-of-solvang.jpg"],
+          "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
+          "performer": {"@type":"Organization","name":"Santa Ynez Valley Wineries & Local Chefs"},
+          "offers": {"@type":"Offer","name":"Spring Fest 2027 tasting pass","price":"65","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/solvang-spring-wine-festival-2027.html"}
+        },
+        {
           "@type": "WebSite",
           "@id": "https://solvangguide.com/#website",
           "url": "https://solvangguide.com/",
@@ -382,6 +413,11 @@
 
         .site-nav-links a.nav-run {
             background: linear-gradient(135deg, #0f766e, #65a30d);
+            gap: 0.4rem;
+        }
+
+        .site-nav-links a.nav-spring {
+            background: linear-gradient(135deg, #9f1239, #e11d48);
             gap: 0.4rem;
         }
 
@@ -2381,6 +2417,7 @@
             <div class="site-nav-links">
                 <a class="is-active" href="index.html" aria-current="page">Home</a>
                 <a href="wine-and-experiences.html"><span class="nav-full">Wine &amp; Experiences</span><span class="nav-short">Wine</span></a>
+                <a class="nav-spring" href="solvang-spring-wine-festival-2027.html"><span class="nav-full">Spring Wine Fest 2027</span><span class="nav-short">Spring Fest</span></a>
                 <a class="nav-yule" href="christmas.html"><span class="nav-full">Christmas 2026</span><span class="nav-short">Christmas</span></a>
                 <a class="nav-taste" href="taste-of-solvang-2027.html"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span></a>
                 <a class="nav-run" href="solvang-wine-marathon-2027.html"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span></a>
@@ -2740,7 +2777,7 @@
     <section class="events-section" id="upcoming-events" aria-labelledby="upcoming-events-heading">
         <div class="container">
             <h2 id="upcoming-events-heading">Upcoming Solvang Events</h2>
-            <p class="section-subtitle">After Danish Days, lock Julefest, Taste of Solvang, and the Wine Country Marathon before you book the rest of the trip.</p>
+            <p class="section-subtitle">After Danish Days, lock Julefest, Taste of Solvang, Spring Wine Fest, and the Wine Country Marathon before you book the rest of the trip.</p>
             <div class="cards-grid">
                 <article class="tour-card">
                     <div class="tour-media">
@@ -2766,6 +2803,19 @@
                         <h3>Taste of Solvang 2027</h3>
                         <p>Pastry walks, chef demonstrations, and Santa Ynez wine pairings across downtown tasting rooms and bakeries.</p>
                         <a class="tour-book-btn" href="taste-of-solvang-2027.html">View Event Guide</a>
+                    </div>
+                </article>
+                <article class="tour-card">
+                    <div class="tour-media">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Santa Ynez Valley vineyard rows for Solvang Spring Wine Festival 2027" width="640" height="400" loading="lazy">
+                        <span class="tour-price">May 8, 2027</span>
+                        <span class="tour-location">📍 Solvang Park, Mission Drive</span>
+                    </div>
+                    <div class="tour-card-inner">
+                        <p class="tour-rating">★ Park tasting day</p>
+                        <h3>Spring Wine Fest 2027</h3>
+                        <p>Public wine and food tasting in Solvang Park — valley pours, cheese boards, live music, and walkable inns.</p>
+                        <a class="tour-book-btn" href="solvang-spring-wine-festival-2027.html">View Event Guide</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3643,7 +3693,7 @@
 
     <!-- Footer -->
     <footer>
-        <p><a href="index.html">Home</a> · <a href="wine-and-experiences.html">Wine &amp; Experiences</a> · <a href="christmas.html">Christmas 2026</a> · <a href="taste-of-solvang-2027.html">Taste of Solvang 2027</a> · <a href="solvang-wine-marathon-2027.html">Wine Marathon 2027</a></p>
+        <p><a href="index.html">Home</a> · <a href="wine-and-experiences.html">Wine &amp; Experiences</a> · <a href="solvang-spring-wine-festival-2027.html">Spring Wine Fest 2027</a> · <a href="christmas.html">Christmas 2026</a> · <a href="taste-of-solvang-2027.html">Taste of Solvang 2027</a> · <a href="solvang-wine-marathon-2027.html">Wine Marathon 2027</a></p>
         <p>&copy; 2026 Solvang Guide. All rights reserved.</p>
     </footer>
 
