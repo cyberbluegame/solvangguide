@@ -323,6 +323,110 @@
         .hotel-location,
         .tour-location,
         .tour-price { z-index: 3; }
+        .wine-kicker {
+            display: inline-block; margin-bottom: 0.85rem; padding: 0.4rem 0.95rem;
+            background: linear-gradient(135deg, #7A1C29, #b45309); color: #fff;
+            border-radius: 9999px; font-weight: 800; font-size: 0.78rem;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            box-shadow: 0 8px 18px rgba(122, 28, 41, 0.28);
+        }
+        .wine-hero { padding: 3.75rem 1.5rem 3.25rem; }
+        .wine-intro {
+            max-width: 820px; margin: 2rem auto 0; text-align: left;
+            color: #3f4658; font-size: 1.08rem; line-height: 1.9;
+        }
+        .wine-intro p { margin-bottom: 1.25rem; }
+        .wine-intro p:last-child { margin-bottom: 0; }
+        .winery-gallery {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+            max-width: 1100px; margin: 2.5rem auto 0;
+        }
+        .winery-gallery-item {
+            position: relative; overflow: hidden; border-radius: 22px;
+            min-height: 160px; box-shadow: 0 12px 28px rgba(26,29,46,0.12);
+            isolation: isolate;
+        }
+        .winery-gallery-item.featured { grid-column: 1 / -1; min-height: 240px; }
+        .winery-gallery-item img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            min-height: inherit; aspect-ratio: 16/10;
+            transform: scale(1.04);
+            animation: gallery-kenburns 16s ease-in-out infinite alternate;
+            transition: transform 0.7s ease, filter 0.7s ease;
+        }
+        .winery-gallery-item.featured img { aspect-ratio: 16/9; min-height: 240px; }
+        .winery-gallery-item::after {
+            content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+            background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.42) 50%, transparent 65%);
+            transform: translateX(-130%);
+            animation: gallery-shimmer 7s ease-in-out infinite;
+        }
+        .winery-gallery-item::before {
+            content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+            background: linear-gradient(180deg, rgba(122,28,41,0.08) 0%, transparent 40%, rgba(26,29,46,0.35) 100%);
+            mix-blend-mode: multiply; opacity: 0.85;
+            transition: opacity 0.45s ease;
+        }
+        .winery-gallery-item figcaption {
+            position: absolute; left: 0.8rem; bottom: 0.8rem; z-index: 3;
+            background: rgba(255,255,255,0.94); color: #7A1C29;
+            border-radius: 9999px; padding: 4px 12px;
+            font-size: 0.72rem; font-weight: 800; letter-spacing: 0.02em;
+        }
+        .winery-gallery-item:hover img,
+        .winery-gallery-item:focus-within img {
+            transform: scale(1.1); filter: saturate(1.15) brightness(1.05);
+            animation-play-state: paused;
+        }
+        .winery-gallery-item:hover::before { opacity: 0.35; }
+        .winery-gallery-item:hover::after { animation-duration: 1.8s; }
+        .winery-gallery-item.delay-2 img { animation-delay: -3s; }
+        .winery-gallery-item.delay-3 img { animation-delay: -6s; }
+        .winery-gallery-item.delay-4 img { animation-delay: -9s; }
+        .winery-gallery-item.delay-5 img { animation-delay: -2s; }
+        .winery-gallery-item.delay-6 img { animation-delay: -5s; }
+        .winery-gallery-item.delay-7 img { animation-delay: -8s; }
+        .winery-gallery-item.delay-2::after { animation-delay: 0.8s; }
+        .winery-gallery-item.delay-3::after { animation-delay: 1.6s; }
+        .winery-gallery-item.delay-4::after { animation-delay: 2.4s; }
+        .winery-gallery-item.delay-5::after { animation-delay: 3.2s; }
+        .winery-gallery-item.delay-6::after { animation-delay: 4s; }
+        .winery-gallery-item.delay-7::after { animation-delay: 4.8s; }
+        @keyframes gallery-kenburns {
+            0% { transform: scale(1.04) translate(0, 0); }
+            100% { transform: scale(1.14) translate(-1.5%, -1%); }
+        }
+        @keyframes gallery-shimmer {
+            0%, 28% { transform: translateX(-130%); }
+            58%, 100% { transform: translateX(130%); }
+        }
+        #wine-tours { scroll-margin-top: 88px; }
+        @media (min-width: 768px) {
+            .winery-gallery {
+                grid-template-columns: 1.4fr 1fr 1fr;
+                grid-template-rows: 200px 200px;
+            }
+            .winery-gallery-item.featured {
+                grid-column: 1 / 2; grid-row: 1 / 3; min-height: auto;
+            }
+            .winery-gallery-item.featured img { min-height: 100%; aspect-ratio: auto; height: 100%; }
+            .winery-gallery-item img { min-height: 100%; aspect-ratio: auto; height: 100%; }
+            .wine-intro { font-size: 1.12rem; }
+        }
+        @media (min-width: 1024px) {
+            .winery-gallery {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+                grid-template-rows: 210px 210px;
+                gap: 0.9rem;
+            }
+            .winery-gallery-item.featured { grid-column: 1 / 2; grid-row: 1 / 3; }
+        }
+        @media (max-width: 768px) {
+            .wine-hero { padding: 2.5rem 16px 2.25rem; }
+            .wine-intro { font-size: 1.02rem; line-height: 1.8; }
+            #wine-tours { scroll-margin-top: 112px; }
+        }
+
     </style>
 </head>
 <body>
@@ -339,385 +443,48 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero wine-hero">
         <div class="container">
+            <p class="wine-kicker">🍷 Santa Ynez Valley · Solvang Wine Country</p>
             <h1>Santa Ynez Valley &amp; Central Coast: 80 Best Tours, Wine Tastings &amp; Unique Stays</h1>
-            <p class="hero-subtitle">Your ultimate guide to vineyard estates, tasting rooms, coastal adventures, and boutique country lodging.</p>
+            <p class="hero-subtitle">Pour a glass of Pinot and settle in — this is the sun-washed tasting-room map of Solvang, Los Olivos, and the Santa Ynez Valley.</p>
+            <div class="wine-intro">
+                <p>The Santa Ynez Valley is one of California’s most intimate wine countries 🍇 — a patchwork of Pinot Noir, Chardonnay, Rhône blends, and Cabernet that rolls from foggy Sta. Rita Hills to the oak-studded canyons above Solvang. You can walk from a Danish bakery to a world-class tasting room in ten minutes, then be standing in vineyard rows before lunch ☀️.</p>
+                <p>What makes it special is the scale. These are still family rooms, picnic lawns, and barrel caves you can actually talk in. Los Olivos pours Rhône and Bordeaux-style flights along a walkable main street 🥂. Foxen Canyon and Happy Canyon reward a designated driver with long views and unhurried pours. Buellton and Lompoc hide industrial-chic “wine ghetto” tasting suites. And Solvang itself is the charming Danish village that makes the whole valley feel like a weekend, not a commute 🌿.</p>
+                <p>Start with the shimmering gallery below, then book a tasting, e-bike, or picnic tour while the light is still golden 🍷. Lodges, ranches, and coastal add-ons wait further down the page — wine comes first.</p>
+            </div>
+            <div class="winery-gallery" role="region" aria-label="Santa Ynez Valley winery and vineyard photo gallery">
+                <figure class="winery-gallery-item featured">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Golden-hour vineyard rows in Santa Ynez Valley wine country" width="1400" height="900" loading="eager" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80';">
+                    <figcaption>Vineyard rows at golden hour</figcaption>
+                </figure>
+                <figure class="winery-gallery-item delay-2">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Wine tasting glasses on a barrel in a Santa Ynez cellar" width="900" height="700" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&amp;fit=crop&amp;w=900&amp;q=80';">
+                    <figcaption>Cellar tasting</figcaption>
+                </figure>
+                <figure class="winery-gallery-item delay-3">
+                    <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Wine being poured into a glass at a Santa Ynez tasting room" width="900" height="700" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1474722883778-792e7990302c?auto=format&amp;fit=crop&amp;w=900&amp;q=80';">
+                    <figcaption>Tasting room pours</figcaption>
+                </figure>
+                <figure class="winery-gallery-item delay-4">
+                    <img src="https://images.unsplash.com/photo-1474722883778-792e7990302c?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Oak wine barrels stacked in a Santa Ynez Valley cellar" width="900" height="700" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Barriques.jpg?width=900';">
+                    <figcaption>Barrel cave</figcaption>
+                </figure>
+                <figure class="winery-gallery-item delay-5">
+                    <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Sunlit wine grapes on the vine in Santa Ynez Valley" width="900" height="700" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Wine_grapes.jpg?width=900';">
+                    <figcaption>Valley grapes</figcaption>
+                </figure>
+                <figure class="winery-gallery-item delay-6">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Rolling oak hills and vineyard country near Solvang" width="900" height="700" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=900&amp;q=80';">
+                    <figcaption>Oak-hill country</figcaption>
+                </figure>
+                <figure class="winery-gallery-item delay-7">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wine_grapes.jpg?width=900" alt="Ripe wine grapes ready for harvest in California wine country" width="900" height="700" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&amp;fit=crop&amp;w=900&amp;q=80';">
+                    <figcaption>Harvest clusters</figcaption>
+                </figure>
+            </div>
         </div>
     </header>
-
-    <section id="countryside-lodges" aria-labelledby="lodges-heading">
-        <div class="container">
-            <h2 id="lodges-heading">30 Countryside Lodges, Vineyard Estates &amp; Resorts</h2>
-            <p class="section-subtitle">Vineyard inns, ranches, and boutique resorts across Solvang, Buellton, Los Olivos, Santa Ynez, Paso Robles, and Santa Barbara — compare live rates on the interactive lodging map.</p>
-            <div class="stay22-map-wrap">
-                <iframe id="stay22-widget" width="100%" height="720" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.6144&amp;lng=-120.1598&amp;address=Santa%20Ynez,%20CA,%20USA" title="Santa Ynez Valley lodging map" allowfullscreen></iframe>
-            </div>
-            <div class="cards-grid">
-                
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Oak-covered ranch hills near Alisal Guest Ranch" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Alisal Guest Ranch & Resort</h3>
-                        <p>Ranch resort with golf, horseback rides, and oak-covered hills just outside the village.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Ranch</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Horseback</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Alisal%20Guest%20Ranch%20%26%20Resort&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_Charm_-_panoramio.jpg?width=800" alt="Village charm near Fess Parker Wine Country Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Los Olivos</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Fess Parker Wine Country Inn</h3>
-                        <p>Wine-country inn on Grand Avenue with tasting-room access and courtyard rooms.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Wine Country</span><span class="amenity amenity-">Boutique</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Fess%20Parker%20Wine%20Country%20Inn&address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fake_Denmark.jpg?width=800" alt="Danish-inspired inn street near Mattei's Tavern" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Los Olivos</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>The Inn at Mattei's Tavern</h3>
-                        <p>Auberge property in historic Los Olivos — luxury rooms beside a landmark tavern.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Historic</span><span class="amenity amenity-sky">Dining</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Inn%20at%20Mattei%27s%20Tavern&address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Danish-land%21.jpg?width=800" alt="Timbered architecture near Santa Ynez Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Santa Ynez</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Santa Ynez Inn</h3>
-                        <p>Victorian-style inn near valley tasting rooms, a quiet base for wine weekends.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Inn</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Free Parking</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Santa%20Ynez%20Inn&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=800" alt="Danish houses near Hotel Ynez" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Santa Ynez</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Hotel Ynez</h3>
-                        <p>Contemporary valley hotel with easy drives to Solvang, Los Olivos, and Buellton.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Modern</span><span class="amenity amenity-">Central Valley</span><span class="amenity amenity-sky">Free Parking</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Ynez&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/City_of_Solvang_%288586060337%29.jpg?width=800" alt="Flower-lined street near The Genevieve" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Santa Ynez</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>The Genevieve</h3>
-                        <p>Luxury historic inn and spa in Santa Ynez — refined rooms after a day of tastings.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Historic</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Genevieve&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grapevine.jpg?width=800" alt="Sunlit grapevines and valley rooftops in Santa Ynez wine country" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Happy_Canyon,_CA.jpg?width=800';">
-                        <span class="hotel-location">📍 Santa Ynez</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Chumash Casino Resort</h3>
-                        <p>4-star resort with spa, rooftop pool, and dining minutes from Solvang.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Rooftop Pool</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Chumash%20Casino%20Resort&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Houses_Solvang.jpg?width=800" alt="Half-timbered houses near Ballard Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Ballard Inn</h3>
-                        <p>Intimate country inn in Ballard, a short hop from Solvang bakeries and vineyards.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Country Inn</span><span class="amenity amenity-sky">Dining</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Ballard%20Inn&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Street_of_Solvang_%284131256161%29.jpg?width=800" alt="Historic street near Sideways Inn in Buellton" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Buellton</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Sideways Inn</h3>
-                        <p>Casual Buellton stay named for the film — gateway to Santa Rita Hills and Solvang.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Value</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Walkable</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Sideways%20Inn&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80" alt="Golden California meadow and wildflowers in the Santa Ynez Valley" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=800';">
-                        <span class="hotel-location">📍 Buellton</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Pea Soup Andersen's Inn</h3>
-                        <p>Classic Highway 101 inn beside the famous split-pea kitchen and tasting rooms.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Classic</span><span class="amenity amenity-">Free Parking</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Pea%20Soup%20Andersen%27s%20Inn&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=800" alt="Village square near Hampton Inn Buellton" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Buellton</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Hampton Inn & Suites Buellton</h3>
-                        <p>Reliable suites with breakfast — a practical base for Santa Ynez Valley tastings.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Free Breakfast</span><span class="amenity amenity-sky">Pool</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hampton%20Inn%20%26%20Suites%20Buellton&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fountains%2C_Solvang%2C_CA%2C_USA_%289500358737%29.jpg?width=800" alt="Village fountains near Quality Inn Buellton" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Buellton</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Quality Inn Buellton</h3>
-                        <p>Straightforward valley lodging with parking and a short drive to Solvang.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Value</span><span class="amenity amenity-">Free Parking</span><span class="amenity amenity-sky">Wine Trail</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Quality%20Inn%20Buellton&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunstone-Vineyards-in-Santa-Ynez-Valley-Winetour-Visit-American-Luxury-Limousine-2015.jpg?width=800" alt="Santa Ynez Valley vineyard rows and rolling wine-country hills near the Marriott" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/California_Vineyards_(15577868872).jpg?width=800';">
-                        <span class="hotel-location">📍 Buellton</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Santa Ynez Valley Marriott</h3>
-                        <p>Full-service hotel with pool and meeting space on the valley’s main corridor.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Wine Country</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Santa%20Ynez%20Valley%20Marriott&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?auto=format&fit=crop&w=800&q=80" alt="Sunset over the Santa Barbara County coast and wine-country hills" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=800';">
-                        <span class="hotel-location">📍 Los Alamos</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Skyview Los Alamos</h3>
-                        <p>Mid-century motel revival with a pool, bar, and desert-meets-vineyard vibe.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Bar</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Skyview%20Los%20Alamos&address=Los%20Alamos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=800" alt="Downtown Solvang street near Hotel Corque" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Hotel Corque</h3>
-                        <p>Luxury downtown Solvang boutique hotel with an outdoor pool and walkable nights.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Downtown</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Corque&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Landsby_-_Solvang_-_Feb_2018_-_Sarah_Stierch.jpg?width=800" alt="The Landsby hotel exterior in downtown Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>The Landsby</h3>
-                        <p>Scandinavian boutique design on Mission Drive — the village’s design-forward stay.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Central</span><span class="amenity amenity-sky">Dining</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Landsby&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Los_Olivos.jpg?width=800" alt="Olive grove and valley lawns in Los Olivos near Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Happy_Canyon,_CA.jpg?width=800';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>The Hadsten Solvang</h3>
-                        <p>Tapestry Collection by Hilton with an indoor pool and contemporary rooms.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Hilton</span><span class="amenity amenity-">Indoor Pool</span><span class="amenity amenity-sky">Upscale</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Hadsten%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cottage.jpg?width=800" alt="Cottage lodging at Wine Valley Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Wine Valley Inn & Cottages</h3>
-                        <p>Danish-style inn and private cottages steps from tasting rooms and bakeries.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Cottages</span><span class="amenity amenity-">Danish Style</span><span class="amenity amenity-sky">Free Parking</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Wine%20Valley%20Inn%20%26%20Cottages&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80" alt="Cozy boutique suite stay at WorldMark Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>WorldMark Solvang</h3>
-                        <p>Spacious suite resort near downtown — room to spread out after vineyard days.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Resort</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=WorldMark%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mission_Santa_Ines.jpg?width=800" alt="Mission Santa Inés arcade in the Santa Ynez Valley near Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_California_Windmill.jpg?width=800';">
-                        <span class="hotel-location">📍 Solvang</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>The Winston Solvang</h3>
-                        <p>Exclusive high-end boutique stay a short stroll from Mission Drive shops.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Boutique</span><span class="amenity amenity-sky">Exclusive</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Winston%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=80" alt="Pacific waterfront light near Hotel Californian" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Santa Barbara</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Hotel Californian</h3>
-                        <p>Funk Zone luxury hotel near the harbor, wine-tasting halls, and State Street.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Funk Zone</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Californian&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://cdn.getyourguide.com/img/tour/fb3a422c8881b39350e9ea4ee81e26b2726849f1a44bcb919847b989c3f9a04a.jpg/146.jpg" alt="Santa Barbara dining gardens near Belmond El Encanto" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Santa Barbara</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Belmond El Encanto</h3>
-                        <p>Hillside icon with ocean views, gardens, and a classic California resort feel.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Ocean Views</span><span class="amenity amenity-sky">Historic</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Belmond%20El%20Encanto&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mission_Santa_Barbara.jpg?width=800" alt="Spanish-colonial gardens and coastal Santa Barbara setting near the Biltmore" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Barbara_Mission.jpg?width=800';">
-                        <span class="hotel-location">📍 Santa Barbara</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Four Seasons Resort The Biltmore Santa Barbara</h3>
-                        <p>Spanish-colonial beachfront resort on the American Riviera.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Beach</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Four%20Seasons%20Resort%20The%20Biltmore%20Santa%20Barbara&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Los_Padres_National_Forest.jpg?width=800" alt="Green canyon hills above Montecito in Los Padres National Forest" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Quercus_agrifolia.jpg?width=800';">
-                        <span class="hotel-location">📍 Santa Barbara</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>San Ysidro Ranch</h3>
-                        <p>Secluded luxury cottages in Montecito canyons — a hideaway after wine country.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Cottages</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=San%20Ysidro%20Ranch&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80" alt="Ocean coastline near Bacara Resort" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Santa Barbara</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Bacara Resort & Spa</h3>
-                        <p>Clifftop Goleta resort with spa, beaches, and a wine-country drive inland.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Coastal</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Bacara%20Resort%20%26%20Spa&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80" alt="Vineyard rows at Allegretto Vineyard Resort" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Paso Robles</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Allegretto Vineyard Resort</h3>
-                        <p>Tuscan-inspired vineyard resort with on-site tasting and resort grounds.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Vineyard</span><span class="amenity amenity-">Resort</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Allegretto%20Vineyard%20Resort&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?auto=format&fit=crop&w=800&q=80" alt="Rolling vineyard hills near Hotel Cheval" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Paso Robles</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Hotel Cheval</h3>
-                        <p>Boutique downtown Paso hotel — walk to tasting rooms after a wine-trail day.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Walkable</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Cheval&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=800" alt="Rolling Santa Ynez Valley hills and wine-country landscape on the Central Coast wine trail" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/California_Vineyards_(15577868872).jpg?width=800';">
-                        <span class="hotel-location">📍 Paso Robles</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>La Bellasera Hotel & Suites</h3>
-                        <p>Suites and a pool near Highway 46 tasting rooms and downtown Paso.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Wine Trail</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=La%20Bellasera%20Hotel%20%26%20Suites&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Copenhagen_Street%2C_Solvang_CA_-_panoramio.jpg?width=800" alt="Village street near Hotel Quintana" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
-                        <span class="hotel-location">📍 Paso Robles</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>Hotel Quintana</h3>
-                        <p>Stylish Paso Robles hotel near downtown tasting rooms and wine-country dining.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Downtown</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Quintana&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-                <article class="hotel-card">
-                    <div class="hotel-media">
-                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nojoqui_Falls.jpg?width=800" alt="Nojoqui Falls canyon trail south of Solvang in Santa Barbara County" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Quercus_agrifolia.jpg?width=800';">
-                        <span class="hotel-location">📍 Santa Barbara</span>
-                    </div>
-                    <div class="hotel-content">
-                        <h3>El Capitan Canyon</h3>
-                        <p>Canyon cabins and safari tents between the coast and Santa Ynez Valley.</p>
-                        <div class="amenities"><span class="amenity amenity-lilac">Cabins</span><span class="amenity amenity-">Nature</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=El%20Capitan%20Canyon&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
 
     <section id="wine-tours" aria-labelledby="wine-tours-heading">
         <div class="container">
@@ -1088,6 +855,379 @@
             </div>
             <div class="gyg-widget-wrap">
                 <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="Y2EKWLC" data-gyg-q="Santa Ynez Valley vineyard winery tasting tour"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="countryside-lodges" aria-labelledby="lodges-heading">
+        <div class="container">
+            <h2 id="lodges-heading">30 Countryside Lodges, Vineyard Estates &amp; Resorts</h2>
+            <p class="section-subtitle">Vineyard inns, ranches, and boutique resorts across Solvang, Buellton, Los Olivos, Santa Ynez, Paso Robles, and Santa Barbara — compare live rates on the interactive lodging map.</p>
+            <div class="stay22-map-wrap">
+                <iframe id="stay22-widget" width="100%" height="720" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.6144&amp;lng=-120.1598&amp;address=Santa%20Ynez,%20CA,%20USA" title="Santa Ynez Valley lodging map" allowfullscreen></iframe>
+            </div>
+            <div class="cards-grid">
+                
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Oak-covered ranch hills near Alisal Guest Ranch" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Alisal Guest Ranch & Resort</h3>
+                        <p>Ranch resort with golf, horseback rides, and oak-covered hills just outside the village.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Ranch</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Horseback</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Alisal%20Guest%20Ranch%20%26%20Resort&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_Charm_-_panoramio.jpg?width=800" alt="Village charm near Fess Parker Wine Country Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Los Olivos</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Fess Parker Wine Country Inn</h3>
+                        <p>Wine-country inn on Grand Avenue with tasting-room access and courtyard rooms.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Wine Country</span><span class="amenity amenity-">Boutique</span><span class="amenity amenity-sky">Spa</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Fess%20Parker%20Wine%20Country%20Inn&address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fake_Denmark.jpg?width=800" alt="Danish-inspired inn street near Mattei's Tavern" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Los Olivos</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Inn at Mattei's Tavern</h3>
+                        <p>Auberge property in historic Los Olivos — luxury rooms beside a landmark tavern.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Historic</span><span class="amenity amenity-sky">Dining</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Inn%20at%20Mattei%27s%20Tavern&address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Danish-land%21.jpg?width=800" alt="Timbered architecture near Santa Ynez Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Santa Ynez</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Santa Ynez Inn</h3>
+                        <p>Victorian-style inn near valley tasting rooms, a quiet base for wine weekends.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Inn</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Free Parking</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Santa%20Ynez%20Inn&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Danish_houses.jpg?width=800" alt="Danish houses near Hotel Ynez" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Santa Ynez</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hotel Ynez</h3>
+                        <p>Contemporary valley hotel with easy drives to Solvang, Los Olivos, and Buellton.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Modern</span><span class="amenity amenity-">Central Valley</span><span class="amenity amenity-sky">Free Parking</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Ynez&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/City_of_Solvang_%288586060337%29.jpg?width=800" alt="Flower-lined street near The Genevieve" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Santa Ynez</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Genevieve</h3>
+                        <p>Luxury historic inn and spa in Santa Ynez — refined rooms after a day of tastings.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Historic</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Genevieve&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grapevine.jpg?width=800" alt="Sunlit grapevines and valley rooftops in Santa Ynez wine country" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Happy_Canyon,_CA.jpg?width=800';">
+                        <span class="hotel-location">📍 Santa Ynez</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Chumash Casino Resort</h3>
+                        <p>4-star resort with spa, rooftop pool, and dining minutes from Solvang.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Rooftop Pool</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Chumash%20Casino%20Resort&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Houses_Solvang.jpg?width=800" alt="Half-timbered houses near Ballard Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Ballard Inn</h3>
+                        <p>Intimate country inn in Ballard, a short hop from Solvang bakeries and vineyards.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Country Inn</span><span class="amenity amenity-sky">Dining</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Ballard%20Inn&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Street_of_Solvang_%284131256161%29.jpg?width=800" alt="Historic street near Sideways Inn in Buellton" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Buellton</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Sideways Inn</h3>
+                        <p>Casual Buellton stay named for the film — gateway to Santa Rita Hills and Solvang.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Value</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Walkable</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Sideways%20Inn&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80" alt="Golden California meadow and wildflowers in the Santa Ynez Valley" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=800';">
+                        <span class="hotel-location">📍 Buellton</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Pea Soup Andersen's Inn</h3>
+                        <p>Classic Highway 101 inn beside the famous split-pea kitchen and tasting rooms.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Classic</span><span class="amenity amenity-">Free Parking</span><span class="amenity amenity-sky">Family</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Pea%20Soup%20Andersen%27s%20Inn&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=800" alt="Village square near Hampton Inn Buellton" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Buellton</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hampton Inn & Suites Buellton</h3>
+                        <p>Reliable suites with breakfast — a practical base for Santa Ynez Valley tastings.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Free Breakfast</span><span class="amenity amenity-sky">Pool</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hampton%20Inn%20%26%20Suites%20Buellton&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fountains%2C_Solvang%2C_CA%2C_USA_%289500358737%29.jpg?width=800" alt="Village fountains near Quality Inn Buellton" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Buellton</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Quality Inn Buellton</h3>
+                        <p>Straightforward valley lodging with parking and a short drive to Solvang.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Value</span><span class="amenity amenity-">Free Parking</span><span class="amenity amenity-sky">Wine Trail</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Quality%20Inn%20Buellton&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunstone-Vineyards-in-Santa-Ynez-Valley-Winetour-Visit-American-Luxury-Limousine-2015.jpg?width=800" alt="Santa Ynez Valley vineyard rows and rolling wine-country hills near the Marriott" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/California_Vineyards_(15577868872).jpg?width=800';">
+                        <span class="hotel-location">📍 Buellton</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Santa Ynez Valley Marriott</h3>
+                        <p>Full-service hotel with pool and meeting space on the valley’s main corridor.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Wine Country</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Santa%20Ynez%20Valley%20Marriott&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?auto=format&fit=crop&w=800&q=80" alt="Sunset over the Santa Barbara County coast and wine-country hills" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=800';">
+                        <span class="hotel-location">📍 Los Alamos</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Skyview Los Alamos</h3>
+                        <p>Mid-century motel revival with a pool, bar, and desert-meets-vineyard vibe.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Bar</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Skyview%20Los%20Alamos&address=Los%20Alamos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_Copenhagen_Drive.jpg?width=800" alt="Downtown Solvang street near Hotel Corque" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hotel Corque</h3>
+                        <p>Luxury downtown Solvang boutique hotel with an outdoor pool and walkable nights.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Downtown</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Corque&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Landsby_-_Solvang_-_Feb_2018_-_Sarah_Stierch.jpg?width=800" alt="The Landsby hotel exterior in downtown Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Landsby</h3>
+                        <p>Scandinavian boutique design on Mission Drive — the village’s design-forward stay.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Central</span><span class="amenity amenity-sky">Dining</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Landsby&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Los_Olivos.jpg?width=800" alt="Olive grove and valley lawns in Los Olivos near Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Happy_Canyon,_CA.jpg?width=800';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Hadsten Solvang</h3>
+                        <p>Tapestry Collection by Hilton with an indoor pool and contemporary rooms.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Hilton</span><span class="amenity amenity-">Indoor Pool</span><span class="amenity amenity-sky">Upscale</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Hadsten%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cottage.jpg?width=800" alt="Cottage lodging at Wine Valley Inn" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Wine Valley Inn & Cottages</h3>
+                        <p>Danish-style inn and private cottages steps from tasting rooms and bakeries.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Cottages</span><span class="amenity amenity-">Danish Style</span><span class="amenity amenity-sky">Free Parking</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Wine%20Valley%20Inn%20%26%20Cottages&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80" alt="Cozy boutique suite stay at WorldMark Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>WorldMark Solvang</h3>
+                        <p>Spacious suite resort near downtown — room to spread out after vineyard days.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Resort</span><span class="amenity amenity-sky">Family</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=WorldMark%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mission_Santa_Ines.jpg?width=800" alt="Mission Santa Inés arcade in the Santa Ynez Valley near Solvang" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Solvang_California_Windmill.jpg?width=800';">
+                        <span class="hotel-location">📍 Solvang</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>The Winston Solvang</h3>
+                        <p>Exclusive high-end boutique stay a short stroll from Mission Drive shops.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Boutique</span><span class="amenity amenity-sky">Exclusive</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Winston%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=80" alt="Pacific waterfront light near Hotel Californian" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Santa Barbara</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hotel Californian</h3>
+                        <p>Funk Zone luxury hotel near the harbor, wine-tasting halls, and State Street.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Funk Zone</span><span class="amenity amenity-sky">Spa</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Californian&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://cdn.getyourguide.com/img/tour/fb3a422c8881b39350e9ea4ee81e26b2726849f1a44bcb919847b989c3f9a04a.jpg/146.jpg" alt="Santa Barbara dining gardens near Belmond El Encanto" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Santa Barbara</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Belmond El Encanto</h3>
+                        <p>Hillside icon with ocean views, gardens, and a classic California resort feel.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Ocean Views</span><span class="amenity amenity-sky">Historic</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Belmond%20El%20Encanto&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mission_Santa_Barbara.jpg?width=800" alt="Spanish-colonial gardens and coastal Santa Barbara setting near the Biltmore" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Barbara_Mission.jpg?width=800';">
+                        <span class="hotel-location">📍 Santa Barbara</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Four Seasons Resort The Biltmore Santa Barbara</h3>
+                        <p>Spanish-colonial beachfront resort on the American Riviera.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Beach</span><span class="amenity amenity-sky">Spa</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Four%20Seasons%20Resort%20The%20Biltmore%20Santa%20Barbara&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Los_Padres_National_Forest.jpg?width=800" alt="Green canyon hills above Montecito in Los Padres National Forest" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Quercus_agrifolia.jpg?width=800';">
+                        <span class="hotel-location">📍 Santa Barbara</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>San Ysidro Ranch</h3>
+                        <p>Secluded luxury cottages in Montecito canyons — a hideaway after wine country.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Cottages</span><span class="amenity amenity-sky">Spa</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=San%20Ysidro%20Ranch&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80" alt="Ocean coastline near Bacara Resort" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Santa Barbara</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Bacara Resort & Spa</h3>
+                        <p>Clifftop Goleta resort with spa, beaches, and a wine-country drive inland.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Coastal</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Bacara%20Resort%20%26%20Spa&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80" alt="Vineyard rows at Allegretto Vineyard Resort" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Paso Robles</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Allegretto Vineyard Resort</h3>
+                        <p>Tuscan-inspired vineyard resort with on-site tasting and resort grounds.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Vineyard</span><span class="amenity amenity-">Resort</span><span class="amenity amenity-sky">Spa</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Allegretto%20Vineyard%20Resort&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?auto=format&fit=crop&w=800&q=80" alt="Rolling vineyard hills near Hotel Cheval" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Paso Robles</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hotel Cheval</h3>
+                        <p>Boutique downtown Paso hotel — walk to tasting rooms after a wine-trail day.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Walkable</span><span class="amenity amenity-sky">Wine</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Cheval&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=800" alt="Rolling Santa Ynez Valley hills and wine-country landscape on the Central Coast wine trail" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/California_Vineyards_(15577868872).jpg?width=800';">
+                        <span class="hotel-location">📍 Paso Robles</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>La Bellasera Hotel & Suites</h3>
+                        <p>Suites and a pool near Highway 46 tasting rooms and downtown Paso.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Wine Trail</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=La%20Bellasera%20Hotel%20%26%20Suites&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Copenhagen_Street%2C_Solvang_CA_-_panoramio.jpg?width=800" alt="Village street near Hotel Quintana" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';">
+                        <span class="hotel-location">📍 Paso Robles</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hotel Quintana</h3>
+                        <p>Stylish Paso Robles hotel near downtown tasting rooms and wine-country dining.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Downtown</span><span class="amenity amenity-sky">Wine</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Quintana&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
+                <article class="hotel-card">
+                    <div class="hotel-media">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nojoqui_Falls.jpg?width=800" alt="Nojoqui Falls canyon trail south of Solvang in Santa Barbara County" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Quercus_agrifolia.jpg?width=800';">
+                        <span class="hotel-location">📍 Santa Barbara</span>
+                    </div>
+                    <div class="hotel-content">
+                        <h3>El Capitan Canyon</h3>
+                        <p>Canyon cabins and safari tents between the coast and Santa Ynez Valley.</p>
+                        <div class="amenities"><span class="amenity amenity-lilac">Cabins</span><span class="amenity amenity-">Nature</span><span class="amenity amenity-sky">Family</span></div>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=El%20Capitan%20Canyon&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
