@@ -1,3 +1,4 @@
+# https://solvangguide.com/robots.txt
 User-agent: *
 Allow: /
 
