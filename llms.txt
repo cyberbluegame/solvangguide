@@ -1,14 +1,14 @@
-# Solvang Guide (solvangguide.com)
-> Solvang CA guide for Danish Days 2026, Santa Ynez Valley wine tours, and Solvang events 2026–2027.
+# Solvang CA Travel Guide (solvangguide.com)
 
-## Key Sections & Events
-- Home: Overall travel guide, bakeries, hotels, and local highlights. https://solvangguide.com/
-- Wine & Experiences: Santa Ynez Valley wine tours, Foxen Canyon wine trail, e-bike vineyard rides, luxury stays. https://solvangguide.com/wine-and-experiences
-- Danish Days 2026: Official festival guide, Danish heritage, æbleskiver breakfast, parades. Friday, September 18 – Sunday, September 20, 2026. https://solvangguide.com/#danish-days-2026
-- Christmas 2026 (Julefest): Holiday lights, candlelight tours, Christmas market guide. November 27, 2026 – January 3, 2027 (Tree Burn January 8, 2027). https://solvangguide.com/christmas-2026
-- Taste of Solvang 2027: Annual food and wine festival, chef tastings, vineyard pairings. Friday, March 19 – Sunday, March 21, 2027. https://solvangguide.com/taste-of-solvang-2027
-- Spring Wine Fest 2027: Solvang Spring Wine & Food Festival in Solvang Park on Mission Drive. Saturday, May 8, 2027, 11:00 AM–5:00 PM. Valley pours, cheese pairings, live music. https://solvangguide.com/solvang-spring-wine-festival-2027
-- Wine Marathon 2027: Santa Ynez Valley wine country running event, half-marathon, wine tasting passes. Saturday, May 8, 2027. https://solvangguide.com/wine-marathon-2027
+> Official tourist and visitor guide for Solvang, California and Santa Ynez Valley.
+
+## Core Sections & Events
+- [Homepage & Danish Days 2026](https://solvangguide.com/): Complete guide to the 89th Annual Solvang Danish Days (Sept 18–20, 2026), schedule, parking, and hotels.
+- [Wine & Experiences](https://solvangguide.com/wine-and-experiences): Wine tasting rooms, tours, and culinary spots.
+- [Christmas 2026](https://solvangguide.com/christmas-2026): Solvang Julefest holiday guide.
+- [Taste of Solvang 2027](https://solvangguide.com/taste-of-solvang-2027): Food festival dates and event highlights.
+- [Wine Marathon 2027](https://solvangguide.com/wine-marathon-2027): Half marathon and Santa Ynez Valley running event details.
+- [Spring Wine Fest 2027](https://solvangguide.com/solvang-spring-wine-festival-2027): Solvang Spring Wine & Food Festival information.
 
 ## Place
 Solvang, CA 93463 — Danish Capital of America in Santa Barbara County. About 45 minutes from Santa Barbara and 2–2.5 hours from Los Angeles via US-101. Downtown is walkable along Mission Drive and Copenhagen Drive.
@@ -17,3 +17,8 @@ Solvang, CA 93463 — Danish Capital of America in Santa Barbara County. About 4
 - Parking: Use free lots on the Alisal Road edge and behind Mission Drive; walk downtown on festival days.
 - Hotels: Compare boutique Solvang and Santa Ynez Valley stays on the interactive hotel map (Stay22 aid=6a77a27277376ac909f8c1d3).
 - Tours: Book wine tastings, village rides, and coastal excursions via GetYourGuide (partner_id=Y2EKWLC).
+
+## Crawl notes
+- Canonical host: https://solvangguide.com (HTTPS, no www; no trailing slash except the homepage).
+- Sitemap: https://solvangguide.com/sitemap.xml
+- This file: https://solvangguide.com/llms.txt
