@@ -1,9 +1,12 @@
 # https://solvangguide.com/robots.txt
+# Canonical host: https://solvangguide.com (HTTPS, no www).
+# Indexable URLs have no trailing slash except the homepage /.
 # Allow Google, Bing, ChatGPT Search, Perplexity, Claude, and other AI crawlers.
 # AI summary file: https://solvangguide.com/llms.txt
 
 User-agent: *
 Allow: /
+Disallow: /solvang_qr_flyer.html
 
 User-agent: Googlebot
 Allow: /
