@@ -93,7 +93,7 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --text-slate: #1E293B; --amber-light: #FFC107; --amber-dark: #FF9800; }
         html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #F8FAFC 0%, #F3E8FF 40%, #E1F4EC 100%); color: #1E293B; line-height: 1.75; min-height: 100vh; overflow-x: hidden; max-width: 100%;  padding-top: 72px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #F8FAFC 0%, #F3E8FF 40%, #E1F4EC 100%); color: #1E293B; line-height: 1.75; min-height: 100vh; overflow-x: hidden; max-width: 100%;  padding-top: 116px; }
         h2 { font-size: 1.875rem; margin-bottom: 1rem; text-align: center; color: #1E293B; }
         h3 { font-size: 1.25rem; color: #1E293B; margin-bottom: 0.5rem; }
         .section-subtitle { text-align: center; max-width: 780px; margin: 0 auto 2rem; color: #334155; font-weight: 600; }
@@ -121,6 +121,7 @@
         .site-nav-links a.nav-taste { background: linear-gradient(135deg, #7c3aed, #be185d); }
         .site-nav-links a.nav-run { background: linear-gradient(135deg, #0f766e, #65a30d); }
         .site-nav-links a.nav-spring { background: linear-gradient(135deg, #9f1239, #e11d48); }
+        .site-nav-links a.nav-summer { background: linear-gradient(135deg, #0284c7, #16a34a); }
         .festive-badge { display: inline-flex; background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.45); border-radius: 9999px; padding: 0.1rem 0.4rem; font-size: 0.75rem; }
         .hero { position: relative; min-height: 68vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #F8FAFC; overflow: hidden; padding: 5rem 1.5rem 4rem; }
         .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -162,7 +163,7 @@
         footer { text-align: center; padding: 2.5rem 1.5rem; color: #334155; border-top: 1px solid #e2e8f0; }
         footer a { color: #9F1239; font-weight: 700; text-decoration: none; }
         @media (max-width: 768px) {
-            body { padding-top: 104px; }
+            body { padding-top: 132px; }
             .site-nav-inner { display: block; min-height: 0; padding: 0.32rem 0; }
             .site-nav-brand { display: none; }
             .site-nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.28rem; overflow: visible; white-space: normal; padding: 0; }
@@ -256,7 +257,7 @@
     </style>
         <style>
             img { width: 100%; max-width: 100%; height: auto; object-fit: cover; display: block; border-radius: 12px; }
-            @media (min-width: 769px) and (max-width: 1024px) { body { padding-top: 104px; } }
+            @media (min-width: 769px) and (max-width: 1024px) { body { padding-top: 116px; } }
         </style>
 </head>
 <body>
@@ -268,6 +269,7 @@
                 <a class="nav-taste is-active" href="https://solvangguide.com/taste-of-solvang-2027" aria-current="page"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span></a>
                 <a class="nav-run" href="https://solvangguide.com/wine-marathon-2027"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span></a>
                 <a class="nav-spring" href="https://solvangguide.com/solvang-spring-wine-festival-2027"><span class="nav-full">Spring Wine Fest 2027</span><span class="nav-short">Spring Fest</span></a>
+                <a class="nav-summer" href="https://solvangguide.com/summer-music-2027.html"><span class="nav-full">Summer Music 2027</span><span class="nav-short">Summer Music</span></a>
                 <a class="nav-danish" href="https://solvangguide.com/solvang-danish-days-2027"><span class="nav-full">Danish Days 2027</span><span class="nav-short">Danish Days</span></a>
             </div>
         </div>
@@ -453,7 +455,7 @@
     </section>
 
     <footer>
-        <p><a href="https://solvangguide.com/">Home</a> · <a href="https://solvangguide.com/wine-and-experiences">Wine &amp; Experiences</a> · <a href="https://solvangguide.com/taste-of-solvang-2027">Taste of Solvang 2027</a> · <a href="https://solvangguide.com/wine-marathon-2027">Wine Marathon 2027</a> · <a href="https://solvangguide.com/solvang-spring-wine-festival-2027">Spring Wine Fest 2027</a> · <a href="https://solvangguide.com/solvang-danish-days-2027">Danish Days 2027</a></p>
+        <p><a href="https://solvangguide.com/">Home</a> · <a href="https://solvangguide.com/wine-and-experiences">Wine &amp; Experiences</a> · <a href="https://solvangguide.com/taste-of-solvang-2027">Taste of Solvang 2027</a> · <a href="https://solvangguide.com/wine-marathon-2027">Wine Marathon 2027</a> · <a href="https://solvangguide.com/solvang-spring-wine-festival-2027">Spring Wine Fest 2027</a> · <a href="https://solvangguide.com/summer-music-2027.html">Summer Music 2027</a> · <a href="https://solvangguide.com/danish-days-2027.html">Danish Days 2027</a></p>
         <p>&copy; 2026 Solvang Guide. All rights reserved.</p>
     </footer>
     <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="Y2EKWLC"></script>

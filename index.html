@@ -188,13 +188,24 @@
           "performer": {"@type":"Organization","name":"Santa Ynez Valley Wineries & Local Chefs"},
           "offers": {"@type":"Offer","name":"Spring Fest 2027 tasting pass","price":"65","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/solvang-spring-wine-festival-2027"}
         },
+                {
+                    "@type": "Event",
+                    "@id": "https://solvangguide.com/summer-music-2027.html#event",
+                    "name": "Solvang Music in the Park 2027 (Planning Guide)",
+                    "url": "https://solvangguide.com/summer-music-2027.html",
+                    "description": "Visitor planning guide for possible June–August 2027 music events at Solvang Park. Exact dates, hours, performers, and the program remain unconfirmed by organizers.",
+                    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                    "inLanguage": "en-US",
+                    "location": {"@type":"Place","name":"Solvang Park","address":{"@type":"PostalAddress","streetAddress":"Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
+                    "organizer": {"@type":"Organization","name":"Event organizer to be announced"}
+                },
         {
           "@type": "WebSite",
           "@id": "https://solvangguide.com/#website",
           "url": "https://solvangguide.com/",
           "name": "Solvang Guide & Travel Directory",
           "alternateName": "Solvang CA Guide",
-          "description": "Solvang CA guide for Danish Days 2026, Santa Ynez Valley wine tours, and Solvang events 2026–2027.",
+          "description": "Solvang visitor guide for Julefest 2026–2027, Taste of Solvang, Spring Wine Fest, Summer Music in the Park, Wine Marathon, and Danish Days 2027.",
           "publisher": { "@id": "https://solvangguide.com/#organization" },
           "about": { "@id": "https://solvangguide.com/#destination" },
           "inLanguage": "en-US"
@@ -439,6 +450,11 @@
             gap: 0.4rem;
         }
 
+        .site-nav-links a.nav-summer {
+            background: linear-gradient(135deg, #0284c7, #16a34a);
+            gap: 0.4rem;
+        }
+
         .site-nav-links a.nav-danish {
             background: linear-gradient(135deg, #0f766e, #2563eb);
             gap: 0.4rem;
@@ -468,7 +484,7 @@
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
-            padding-top: 72px;
+            padding-top: 116px;
         }
 
         /* Animated Ambient Blur Circles */
@@ -2060,7 +2076,7 @@ footer a:hover {
 
 
         @media (max-width: 768px) {
-            body { padding-top: 104px; }
+            body { padding-top: 132px; }
             .site-nav-inner { display: block; min-height: 0; padding: 0.32rem 0; }
             .site-nav-brand { display: none; }
             .site-nav-links {
@@ -2534,7 +2550,7 @@ footer a:hover {
             .day-photo-row.cols-3 { grid-template-columns: 1fr !important; }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
-            body { padding-top: 104px; }
+            body { padding-top: 116px; }
         }
     </style>
 </head>
@@ -2547,6 +2563,7 @@ footer a:hover {
                 <a class="nav-taste" href="https://solvangguide.com/taste-of-solvang-2027"><span class="nav-full">Taste of Solvang 2027</span><span class="nav-short">Taste 2027</span></a>
                 <a class="nav-run" href="https://solvangguide.com/wine-marathon-2027"><span class="nav-full">Wine Marathon 2027</span><span class="nav-short">Marathon</span></a>
                 <a class="nav-spring" href="https://solvangguide.com/solvang-spring-wine-festival-2027"><span class="nav-full">Spring Wine Fest 2027</span><span class="nav-short">Spring Fest</span></a>
+                <a class="nav-summer" href="https://solvangguide.com/summer-music-2027.html"><span class="nav-full">Summer Music 2027</span><span class="nav-short">Summer Music</span></a>
                 <a class="nav-danish" href="https://solvangguide.com/solvang-danish-days-2027"><span class="nav-full">Danish Days 2027</span><span class="nav-short">Danish Days</span></a>
             </div>
         </div>
@@ -3004,7 +3021,7 @@ footer a:hover {
     <section class="events-section" id="upcoming-events" aria-labelledby="upcoming-events-heading">
         <div class="container">
             <h2 id="upcoming-events-heading">Upcoming Solvang Events</h2>
-            <p class="section-subtitle">Plan your Solvang Julefest visit and the 2027 food, wine, race, and Danish heritage weekends.</p>
+            <p class="section-subtitle">Plan your Solvang Julefest visit and the 2027 food, wine, race, summer-music, and Danish heritage events.</p>
             <div class="cards-grid">
                 <article class="tour-card">
                     <div class="tour-media">
@@ -3056,6 +3073,19 @@ footer a:hover {
                         <h3>Wine Country Marathon 2027</h3>
                         <p>Half marathon through vineyard country with a post-race wine festival in Solvang Park.</p>
                         <a class="tour-book-btn" href="https://solvangguide.com/wine-marathon-2027">View Event Guide</a>
+                    </div>
+                </article>
+                <article class="tour-card">
+                    <div class="tour-media">
+                        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Outdoor summer concert crowd in the evening" width="640" height="400" loading="lazy">
+                        <span class="tour-price">June–August 2027 · provisional</span>
+                        <span class="tour-location">📍 Solvang Park</span>
+                    </div>
+                    <div class="tour-card-inner">
+                        <p class="tour-rating">★ Dates and performers pending</p>
+                        <h3>Summer Music 2027</h3>
+                        <p>Plan a summer evening around possible outdoor music in Solvang Park. The 2027 calendar and performers have not yet been confirmed.</p>
+                        <a class="tour-book-btn" href="https://solvangguide.com/summer-music-2027.html">View Planning Guide</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3933,7 +3963,7 @@ footer a:hover {
 
     <!-- Footer -->
     <footer>
-        <p><a href="https://solvangguide.com/">Home</a> · <a href="https://solvangguide.com/wine-and-experiences">Wine &amp; Experiences</a> · <a href="https://solvangguide.com/taste-of-solvang-2027">Taste of Solvang 2027</a> · <a href="https://solvangguide.com/wine-marathon-2027">Wine Marathon 2027</a> · <a href="https://solvangguide.com/solvang-spring-wine-festival-2027">Spring Wine Fest 2027</a> · <a href="https://solvangguide.com/solvang-danish-days-2027">Danish Days 2027</a></p>
+        <p><a href="https://solvangguide.com/">Home</a> · <a href="https://solvangguide.com/wine-and-experiences">Wine &amp; Experiences</a> · <a href="https://solvangguide.com/taste-of-solvang-2027">Taste of Solvang 2027</a> · <a href="https://solvangguide.com/wine-marathon-2027">Wine Marathon 2027</a> · <a href="https://solvangguide.com/solvang-spring-wine-festival-2027">Spring Wine Fest 2027</a> · <a href="https://solvangguide.com/summer-music-2027.html">Summer Music 2027</a> · <a href="https://solvangguide.com/danish-days-2027.html">Danish Days 2027</a></p>
         <p>&copy; 2026 Solvang Guide. All rights reserved.</p>
     </footer>
 
