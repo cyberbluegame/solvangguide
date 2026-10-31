@@ -66,7 +66,7 @@
             "name": "Solvang Park",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "1693 Mission Drive",
+              "streetAddress": "1630 Mission Drive",
               "addressLocality": "Solvang",
               "addressRegion": "CA",
               "postalCode": "93463",
@@ -220,6 +220,46 @@
             img { width: 100%; max-width: 100%; height: auto; object-fit: cover; display: block; border-radius: 12px; }
             @media (min-width: 769px) and (max-width: 1024px) { body { padding-top: 116px; } }
         </style>
+    <style id="site-shared-layout">
+        /* Shared header nav: a single fixed row on every screen size. Pills never wrap;
+           on narrow screens the row scrolls sideways instead of stacking 3-4 rows deep. */
+        :root { --site-nav-h: 60px; }
+        html { scroll-padding-top: calc(var(--site-nav-h) + 12px); }
+        body { padding-top: var(--site-nav-h) !important; }
+        .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; display: flex; align-items: center; height: var(--site-nav-h); background: rgba(255,255,255,0.96); border-bottom: 1px solid #e2e8f0; -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%); }
+        .site-nav > .container { display: block; width: 100%; max-width: none; min-height: 0; margin: 0; padding: 0; }
+        .site-nav .site-nav-links { display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 0.45rem; padding: 0.5rem 16px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .site-nav .site-nav-links::-webkit-scrollbar { display: none; }
+        .site-nav .site-nav-links > a:first-child { margin-left: auto; }
+        .site-nav .site-nav-links > a:last-child { margin-right: auto; }
+        .site-nav .site-nav-links a { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 0; min-height: 40px; padding: 0.45rem 0.95rem; border-radius: 9999px; color: #fff; background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 3px 10px rgba(15, 23, 42, 0.14); font-size: 0.88rem; font-weight: 800; line-height: 1.2; letter-spacing: 0.01em; text-align: center; text-decoration: none; white-space: nowrap; scroll-snap-align: center; outline-offset: 2px; }
+        .site-nav .site-nav-links a.nav-taste { background: linear-gradient(135deg, #7c3aed, #be185d); }
+        .site-nav .site-nav-links a.nav-run { background: linear-gradient(135deg, #0f766e, #65a30d); }
+        .site-nav .site-nav-links a.nav-spring { background: linear-gradient(135deg, #9f1239, #e11d48); }
+        .site-nav .site-nav-links a.nav-summer { background: linear-gradient(135deg, #0284c7, #16a34a); }
+        .site-nav .site-nav-links a.nav-danish { background: linear-gradient(135deg, #0f766e, #2563eb); }
+        .site-nav .site-nav-links a.is-active { outline: none; filter: brightness(1.08); box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f59e0b; }
+        .site-nav .site-nav-links a:focus-visible { outline: 3px solid #1d4ed8; }
+        .site-nav .nav-full { display: inline; }
+        .site-nav .nav-short { display: none; }
+        @media (max-width: 1240px) {
+            .site-nav .nav-full { display: none; }
+            .site-nav .nav-short { display: inline; }
+        }
+        @media (max-width: 900px) {
+            .site-nav .site-nav-links { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%); }
+        }
+        @media (max-width: 560px) {
+            .site-nav .site-nav-links a { min-height: 38px; padding: 0.42rem 0.8rem; font-size: 0.82rem; }
+        }
+
+        /* Card listings: flexible auto-fit grid (min 280px per card, at most 3 per row). */
+        .cards-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(280px, calc((100% - 4rem) / 3))), 1fr)); }
+        .cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(280px, calc((100% - 2rem) / 3))), 1fr)); }
+
+        /* Stay22 hotel map: full width, comfortable height on every screen. */
+        #stay22-widget, .stay22-map-wrap iframe { display: block; width: 100%; max-width: 100%; border: 0; }
+    </style>
 </head>
 <body>
     <nav class="site-nav" aria-label="Primary">
@@ -235,6 +275,16 @@
             </div>
         </div>
     </nav>
+    <script>
+        // Keep the current page's pill in view when the nav bar scrolls sideways on small screens.
+        (function () {
+            var bar = document.querySelector('.site-nav-links');
+            var active = bar && bar.querySelector('.is-active');
+            if (!active || bar.scrollWidth <= bar.clientWidth) return;
+            var b = bar.getBoundingClientRect(), a = active.getBoundingClientRect();
+            bar.scrollLeft += (a.left - b.left) - (b.width - a.width) / 2;
+        })();
+    </script>
 
     <header class="hero">
         <img class="hero-photo" src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Golden-hour vineyard rows in Santa Ynez Valley for Solvang Spring Wine Festival 2027" width="1600" height="900" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Santa_Ynez_Valley.JPG?width=1600';">
@@ -252,7 +302,7 @@
             <h2 id="swf-facts">Spring Wine Fest 2027 at a glance</h2>
             <dl>
                 <div class="fact"><dt>Date</dt><dd>Saturday, May 8, 2027. Pacific Time. Gates 11:00 AM; last pour 5:00 PM at Solvang Park.</dd></div>
-                <div class="fact"><dt>Location</dt><dd>Solvang Park, 1693 Mission Drive, Solvang, CA 93463 — oaks, lawn, and a two-minute walk to Copenhagen Drive bakeries.</dd></div>
+                <div class="fact"><dt>Location</dt><dd>Solvang Park, 1630 Mission Drive, Solvang, CA 93463 — oaks, lawn, and a two-minute walk to Copenhagen Drive bakeries.</dd></div>
                 <div class="fact"><dt>Highlights</dt><dd>🍷 Valley pinot &amp; chardonnay · 🧀 Cheese pairings · 🍓 Seasonal fruit plates · 🎶 Live music · 🥂 Tasting-pass pours</dd></div>
                 <div class="fact"><dt>Admission</dt><dd>Ticketed tasting pass. Food plates and some reserve pours are extra. Official 2027 wristband pricing publishes with the pass.</dd></div>
                 <div class="fact"><dt>Parking</dt><dd>Free lots on the Alisal Road edge and behind Mission Drive. Walk to the park. Do not circle Copenhagen Drive after 10:30 AM.</dd></div>
@@ -347,7 +397,7 @@
             <div class="cards-grid cols-3">
                 <article class="hotel-card">
                     <div class="hotel-media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_Square_Solvang.jpg?width=800" alt="Solvang Park and village square near the Spring Wine Festival tents" width="800" height="500" loading="lazy"></div>
-                    <div class="hotel-content"><h3>🌳 Solvang Park</h3><p>Main tasting lawn at 1693 Mission Drive. Oaks, restrooms, stage, and the shortest walk to Copenhagen Drive bakeries.</p></div>
+                    <div class="hotel-content"><h3>🌳 Solvang Park</h3><p>Main tasting lawn at 1630 Mission Drive. Oaks, restrooms, stage, and the shortest walk to Copenhagen Drive bakeries.</p></div>
                 </article>
                 <article class="hotel-card">
                     <div class="hotel-media"><img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Santa Ynez Valley vineyard rows pouring at Spring Fest" width="800" height="500" loading="lazy"></div>
@@ -367,14 +417,14 @@
             <p class="section-subtitle">Human-friendly buttons — tracking IDs stay on the link, not in the label.</p>
             <p class="callout">May 8 shares the village with race weekend. A room on Mission Drive beats a 10:00 AM parking hunt.</p>
             <div class="stay22-map-wrap">
-                <iframe id="stay22-widget" width="100%" height="720" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.5958&amp;lng=-120.1376&amp;address=Solvang,%20CA,%20USA" title="Solvang hotel map near Solvang Park for Spring Wine Festival 2027" allowfullscreen></iframe>
+                <iframe id="stay22-widget" width="100%" height="428" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.5958&amp;lng=-120.1376&amp;address=Solvang,%20CA,%20USA" frameborder="0" title="Solvang hotel map near Solvang Park for Spring Wine Festival 2027" loading="lazy" allowfullscreen></iframe>
             </div>
             <div class="cards-grid" style="grid-template-columns:1fr;max-width:640px;margin:0 auto 2rem;">
                 <article class="hotel-card">
                     <div class="hotel-content">
                         <h3>Walkable inns by the park</h3>
                         <p>The Landsby, Hotel Corque, Wine Valley Inn, and neighboring Mission Drive stays — same May weekend the festival crowd is watching.</p>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Hotel Availability Near Solvang Park</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Hotel Availability Near Solvang Park</a>
                     </div>
                 </article>
             </div>
@@ -388,7 +438,7 @@
                         <h3>🍷 Three-winery picnic day</h3>
                         <p>Taste three Santa Ynez Valley rooms with a picnic lunch — book Friday or Sunday around park hours.</p>
                         <div class="amenities"><span class="amenity">Picnic</span><span class="amenity">Wine tasting</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Your Solvang Wine Tasting Tour Here</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Your Solvang Wine Tasting Tour Here</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -400,7 +450,7 @@
                         <h3>🥂 Village tasting pass</h3>
                         <p>Compare downtown Solvang and Santa Ynez tasting-pass style days when the official Spring Fest wristband is not enough.</p>
                         <div class="amenities"><span class="amenity">Tasting pass</span><span class="amenity">Walkable</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20wine%20tasting%20pass&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Get Tickets &amp; Tasting Passes for Spring Fest 2027</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20wine%20tasting%20pass&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Get Tickets &amp; Tasting Passes for Spring Fest 2027</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -412,7 +462,7 @@
                         <h3>🚲 Vineyard e-bike loop</h3>
                         <p>Pedal oak-hill lanes on Sunday when the park tents are gone and the valley is quiet again.</p>
                         <div class="amenities"><span class="amenity">E-bike</span><span class="amenity">Vineyard views</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20country%20e-bike%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Book a Santa Ynez Vineyard E-Bike Ride</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20country%20e-bike%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Book a Santa Ynez Vineyard E-Bike Ride</a>
                     </div>
                 </article>
             </div>

@@ -105,7 +105,7 @@
           "location": {
             "@type": "Place",
             "name": "Solvang Park & Village",
-            "address": {"@type":"PostalAddress","streetAddress":"1693 Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"},
+            "address": {"@type":"PostalAddress","streetAddress":"1630 Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"},
             "geo": {"@type":"GeoCoordinates","latitude":34.5958,"longitude":-120.1376}
           },
           "image": ["https://solvangguide.com/images/julefest-banner.jpg"],
@@ -175,7 +175,7 @@
             "name": "Solvang Park",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "1693 Mission Drive",
+              "streetAddress": "1630 Mission Drive",
               "addressLocality": "Solvang",
               "addressRegion": "CA",
               "postalCode": "93463",
@@ -188,17 +188,29 @@
           "performer": {"@type":"Organization","name":"Santa Ynez Valley Wineries & Local Chefs"},
           "offers": {"@type":"Offer","name":"Spring Fest 2027 tasting pass","price":"65","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/solvang-spring-wine-festival-2027"}
         },
-                {
-                    "@type": "Event",
-                    "@id": "https://solvangguide.com/summer-music-2027.html#event",
-                    "name": "Solvang Music in the Park 2027 (Planning Guide)",
-                    "url": "https://solvangguide.com/summer-music-2027.html",
-                    "description": "Visitor planning guide for possible June–August 2027 music events at Solvang Park. Exact dates, hours, performers, and the program remain unconfirmed by organizers.",
-                    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-                    "inLanguage": "en-US",
-                    "location": {"@type":"Place","name":"Solvang Park","address":{"@type":"PostalAddress","streetAddress":"Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
-                    "organizer": {"@type":"Organization","name":"Event organizer to be announced"}
-                },
+        {
+          "@type": "MusicEvent",
+          "@id": "https://solvangguide.com/summer-music-2027.html#event",
+          "name": "Solvang Music in the Park 2027",
+          "url": "https://solvangguide.com/summer-music-2027.html",
+          "description": "Free summer outdoor concerts at the Solvang Park gazebo in downtown Solvang, hosted by the Solvang Chamber of Commerce. Recent seasons ran Wednesday evenings from 5 to 8 PM through August; the 2027 season is planned for June through August 2027, with exact dates and the band lineup to be announced by organizers.",
+          "startDate": "2027-06-01",
+          "endDate": "2027-08-31",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "isAccessibleForFree": true,
+          "inLanguage": "en-US",
+          "location": {
+            "@type": "Place",
+            "name": "Solvang Park",
+            "address": {"@type":"PostalAddress","streetAddress":"1630 Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"},
+            "geo": {"@type":"GeoCoordinates","latitude":34.5958,"longitude":-120.1376}
+          },
+          "image": ["https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&h=630&q=80"],
+          "organizer": {"@type":"Organization","name":"Solvang Chamber of Commerce","url":"https://solvangcc.com/"},
+          "performer": {"@type":"PerformingGroup","name":"Local and regional bands (2027 lineup to be announced)"},
+          "offers": {"@type":"Offer","name":"Free admission","price":"0","priceCurrency":"USD","validFrom":"2026-10-31T00:00:00-07:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/summer-music-2027.html"}
+        },
         {
           "@type": "WebSite",
           "@id": "https://solvangguide.com/#website",
@@ -217,7 +229,7 @@
           "name": "Solvang Julefest 2026–2027: California's Danish Christmas Wonderland",
           "isPartOf": { "@id": "https://solvangguide.com/#website" },
           "about": { "@id": "https://solvangguide.com/#destination" },
-          "dateModified": "2026-09-26",
+          "dateModified": "2026-10-31",
           "inLanguage": "en-US"
         },
         {
@@ -2553,6 +2565,46 @@ footer a:hover {
             body { padding-top: 116px; }
         }
     </style>
+    <style id="site-shared-layout">
+        /* Shared header nav: a single fixed row on every screen size. Pills never wrap;
+           on narrow screens the row scrolls sideways instead of stacking 3-4 rows deep. */
+        :root { --site-nav-h: 60px; }
+        html { scroll-padding-top: calc(var(--site-nav-h) + 12px); }
+        body { padding-top: var(--site-nav-h) !important; }
+        .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; display: flex; align-items: center; height: var(--site-nav-h); background: rgba(255,255,255,0.96); border-bottom: 1px solid #e2e8f0; -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%); }
+        .site-nav > .container { display: block; width: 100%; max-width: none; min-height: 0; margin: 0; padding: 0; }
+        .site-nav .site-nav-links { display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 0.45rem; padding: 0.5rem 16px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .site-nav .site-nav-links::-webkit-scrollbar { display: none; }
+        .site-nav .site-nav-links > a:first-child { margin-left: auto; }
+        .site-nav .site-nav-links > a:last-child { margin-right: auto; }
+        .site-nav .site-nav-links a { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 0; min-height: 40px; padding: 0.45rem 0.95rem; border-radius: 9999px; color: #fff; background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 3px 10px rgba(15, 23, 42, 0.14); font-size: 0.88rem; font-weight: 800; line-height: 1.2; letter-spacing: 0.01em; text-align: center; text-decoration: none; white-space: nowrap; scroll-snap-align: center; outline-offset: 2px; }
+        .site-nav .site-nav-links a.nav-taste { background: linear-gradient(135deg, #7c3aed, #be185d); }
+        .site-nav .site-nav-links a.nav-run { background: linear-gradient(135deg, #0f766e, #65a30d); }
+        .site-nav .site-nav-links a.nav-spring { background: linear-gradient(135deg, #9f1239, #e11d48); }
+        .site-nav .site-nav-links a.nav-summer { background: linear-gradient(135deg, #0284c7, #16a34a); }
+        .site-nav .site-nav-links a.nav-danish { background: linear-gradient(135deg, #0f766e, #2563eb); }
+        .site-nav .site-nav-links a.is-active { outline: none; filter: brightness(1.08); box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f59e0b; }
+        .site-nav .site-nav-links a:focus-visible { outline: 3px solid #1d4ed8; }
+        .site-nav .nav-full { display: inline; }
+        .site-nav .nav-short { display: none; }
+        @media (max-width: 1240px) {
+            .site-nav .nav-full { display: none; }
+            .site-nav .nav-short { display: inline; }
+        }
+        @media (max-width: 900px) {
+            .site-nav .site-nav-links { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%); }
+        }
+        @media (max-width: 560px) {
+            .site-nav .site-nav-links a { min-height: 38px; padding: 0.42rem 0.8rem; font-size: 0.82rem; }
+        }
+
+        /* Card listings: flexible auto-fit grid (min 280px per card, at most 3 per row). */
+        .cards-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(280px, calc((100% - 4rem) / 3))), 1fr)); }
+        .cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(280px, calc((100% - 2rem) / 3))), 1fr)); }
+
+        /* Stay22 hotel map: full width, comfortable height on every screen. */
+        #stay22-widget, .stay22-map-wrap iframe { display: block; width: 100%; max-width: 100%; border: 0; }
+    </style>
 </head>
 <body>
     <nav class="site-nav" aria-label="Primary">
@@ -2568,6 +2620,16 @@ footer a:hover {
             </div>
         </div>
     </nav>
+    <script>
+        // Keep the current page's pill in view when the nav bar scrolls sideways on small screens.
+        (function () {
+            var bar = document.querySelector('.site-nav-links');
+            var active = bar && bar.querySelector('.is-active');
+            if (!active || bar.scrollWidth <= bar.clientWidth) return;
+            var b = bar.getBoundingClientRect(), a = active.getBoundingClientRect();
+            bar.scrollLeft += (a.left - b.left) - (b.width - a.width) / 2;
+        })();
+    </script>
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
@@ -2933,7 +2995,7 @@ footer a:hover {
             <p class="section-subtitle">Julefest weekends sell out up to 6 months in advance — reserve your hotel early, then add a wine tasting or trolley ride around the lights.</p>
             <p class="callout">Parade weekend (December 4–6, 2026), Christmas week, and New Year’s Eve are the first to vanish. Book The Landsby, Hotel Corque, Wine Valley Inn, Hadsten, or a Buellton base now.</p>
             <div class="stay22-map-wrap">
-                <iframe id="stay22-widget" width="100%" height="720" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.5958&amp;lng=-120.1376&amp;address=Solvang,%20CA,%20USA" title="Solvang hotel map for Julefest" allowfullscreen></iframe>
+                <iframe id="stay22-widget" width="100%" height="428" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.5958&amp;lng=-120.1376&amp;address=Solvang,%20CA,%20USA" frameborder="0" title="Solvang hotel map for Julefest" loading="lazy" allowfullscreen></iframe>
             </div>
             <div class="cards-grid" style="grid-template-columns: 1fr;">
                 <article class="hotel-card">
@@ -2945,7 +3007,7 @@ footer a:hover {
                         <h3>Check village hotel rates</h3>
                         <p>Compare downtown Solvang and Buellton inventory on one hotel map. A walkable room beats circling Copenhagen Drive after the 5:30 PM tree lighting.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Hotel Map</span><span class="amenity">Sells out</span><span class="amenity amenity-sky">Walkable</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
             </div>
@@ -2961,7 +3023,7 @@ footer a:hover {
                     <div class="hotel-content">
                         <h3>Santa Ynez 3-Winery Tour with Picnic Lunch</h3>
                         <p>Three valley tastings and a picnic — book a weekday or the Monday after Christmas when the village is still lit but calmer.</p>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -2973,7 +3035,7 @@ footer a:hover {
                     <div class="hotel-content">
                         <h3>Horse-drawn trolley &amp; village ride</h3>
                         <p>The classic holiday sightseeing loop past bakeries, windmills, and Mission Drive lights — easiest on a Friday before the Saturday parade.</p>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20horse%20drawn%20trolley%20ride&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20horse%20drawn%20trolley%20ride&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -2985,7 +3047,7 @@ footer a:hover {
                     <div class="hotel-content">
                         <h3>Holiday walking &amp; sightseeing</h3>
                         <p>Guided village walks for folklore, bakeries, and photo stops. Pair a late-afternoon tour with the 5:00 PM park light show.</p>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20Christmas%20walking%20sightseeing%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20Christmas%20walking%20sightseeing%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
             </div>
@@ -3078,13 +3140,13 @@ footer a:hover {
                 <article class="tour-card">
                     <div class="tour-media">
                         <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Outdoor summer concert crowd in the evening" width="640" height="400" loading="lazy">
-                        <span class="tour-price">June–August 2027 · provisional</span>
+                        <span class="tour-price">June–August 2027 · Free</span>
                         <span class="tour-location">📍 Solvang Park</span>
                     </div>
                     <div class="tour-card-inner">
                         <p class="tour-rating">★ Dates and performers pending</p>
-                        <h3>Summer Music 2027</h3>
-                        <p>Plan a summer evening around possible outdoor music in Solvang Park. The 2027 calendar and performers have not yet been confirmed.</p>
+                        <h3>Solvang Music in the Park 2027</h3>
+                        <p>Free summer concerts at the Solvang Park gazebo, hosted by the Solvang Chamber of Commerce. Recent seasons ran Wednesday evenings 5–8 PM; the 2027 dates and lineup are not announced yet.</p>
                         <a class="tour-book-btn" href="https://solvangguide.com/summer-music-2027.html">View Planning Guide</a>
                     </div>
                 </article>
@@ -3123,7 +3185,7 @@ footer a:hover {
                         <p class="tour-rating">★ 4.7 (19 reviews)</p>
                         <h3>Santa Ynez 3-Winery Tour with Picnic Lunch</h3>
                         <p>Taste three Santa Ynez Valley wineries with a picnic lunch — a classic wine-country day from Solvang and Buellton.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
 
@@ -3137,7 +3199,7 @@ footer a:hover {
                         <p class="tour-rating">★ Oak hills wine adventure</p>
                         <h3>Vineyard Rides Wine Adventure</h3>
                         <p>Ride through oak hills and vineyard rows on a wine-country outing — tasting stops across the Santa Ynez Valley.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Vineyard%20Rides%20Wine%20Adventure%20Santa%20Ynez&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?q=Vineyard%20Rides%20Wine%20Adventure%20Santa%20Ynez&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
             </div>
@@ -3164,7 +3226,7 @@ footer a:hover {
             <h2>Solvang Hotels Map: Boutique Stays in the Danish Village</h2>
             <p class="section-subtitle">Browse cozy boutique stays and convenient lodging options near the heart of town.</p>
             <div class="stay22-map-wrap">
-                <iframe id="stay22-widget" width="100%" height="800" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&lat=34.5958&lng=-120.1376&address=Solvang,%20CA,%20USA" frameborder="0" allowfullscreen></iframe>
+                <iframe id="stay22-widget-2" width="100%" height="428" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.5958&amp;lng=-120.1376&amp;address=Solvang,%20CA,%20USA" frameborder="0" title="Solvang hotel map" loading="lazy" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -3188,7 +3250,7 @@ footer a:hover {
                             <span class="amenity">Central</span>
                             <span class="amenity amenity-rose">On-site Dining</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3204,7 +3266,7 @@ footer a:hover {
                             <span class="amenity amenity-sky">Outdoor Pool</span>
                             <span class="amenity amenity-emerald">Walkable</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Corque&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Corque&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3220,7 +3282,7 @@ footer a:hover {
                             <span class="amenity amenity-lilac">Boutique</span>
                             <span class="amenity amenity-rose">Exclusive</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Winston%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Winston%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3236,7 +3298,7 @@ footer a:hover {
                             <span class="amenity">Upscale</span>
                             <span class="amenity amenity-lilac">Hilton</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Hadsten%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Hadsten%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3252,7 +3314,7 @@ footer a:hover {
                             <span class="amenity amenity-lilac">Danish Style</span>
                             <span class="amenity amenity-emerald">Free Parking</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Wine%20Valley%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Wine%20Valley%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3268,7 +3330,7 @@ footer a:hover {
                             <span class="amenity">Authentic</span>
                             <span class="amenity amenity-emerald">Free Parking</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=King%20Frederik%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=King%20Frederik%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3284,7 +3346,7 @@ footer a:hover {
                             <span class="amenity amenity-sky">Pool &amp; Hot Tub</span>
                             <span class="amenity amenity-rose">Cold Brew Bar</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Vinland%20Hotel%20%26%20Lounge&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Vinland%20Hotel%20%26%20Lounge&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3300,7 +3362,7 @@ footer a:hover {
                             <span class="amenity amenity-emerald">Gardens</span>
                             <span class="amenity">Family Friendly</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Solvang%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Solvang%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3316,7 +3378,7 @@ footer a:hover {
                             <span class="amenity amenity-emerald">Courtyard</span>
                             <span class="amenity">Boutique</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Atterdag%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Atterdag%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3332,7 +3394,7 @@ footer a:hover {
                             <span class="amenity amenity-emerald">Pet Friendly</span>
                             <span class="amenity amenity-lilac">Authentic</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Royal%20Copenhagen%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Royal%20Copenhagen%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3348,7 +3410,7 @@ footer a:hover {
                             <span class="amenity">Lodge</span>
                             <span class="amenity amenity-emerald">Garden Paths</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Svendsgaard%27s%20Danish%20Lodge&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Svendsgaard%27s%20Danish%20Lodge&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3364,7 +3426,7 @@ footer a:hover {
                             <span class="amenity">Fire Pits</span>
                             <span class="amenity amenity-rose">Private Patios</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=New%20Haven%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=New%20Haven%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3380,7 +3442,7 @@ footer a:hover {
                             <span class="amenity amenity-sky">Outdoor Pool</span>
                             <span class="amenity amenity-lilac">Spacious</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Kronborg%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Kronborg%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3396,7 +3458,7 @@ footer a:hover {
                             <span class="amenity amenity-lilac">Scandinavian</span>
                             <span class="amenity">Walkable</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Hamlet%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Hamlet%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3412,7 +3474,7 @@ footer a:hover {
                             <span class="amenity amenity-sky">Quiet</span>
                             <span class="amenity">Charming</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Viking%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Viking%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3428,7 +3490,7 @@ footer a:hover {
                             <span class="amenity">Resort</span>
                             <span class="amenity amenity-emerald">Family Friendly</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=WorldMark%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=WorldMark%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3444,7 +3506,7 @@ footer a:hover {
                             <span class="amenity amenity-lilac">Historic</span>
                             <span class="amenity amenity-rose">Spa</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Genevieve&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Genevieve&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -3460,7 +3522,7 @@ footer a:hover {
                             <span class="amenity amenity-rose">Spa</span>
                             <span class="amenity amenity-sky">Rooftop Pool</span>
                         </div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Chumash%20Casino%20Resort&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates &amp; Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Chumash%20Casino%20Resort&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates &amp; Availability</a>
                     </div>
                 </article>
             </div>
@@ -3808,7 +3870,7 @@ footer a:hover {
                         <p class="tour-rating">★ 4.7 (60 reviews)</p>
                         <h3>Santa Barbara Harbor: Wildlife Kayak Tour</h3>
                         <p>Paddle the harbor on a 2-hour wildlife kayak outing with city, beach, and sea-lion views for every skill level.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=199639&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=199639&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3821,7 +3883,7 @@ footer a:hover {
                         <p class="tour-rating">★ 4.7 (108 reviews)</p>
                         <h3>Santa Barbara Historic Trolley Tour</h3>
                         <p>See downtown landmarks and coastal streets on a classic 1.5-hour trolley — an easy add-on to a Solvang day trip.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=880318&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=880318&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3834,7 +3896,7 @@ footer a:hover {
                         <p class="tour-rating">★ 4.8 (29 reviews)</p>
                         <h3>Santa Barbara Harbor: Sunset Kayak Tour</h3>
                         <p>Watch the coast glow at golden hour on a 2-hour guided harbor kayak — a calm, scenic evening on the water.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=200656&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=200656&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3847,7 +3909,7 @@ footer a:hover {
                         <p class="tour-rating">★ 4.7 (10 reviews)</p>
                         <h3>Private Beach Horseback Ride</h3>
                         <p>Ride the shoreline on a private guided horseback outing — the coastal counterpart to Santa Ynez ranch trails.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=1317595&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=1317595&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3860,7 +3922,7 @@ footer a:hover {
                         <p class="tour-rating">★ 5.0 (1 review)</p>
                         <h3>Santa Barbara Funk Zone Foodie Tour</h3>
                         <p>Taste the Funk Zone’s food and drink scene on a guided walking tour through Santa Barbara’s liveliest warehouse district.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=703898&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=703898&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3873,7 +3935,7 @@ footer a:hover {
                         <p class="tour-rating">★ 4.5 (34 reviews)</p>
                         <h3>Discover Santa Barbara Yacht Cruise</h3>
                         <p>Cruise the harbor and coastline on a yacht sightseeing outing — Channel Islands views without leaving the waterfront.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=932917&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=932917&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3886,7 +3948,7 @@ footer a:hover {
                         <p class="tour-rating">★ 5.0 (3 reviews)</p>
                         <h3>Gaviota Coast Kayak Tour (3.5 Hours)</h3>
                         <p>Explore wilder coastline west of Santa Barbara on a longer guided kayak, with time to take in cliffs and open water.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=199654&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=199654&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="tour-card">
@@ -3899,7 +3961,7 @@ footer a:hover {
                         <p class="tour-rating">★ 4.7 (10 reviews)</p>
                         <h3>Santa Barbara 1.5-Hour Harbor Kayak Tour</h3>
                         <p>A shorter harbor paddle if you want coastal time before heading back to Solvang bakeries and tasting rooms.</p>
-                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=399515&amp;partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="tour-book-btn" href="https://www.getyourguide.com/s/?et=399515&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
             </div>

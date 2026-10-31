@@ -74,7 +74,7 @@
           "endDate": "2027-01-08",
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {"@type":"Place","name":"Solvang Park & Village","address":{"@type":"PostalAddress","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
+          "location": {"@type":"Place","name":"Solvang Park & Village","address":{"@type":"PostalAddress","streetAddress":"1630 Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
           "image": ["https://solvangguide.com/images/julefest-banner.jpg"],
           "organizer": {"@type":"Organization","name":"City of Solvang","url":"https://solvangguide.com/"},
           "performer": {"@type":"PerformingGroup","name":"Fossemalle Dance Studio & Carolers"},
@@ -90,7 +90,7 @@
           "endDate": "2027-03-21",
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {"@type":"Place","name":"Solvang Wine Country","address":{"@type":"PostalAddress","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
+          "location": {"@type":"Place","name":"Solvang Wine Country","address":{"@type":"PostalAddress","streetAddress":"Mission Drive & Copenhagen Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
           "image": ["https://solvangguide.com/images/taste-of-solvang.jpg"],
           "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
           "performer": {"@type":"Organization","name":"Santa Ynez Valley Wineries & Local Chefs"},
@@ -106,7 +106,7 @@
           "endDate": "2027-05-08",
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {"@type":"Place","name":"Downtown Solvang & Santa Ynez Valley Vineyards","address":{"@type":"PostalAddress","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
+          "location": {"@type":"Place","name":"Downtown Solvang & Santa Ynez Valley Vineyards","address":{"@type":"PostalAddress","streetAddress":"Mission Drive & Copenhagen Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}},
           "image": ["https://solvangguide.com/images/wine-marathon.jpg"],
           "organizer": {"@type":"Organization","name":"Santa Ynez Valley Wine Country Runs","url":"https://solvangguide.com/"},
           "performer": {"@type":"Organization","name":"Santa Ynez Valley Runners"},
@@ -117,17 +117,23 @@
           "@id": "https://solvangguide.com/#spring-wine-festival-2027",
           "name": "Solvang Spring Wine & Food Festival 2027",
           "url": "https://solvangguide.com/solvang-spring-wine-festival-2027",
+          "description": "Solvang Spring Wine & Food Festival 2027 is a public tasting day in Solvang Park on Saturday, May 8, 2027, with Santa Ynez Valley wineries, cheese pairings, and live music steps from downtown lodging.",
           "startDate": "2027-05-08T11:00:00-07:00",
           "endDate": "2027-05-08T17:00:00-07:00",
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "isAccessibleForFree": false,
           "inLanguage": "en-US",
           "location": {
             "@type": "Place",
             "name": "Solvang Park",
-            "address": {"@type":"PostalAddress","streetAddress":"1693 Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"}
+            "address": {"@type":"PostalAddress","streetAddress":"1630 Mission Drive","addressLocality":"Solvang","addressRegion":"CA","postalCode":"93463","addressCountry":"US"},
+            "geo": {"@type":"GeoCoordinates","latitude":34.5958,"longitude":-120.1376}
           },
-          "offers": {"@type":"Offer","price":"65","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/solvang-spring-wine-festival-2027"}
+          "image": ["https://solvangguide.com/images/taste-of-solvang.jpg"],
+          "organizer": {"@type":"Organization","name":"Solvang Conference & Visitors Bureau","url":"https://solvangguide.com/"},
+          "performer": {"@type":"Organization","name":"Santa Ynez Valley Wineries & Local Chefs"},
+          "offers": {"@type":"Offer","name":"Spring Fest 2027 tasting pass","price":"65","priceCurrency":"USD","validFrom":"2026-01-01T00:00:00-08:00","availability":"https://schema.org/InStock","url":"https://solvangguide.com/solvang-spring-wine-festival-2027"}
         },
         {
           "@type": "BreadcrumbList",
@@ -499,6 +505,46 @@
             img { width: 100%; max-width: 100%; height: auto; object-fit: cover; display: block; border-radius: 12px; }
             @media (min-width: 769px) and (max-width: 1024px) { body { padding-top: 116px; } }
         </style>
+    <style id="site-shared-layout">
+        /* Shared header nav: a single fixed row on every screen size. Pills never wrap;
+           on narrow screens the row scrolls sideways instead of stacking 3-4 rows deep. */
+        :root { --site-nav-h: 60px; }
+        html { scroll-padding-top: calc(var(--site-nav-h) + 12px); }
+        body { padding-top: var(--site-nav-h) !important; }
+        .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; display: flex; align-items: center; height: var(--site-nav-h); background: rgba(255,255,255,0.96); border-bottom: 1px solid #e2e8f0; -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%); }
+        .site-nav > .container { display: block; width: 100%; max-width: none; min-height: 0; margin: 0; padding: 0; }
+        .site-nav .site-nav-links { display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 0.45rem; padding: 0.5rem 16px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .site-nav .site-nav-links::-webkit-scrollbar { display: none; }
+        .site-nav .site-nav-links > a:first-child { margin-left: auto; }
+        .site-nav .site-nav-links > a:last-child { margin-right: auto; }
+        .site-nav .site-nav-links a { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 0; min-height: 40px; padding: 0.45rem 0.95rem; border-radius: 9999px; color: #fff; background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 3px 10px rgba(15, 23, 42, 0.14); font-size: 0.88rem; font-weight: 800; line-height: 1.2; letter-spacing: 0.01em; text-align: center; text-decoration: none; white-space: nowrap; scroll-snap-align: center; outline-offset: 2px; }
+        .site-nav .site-nav-links a.nav-taste { background: linear-gradient(135deg, #7c3aed, #be185d); }
+        .site-nav .site-nav-links a.nav-run { background: linear-gradient(135deg, #0f766e, #65a30d); }
+        .site-nav .site-nav-links a.nav-spring { background: linear-gradient(135deg, #9f1239, #e11d48); }
+        .site-nav .site-nav-links a.nav-summer { background: linear-gradient(135deg, #0284c7, #16a34a); }
+        .site-nav .site-nav-links a.nav-danish { background: linear-gradient(135deg, #0f766e, #2563eb); }
+        .site-nav .site-nav-links a.is-active { outline: none; filter: brightness(1.08); box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f59e0b; }
+        .site-nav .site-nav-links a:focus-visible { outline: 3px solid #1d4ed8; }
+        .site-nav .nav-full { display: inline; }
+        .site-nav .nav-short { display: none; }
+        @media (max-width: 1240px) {
+            .site-nav .nav-full { display: none; }
+            .site-nav .nav-short { display: inline; }
+        }
+        @media (max-width: 900px) {
+            .site-nav .site-nav-links { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%); }
+        }
+        @media (max-width: 560px) {
+            .site-nav .site-nav-links a { min-height: 38px; padding: 0.42rem 0.8rem; font-size: 0.82rem; }
+        }
+
+        /* Card listings: flexible auto-fit grid (min 280px per card, at most 3 per row). */
+        .cards-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(280px, calc((100% - 4rem) / 3))), 1fr)); }
+        .cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(280px, calc((100% - 2rem) / 3))), 1fr)); }
+
+        /* Stay22 hotel map: full width, comfortable height on every screen. */
+        #stay22-widget, .stay22-map-wrap iframe { display: block; width: 100%; max-width: 100%; border: 0; }
+    </style>
 </head>
 <body>
     <nav class="site-nav" aria-label="Primary">
@@ -514,6 +560,16 @@
             </div>
         </div>
     </nav>
+    <script>
+        // Keep the current page's pill in view when the nav bar scrolls sideways on small screens.
+        (function () {
+            var bar = document.querySelector('.site-nav-links');
+            var active = bar && bar.querySelector('.is-active');
+            if (!active || bar.scrollWidth <= bar.clientWidth) return;
+            var b = bar.getBoundingClientRect(), a = active.getBoundingClientRect();
+            bar.scrollLeft += (a.left - b.left) - (b.width - a.width) / 2;
+        })();
+    </script>
 
     <header class="hero wine-hero">
         <div class="container">
@@ -574,7 +630,7 @@
                         <h3>Santa Ynez 3-Winery Tour with Picnic Lunch</h3>
                         <p>Taste three valley wineries with a picnic lunch from Solvang or Buellton.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Wine Tasting</span><span class="amenity amenity-">Picnic</span><span class="amenity amenity-sky">Top Rated</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=567365&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -587,7 +643,7 @@
                         <h3>Santa Ynez Valley Small-Group Wine Trail</h3>
                         <p>Small-group shuttle across Los Olivos, Solvang, and Santa Ynez tasting rooms.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Small Group</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Free Cancellation</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/santa-ynez-l171561/santa-ynez-valley-small-group-wine-trail/?partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/santa-ynez-l171561/santa-ynez-valley-small-group-wine-trail/?partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -600,7 +656,7 @@
                         <h3>Private Santa Ynez Valley Wine Tour</h3>
                         <p>Private driver and custom winery stops — no designated driver required.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Private</span><span class="amenity amenity-">Wine Tasting</span><span class="amenity amenity-sky">Custom</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=private%20Santa%20Ynez%20Valley%20wine%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=private%20Santa%20Ynez%20Valley%20wine%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -613,7 +669,7 @@
                         <h3>Los Olivos Walking Wine Tasting</h3>
                         <p>Stroll Grand Avenue tasting rooms on foot in the valley’s prettiest village.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Walkable</span><span class="amenity amenity-">Tasting Rooms</span><span class="amenity amenity-sky">Los Olivos</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Los%20Olivos%20walking%20wine%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Los%20Olivos%20walking%20wine%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -626,7 +682,7 @@
                         <h3>Solvang Village Wine Tasting Pass</h3>
                         <p>Sample downtown Solvang tasting rooms without leaving the Danish village.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Tasting Pass</span><span class="amenity amenity-">Walkable</span><span class="amenity amenity-sky">Solvang</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20wine%20tasting%20pass&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20wine%20tasting%20pass&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -639,7 +695,7 @@
                         <h3>Santa Rita Hills Pinot Noir Trail</h3>
                         <p>Cool-climate Pinot and Chardonnay stops west of Buellton and Lompoc.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Pinot Noir</span><span class="amenity amenity-">Santa Rita Hills</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Rita%20Hills%20pinot%20noir%20wine%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Rita%20Hills%20pinot%20noir%20wine%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -652,7 +708,7 @@
                         <h3>Foxen Canyon Wine Trail Tour</h3>
                         <p>Scenic Foxen Canyon wineries between Los Olivos and Santa Maria.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Wine Trail</span><span class="amenity amenity-">Scenic</span><span class="amenity amenity-sky">Small Group</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Foxen%20Canyon%20wine%20trail%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Foxen%20Canyon%20wine%20trail%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -665,7 +721,7 @@
                         <h3>Happy Canyon Cabernet Tasting</h3>
                         <p>Bordeaux-style reds on the valley’s warmer Happy Canyon bench.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Cabernet</span><span class="amenity amenity-">Happy Canyon</span><span class="amenity amenity-sky">Wine Tasting</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Happy%20Canyon%20Santa%20Ynez%20cabernet%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Happy%20Canyon%20Santa%20Ynez%20cabernet%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -678,7 +734,7 @@
                         <h3>Sommelier-Guided Santa Ynez Tasting</h3>
                         <p>A sommelier leads flights and food pairings at boutique valley estates.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Sommelier</span><span class="amenity amenity-">Pairing</span><span class="amenity amenity-sky">Top Rated</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=sommelier%20guided%20Santa%20Ynez%20wine%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=sommelier%20guided%20Santa%20Ynez%20wine%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -691,7 +747,7 @@
                         <h3>Wine Country E-Bike Tour</h3>
                         <p>Pedal vineyard lanes on e-bikes with tasting stops and valley views.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">E-Bike</span><span class="amenity amenity-">Wine Tasting</span><span class="amenity amenity-sky">Active</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20country%20e-bike%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20country%20e-bike%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -704,7 +760,7 @@
                         <h3>Sunset Vineyard Picnic Experience</h3>
                         <p>Golden-hour picnic among the vines with a curated tasting flight.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Sunset</span><span class="amenity amenity-">Picnic</span><span class="amenity amenity-sky">Romantic</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20sunset%20vineyard%20picnic%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20sunset%20vineyard%20picnic%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -717,7 +773,7 @@
                         <h3>Cellar Tour & Barrel Tasting</h3>
                         <p>Go behind the scenes for barrel samples and a cellar walk-through.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Cellar Tour</span><span class="amenity amenity-">Barrel Tasting</span><span class="amenity amenity-sky">Insider</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20cellar%20tour%20barrel%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20cellar%20tour%20barrel%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -730,7 +786,7 @@
                         <h3>Paso Robles Highway 46 Wine Day</h3>
                         <p>Full-day tasting along Paso’s Highway 46 East and West corridors.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Paso Robles</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Day Tour</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20Highway%2046%20wine%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20Highway%2046%20wine%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -743,7 +799,7 @@
                         <h3>Paso Robles Downtown Tasting Rooms</h3>
                         <p>Walk downtown Paso tasting rooms — Rhône blends, Zinfandel, and Cabernet.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Walkable</span><span class="amenity amenity-">Paso Robles</span><span class="amenity amenity-sky">Tasting Rooms</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20downtown%20wine%20tasting%20rooms&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20downtown%20wine%20tasting%20rooms&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -756,7 +812,7 @@
                         <h3>Paso Robles Private Winery Excursion</h3>
                         <p>Private SUV day across boutique west-side and east-side estates.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Private</span><span class="amenity amenity-">Paso Robles</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=private%20Paso%20Robles%20winery%20excursion&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=private%20Paso%20Robles%20winery%20excursion&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -769,7 +825,7 @@
                         <h3>Tin City Paso Robles Urban Tasting</h3>
                         <p>Industrial-chic Tin City warehouses with experimental pours and food trucks.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Tin City</span><span class="amenity amenity-">Urban Wine</span><span class="amenity amenity-sky">Food</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Tin%20City%20Paso%20Robles%20wine%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Tin%20City%20Paso%20Robles%20wine%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -782,7 +838,7 @@
                         <h3>Paso Robles Wine Shuttle Hop-On</h3>
                         <p>Worry-free shuttle between tasting rooms so nobody has to drive.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Shuttle</span><span class="amenity amenity-">Free Cancellation</span><span class="amenity amenity-sky">Wine Trail</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20wine%20shuttle%20hop%20on&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Paso%20Robles%20wine%20shuttle%20hop%20on&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -795,7 +851,7 @@
                         <h3>Olive Oil & Wine Pairing Tour</h3>
                         <p>Valley olive mills paired with local whites and rosés.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Olive Oil</span><span class="amenity amenity-">Pairing</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20olive%20oil%20and%20wine%20pairing%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20olive%20oil%20and%20wine%20pairing%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -808,7 +864,7 @@
                         <h3>Santa Barbara Urban Wine Trail</h3>
                         <p>Funk Zone and downtown urban wineries without leaving the city.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Funk Zone</span><span class="amenity amenity-">Urban Wine</span><span class="amenity amenity-sky">Walkable</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20urban%20wine%20trail%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20urban%20wine%20trail%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -821,7 +877,7 @@
                         <h3>Santa Barbara Funk Zone Wine Walk</h3>
                         <p>Guided warehouse-district walk through tasting rooms and tapas stops.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Guided Walk</span><span class="amenity amenity-">Funk Zone</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=703898&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=703898&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -834,7 +890,7 @@
                         <h3>Lompoc Wine Ghetto Tasting</h3>
                         <p>Urban tasting warehouses in Lompoc’s Wine Ghetto — Pinot-focused pours.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Lompoc</span><span class="amenity amenity-">Pinot Noir</span><span class="amenity amenity-sky">Urban</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Lompoc%20Wine%20Ghetto%20tasting%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Lompoc%20Wine%20Ghetto%20tasting%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -847,7 +903,7 @@
                         <h3>Sta. Rita Hills AVA Half-Day Tour</h3>
                         <p>Half-day focused on the Sta. Rita Hills AVA from Buellton.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Half Day</span><span class="amenity amenity-">AVA</span><span class="amenity amenity-sky">Wine Tasting</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Sta%20Rita%20Hills%20AVA%20wine%20tour%20Buellton&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Sta%20Rita%20Hills%20AVA%20wine%20tour%20Buellton&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -860,7 +916,7 @@
                         <h3>Women Winemakers of Santa Ynez</h3>
                         <p>Tastings highlighting women-led valley labels and estate vineyards.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Women Winemakers</span><span class="amenity amenity-">Boutique</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=women%20winemakers%20Santa%20Ynez%20tasting%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=women%20winemakers%20Santa%20Ynez%20tasting%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -873,7 +929,7 @@
                         <h3>Rhône Rangers Los Olivos Flight</h3>
                         <p>Syrah, Grenache, and GSM blends from Los Olivos District growers.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Rhône</span><span class="amenity amenity-">Los Olivos</span><span class="amenity amenity-sky">Flight</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Los%20Olivos%20Rhone%20wine%20tasting%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Los%20Olivos%20Rhone%20wine%20tasting%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -886,7 +942,7 @@
                         <h3>Sparkling Wine Brunch Tasting</h3>
                         <p>Bubbles and brunch pairings — a festive start to a village wine day.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Sparkling</span><span class="amenity amenity-">Brunch</span><span class="amenity amenity-sky">Solvang</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20sparkling%20wine%20brunch%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20sparkling%20wine%20brunch%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -899,7 +955,7 @@
                         <h3>Vineyard Sunset Photography + Tasting</h3>
                         <p>Golden-hour photo walk through the vines followed by a seated tasting.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Sunset</span><span class="amenity amenity-">Photography</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20vineyard%20sunset%20photography%20tasting&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20vineyard%20sunset%20photography%20tasting&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -912,7 +968,7 @@
                         <h3>Accessible Santa Ynez Wine Shuttle</h3>
                         <p>Easy-access shuttle itinerary for guests who want tastings without hiking estates.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Shuttle</span><span class="amenity amenity-">Accessible</span><span class="amenity amenity-sky">Wine Tasting</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=accessible%20Santa%20Ynez%20wine%20shuttle%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=accessible%20Santa%20Ynez%20wine%20shuttle%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -925,7 +981,7 @@
                         <h3>Los Alamos Hidden Wineries Tour</h3>
                         <p>Off-the-path tasting rooms between Solvang and Santa Maria.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Hidden Gems</span><span class="amenity amenity-">Los Alamos</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Los%20Alamos%20hidden%20wineries%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Los%20Alamos%20hidden%20wineries%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -938,7 +994,7 @@
                         <h3>Santa Ynez Valley Wine & Chocolate Pairing</h3>
                         <p>Reserve reds paired with local chocolate — a classic valley afternoon.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Chocolate</span><span class="amenity amenity-">Pairing</span><span class="amenity amenity-sky">Top Rated</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20and%20chocolate%20pairing&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20wine%20and%20chocolate%20pairing&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -951,7 +1007,7 @@
                         <h3>Central Coast Wine Pass Day</h3>
                         <p>Flexible tasting-pass style day across multiple Santa Ynez Valley rooms.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Tasting Pass</span><span class="amenity amenity-">Flexible</span><span class="amenity amenity-sky">Wine Trail</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/santa-ynez-l171561/central-coast-wine-pass-day/?partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/santa-ynez-l171561/central-coast-wine-pass-day/?partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
             </div>
@@ -966,7 +1022,7 @@
             <h2 id="lodges-heading">30 Countryside Lodges, Vineyard Estates &amp; Resorts</h2>
             <p class="section-subtitle">Vineyard inns, ranches, and boutique resorts across Solvang, Buellton, Los Olivos, Santa Ynez, Paso Robles, and Santa Barbara — compare live rates on the interactive lodging map.</p>
             <div class="stay22-map-wrap">
-                <iframe id="stay22-widget" width="100%" height="720" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.6144&amp;lng=-120.1598&amp;address=Santa%20Ynez,%20CA,%20USA" title="Santa Ynez Valley lodging map" allowfullscreen></iframe>
+                <iframe id="stay22-widget" width="100%" height="428" src="https://stay22.com/embed/6a77a27277376ac909f8c1d3?showlist=true&amp;lat=34.6144&amp;lng=-120.1598&amp;address=Santa%20Ynez,%20CA,%20USA" frameborder="0" title="Santa Ynez Valley lodging map" loading="lazy" allowfullscreen></iframe>
             </div>
             <div class="cards-grid">
                 
@@ -979,7 +1035,7 @@
                         <h3>Alisal Guest Ranch & Resort</h3>
                         <p>Ranch resort with golf, horseback rides, and oak-covered hills just outside the village.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Ranch</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Horseback</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Alisal%20Guest%20Ranch%20%26%20Resort&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Alisal%20Guest%20Ranch%20%26%20Resort&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -991,7 +1047,7 @@
                         <h3>Fess Parker Wine Country Inn</h3>
                         <p>Wine-country inn on Grand Avenue with tasting-room access and courtyard rooms.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Wine Country</span><span class="amenity amenity-">Boutique</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Fess%20Parker%20Wine%20Country%20Inn&address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Fess%20Parker%20Wine%20Country%20Inn&amp;address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1003,7 +1059,7 @@
                         <h3>The Inn at Mattei's Tavern</h3>
                         <p>Auberge property in historic Los Olivos — luxury rooms beside a landmark tavern.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Historic</span><span class="amenity amenity-sky">Dining</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Inn%20at%20Mattei%27s%20Tavern&address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Inn%20at%20Mattei%27s%20Tavern&amp;address=Los%20Olivos%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1015,7 +1071,7 @@
                         <h3>Santa Ynez Inn</h3>
                         <p>Victorian-style inn near valley tasting rooms, a quiet base for wine weekends.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Inn</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Free Parking</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Santa%20Ynez%20Inn&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Santa%20Ynez%20Inn&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1027,7 +1083,7 @@
                         <h3>Hotel Ynez</h3>
                         <p>Contemporary valley hotel with easy drives to Solvang, Los Olivos, and Buellton.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Modern</span><span class="amenity amenity-">Central Valley</span><span class="amenity amenity-sky">Free Parking</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Ynez&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Ynez&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1039,7 +1095,7 @@
                         <h3>The Genevieve</h3>
                         <p>Luxury historic inn and spa in Santa Ynez — refined rooms after a day of tastings.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Historic</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Genevieve&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Genevieve&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1051,7 +1107,7 @@
                         <h3>Chumash Casino Resort</h3>
                         <p>4-star resort with spa, rooftop pool, and dining minutes from Solvang.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Rooftop Pool</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Chumash%20Casino%20Resort&address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Chumash%20Casino%20Resort&amp;address=Santa%20Ynez%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1063,7 +1119,7 @@
                         <h3>Ballard Inn</h3>
                         <p>Intimate country inn in Ballard, a short hop from Solvang bakeries and vineyards.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Country Inn</span><span class="amenity amenity-sky">Dining</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Ballard%20Inn&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Ballard%20Inn&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1075,7 +1131,7 @@
                         <h3>Sideways Inn</h3>
                         <p>Casual Buellton stay named for the film — gateway to Santa Rita Hills and Solvang.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Value</span><span class="amenity amenity-">Wine Trail</span><span class="amenity amenity-sky">Walkable</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Sideways%20Inn&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Sideways%20Inn&amp;address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1087,7 +1143,7 @@
                         <h3>Pea Soup Andersen's Inn</h3>
                         <p>Classic Highway 101 inn beside the famous split-pea kitchen and tasting rooms.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Classic</span><span class="amenity amenity-">Free Parking</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Pea%20Soup%20Andersen%27s%20Inn&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Pea%20Soup%20Andersen%27s%20Inn&amp;address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1099,7 +1155,7 @@
                         <h3>Hampton Inn & Suites Buellton</h3>
                         <p>Reliable suites with breakfast — a practical base for Santa Ynez Valley tastings.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Free Breakfast</span><span class="amenity amenity-sky">Pool</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hampton%20Inn%20%26%20Suites%20Buellton&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hampton%20Inn%20%26%20Suites%20Buellton&amp;address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1111,7 +1167,7 @@
                         <h3>Quality Inn Buellton</h3>
                         <p>Straightforward valley lodging with parking and a short drive to Solvang.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Value</span><span class="amenity amenity-">Free Parking</span><span class="amenity amenity-sky">Wine Trail</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Quality%20Inn%20Buellton&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Quality%20Inn%20Buellton&amp;address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1123,7 +1179,7 @@
                         <h3>Santa Ynez Valley Marriott</h3>
                         <p>Full-service hotel with pool and meeting space on the valley’s main corridor.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Wine Country</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Santa%20Ynez%20Valley%20Marriott&address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Santa%20Ynez%20Valley%20Marriott&amp;address=Buellton%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1135,7 +1191,7 @@
                         <h3>Skyview Los Alamos</h3>
                         <p>Mid-century motel revival with a pool, bar, and desert-meets-vineyard vibe.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Bar</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Skyview%20Los%20Alamos&address=Los%20Alamos%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Skyview%20Los%20Alamos&amp;address=Los%20Alamos%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1147,7 +1203,7 @@
                         <h3>Hotel Corque</h3>
                         <p>Luxury downtown Solvang boutique hotel with an outdoor pool and walkable nights.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Downtown</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Corque&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Corque&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1159,7 +1215,7 @@
                         <h3>The Landsby</h3>
                         <p>Scandinavian boutique design on Mission Drive — the village’s design-forward stay.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Central</span><span class="amenity amenity-sky">Dining</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Landsby&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Landsby&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1171,7 +1227,7 @@
                         <h3>The Hadsten Solvang</h3>
                         <p>Tapestry Collection by Hilton with an indoor pool and contemporary rooms.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Hilton</span><span class="amenity amenity-">Indoor Pool</span><span class="amenity amenity-sky">Upscale</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Hadsten%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Hadsten%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1183,7 +1239,7 @@
                         <h3>Wine Valley Inn & Cottages</h3>
                         <p>Danish-style inn and private cottages steps from tasting rooms and bakeries.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Cottages</span><span class="amenity amenity-">Danish Style</span><span class="amenity amenity-sky">Free Parking</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Wine%20Valley%20Inn%20%26%20Cottages&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Wine%20Valley%20Inn%20%26%20Cottages&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1195,7 +1251,7 @@
                         <h3>WorldMark Solvang</h3>
                         <p>Spacious suite resort near downtown — room to spread out after vineyard days.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Resort</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=WorldMark%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=WorldMark%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1207,7 +1263,7 @@
                         <h3>The Winston Solvang</h3>
                         <p>Exclusive high-end boutique stay a short stroll from Mission Drive shops.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Boutique</span><span class="amenity amenity-sky">Exclusive</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=The%20Winston%20Solvang&address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=The%20Winston%20Solvang&amp;address=Solvang%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1219,7 +1275,7 @@
                         <h3>Hotel Californian</h3>
                         <p>Funk Zone luxury hotel near the harbor, wine-tasting halls, and State Street.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Funk Zone</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Californian&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Californian&amp;address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1231,7 +1287,7 @@
                         <h3>Belmond El Encanto</h3>
                         <p>Hillside icon with ocean views, gardens, and a classic California resort feel.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Ocean Views</span><span class="amenity amenity-sky">Historic</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Belmond%20El%20Encanto&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Belmond%20El%20Encanto&amp;address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1243,7 +1299,7 @@
                         <h3>Four Seasons Resort The Biltmore Santa Barbara</h3>
                         <p>Spanish-colonial beachfront resort on the American Riviera.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Beach</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Four%20Seasons%20Resort%20The%20Biltmore%20Santa%20Barbara&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Four%20Seasons%20Resort%20The%20Biltmore%20Santa%20Barbara&amp;address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1255,7 +1311,7 @@
                         <h3>San Ysidro Ranch</h3>
                         <p>Secluded luxury cottages in Montecito canyons — a hideaway after wine country.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Luxury</span><span class="amenity amenity-">Cottages</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=San%20Ysidro%20Ranch&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=San%20Ysidro%20Ranch&amp;address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1267,7 +1323,7 @@
                         <h3>Bacara Resort & Spa</h3>
                         <p>Clifftop Goleta resort with spa, beaches, and a wine-country drive inland.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Resort</span><span class="amenity amenity-">Spa</span><span class="amenity amenity-sky">Coastal</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Bacara%20Resort%20%26%20Spa&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Bacara%20Resort%20%26%20Spa&amp;address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1279,7 +1335,7 @@
                         <h3>Allegretto Vineyard Resort</h3>
                         <p>Tuscan-inspired vineyard resort with on-site tasting and resort grounds.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Vineyard</span><span class="amenity amenity-">Resort</span><span class="amenity amenity-sky">Spa</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Allegretto%20Vineyard%20Resort&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Allegretto%20Vineyard%20Resort&amp;address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1291,7 +1347,7 @@
                         <h3>Hotel Cheval</h3>
                         <p>Boutique downtown Paso hotel — walk to tasting rooms after a wine-trail day.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Walkable</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Cheval&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Cheval&amp;address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1303,7 +1359,7 @@
                         <h3>La Bellasera Hotel & Suites</h3>
                         <p>Suites and a pool near Highway 46 tasting rooms and downtown Paso.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Suites</span><span class="amenity amenity-">Pool</span><span class="amenity amenity-sky">Wine Trail</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=La%20Bellasera%20Hotel%20%26%20Suites&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=La%20Bellasera%20Hotel%20%26%20Suites&amp;address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1315,7 +1371,7 @@
                         <h3>Hotel Quintana</h3>
                         <p>Stylish Paso Robles hotel near downtown tasting rooms and wine-country dining.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Boutique</span><span class="amenity amenity-">Downtown</span><span class="amenity amenity-sky">Wine</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=Hotel%20Quintana&address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=Hotel%20Quintana&amp;address=Paso%20Robles%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1327,7 +1383,7 @@
                         <h3>El Capitan Canyon</h3>
                         <p>Canyon cabins and safari tents between the coast and Santa Ynez Valley.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Cabins</span><span class="amenity amenity-">Nature</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&hotelname=El%20Capitan%20Canyon&address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="noopener noreferrer">Check Rates & Availability</a>
+                        <a class="availability-btn" href="https://www.stay22.com/allez/roam?aid=6a77a27277376ac909f8c1d3&amp;hotelname=El%20Capitan%20Canyon&amp;address=Santa%20Barbara%2C%20CA%2C%20USA" target="_blank" rel="sponsored noopener noreferrer">Check Rates & Availability</a>
                     </div>
                 </article>
             </div>
@@ -1350,7 +1406,7 @@
                         <h3>Ostrichland USA Visit</h3>
                         <p>Feed ostriches and emus on Highway 246 between Buellton and Solvang — a family favorite.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Family</span><span class="amenity amenity-">Ostrichland</span><span class="amenity amenity-sky">Unique</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Ostrichland%20USA%20Solvang%20Buellton&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Ostrichland%20USA%20Solvang%20Buellton&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1363,7 +1419,7 @@
                         <h3>Solvang Horse-Drawn Trolley Ride</h3>
                         <p>Historic-style trolley through Danish streets, windmills, and Mission Drive.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Trolley</span><span class="amenity amenity-">Family</span><span class="amenity amenity-sky">Solvang</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20horse%20drawn%20trolley%20ride&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20horse%20drawn%20trolley%20ride&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1376,7 +1432,7 @@
                         <h3>Santa Barbara Historic Trolley Tour</h3>
                         <p>1.5-hour trolley past downtown landmarks and coastal streets.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Trolley</span><span class="amenity amenity-">Top Rated</span><span class="amenity amenity-sky">Sightseeing</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=880318&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=880318&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1389,7 +1445,7 @@
                         <h3>Santa Barbara Harbor Wildlife Kayak</h3>
                         <p>2-hour harbor paddle with sea lions and city-and-beach views.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Kayak</span><span class="amenity amenity-">Wildlife</span><span class="amenity amenity-sky">Free Cancellation</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=199639&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=199639&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1402,7 +1458,7 @@
                         <h3>Santa Barbara Sunset Kayak Tour</h3>
                         <p>Golden-hour harbor kayak when the coast lights up.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Kayak</span><span class="amenity amenity-">Sunset</span><span class="amenity amenity-sky">Coastal</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=200656&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=200656&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1415,7 +1471,7 @@
                         <h3>Gaviota Coast Kayak (3.5 Hours)</h3>
                         <p>Longer guided paddle along wilder cliffs west of Santa Barbara.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Kayak</span><span class="amenity amenity-">Adventure</span><span class="amenity amenity-sky">Coastal</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=199654&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=199654&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1428,7 +1484,7 @@
                         <h3>Santa Barbara Harbor Kayak 1.5 Hours</h3>
                         <p>Shorter harbor paddle before heading back to Solvang bakeries.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Kayak</span><span class="amenity amenity-">Beginner</span><span class="amenity amenity-sky">Harbor</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=399515&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=399515&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1441,7 +1497,7 @@
                         <h3>Private Beach Horseback Ride</h3>
                         <p>Private guided ride along the shoreline — coastal counterpart to valley ranches.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Horseback</span><span class="amenity amenity-">Private</span><span class="amenity amenity-sky">Beach</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=1317595&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=1317595&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1454,7 +1510,7 @@
                         <h3>Santa Ynez Ranch Horseback Ride</h3>
                         <p>Trail ride through oak hills and ranch country above the vineyards.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Horseback</span><span class="amenity amenity-">Ranch</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20ranch%20horseback%20riding%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20ranch%20horseback%20riding%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1467,7 +1523,7 @@
                         <h3>Santa Barbara Whale Watching Cruise</h3>
                         <p>Seasonal whale and dolphin watch from the harbor toward the Channel Islands.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Whale Watching</span><span class="amenity amenity-">Wildlife</span><span class="amenity amenity-sky">Cruise</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20whale%20watching%20cruise&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20whale%20watching%20cruise&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1480,7 +1536,7 @@
                         <h3>Discover Santa Barbara Yacht Cruise</h3>
                         <p>Harbor and coastline yacht sightseeing with Channel Islands views.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Yacht</span><span class="amenity amenity-">Cruise</span><span class="amenity amenity-sky">Coastal</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=932917&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?et=932917&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1493,7 +1549,7 @@
                         <h3>Danish Baking Workshop in Solvang</h3>
                         <p>Hands-on aebleskiver or kringle class — taste the village by baking it.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Baking</span><span class="amenity amenity-">Workshop</span><span class="amenity amenity-sky">Danish</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20Danish%20baking%20workshop%20aebleskiver&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20Danish%20baking%20workshop%20aebleskiver&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1506,7 +1562,7 @@
                         <h3>Mission Santa Inés Guided Visit</h3>
                         <p>Walk the 1804 mission on the edge of downtown with local context.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Mission</span><span class="amenity amenity-">History</span><span class="amenity amenity-sky">Walkable</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Mission%20Santa%20Ines%20Solvang%20guided%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Mission%20Santa%20Ines%20Solvang%20guided%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1519,7 +1575,7 @@
                         <h3>Solvang Surrey Bike Rental Loop</h3>
                         <p>Multi-rider surrey or bike loop through village streets and parks.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Bikes</span><span class="amenity amenity-">Family</span><span class="amenity amenity-sky">Solvang</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20surrey%20bike%20rental&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20surrey%20bike%20rental&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1532,7 +1588,7 @@
                         <h3>Cachuma Lake Nature Outing</h3>
                         <p>Lake time in the valley — picnic, wildlife watching, and mountain views.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Lake</span><span class="amenity amenity-">Nature</span><span class="amenity amenity-sky">Family</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Cachuma%20Lake%20Santa%20Ynez%20nature%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Cachuma%20Lake%20Santa%20Ynez%20nature%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1545,7 +1601,7 @@
                         <h3>Nojoqui Falls Picnic Stop</h3>
                         <p>Short waterfall walk and picnic south of Solvang on the way to the coast.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Waterfall</span><span class="amenity amenity-">Picnic</span><span class="amenity amenity-sky">Easy Hike</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Nojoqui%20Falls%20Solvang%20hike&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Nojoqui%20Falls%20Solvang%20hike&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1558,7 +1614,7 @@
                         <h3>Santa Barbara Harbor Bike Cruise Combo</h3>
                         <p>Easy coastal ride plus harbor time — pair with a Solvang bakery morning.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Bike</span><span class="amenity amenity-">Harbor</span><span class="amenity amenity-sky">Coastal</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20harbor%20bike%20tour&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Barbara%20harbor%20bike%20tour&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1571,7 +1627,7 @@
                         <h3>Channel Islands Day-Trip Planning</h3>
                         <p>Ferry-day island adventure from the harbor — book coastal add-ons here.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Islands</span><span class="amenity amenity-">Adventure</span><span class="amenity amenity-sky">Wildlife</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Channel%20Islands%20Santa%20Barbara%20day%20trip&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Channel%20Islands%20Santa%20Barbara%20day%20trip&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1584,7 +1640,7 @@
                         <h3>Kids Solvang Village Treasure Walk</h3>
                         <p>Family-friendly village hunt past windmills, storks, and pastry windows.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Family</span><span class="amenity amenity-">Walking</span><span class="amenity amenity-sky">Kids</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20family%20walking%20tour%20kids&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Reserve Tour</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Solvang%20family%20walking%20tour%20kids&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Reserve Tour</a>
                     </div>
                 </article>
                 <article class="hotel-card">
@@ -1597,7 +1653,7 @@
                         <h3>Hot Air Balloon over Wine Country</h3>
                         <p>Sunrise balloon flights over vineyards when seasonal operators are flying.</p>
                         <div class="amenities"><span class="amenity amenity-lilac">Balloon</span><span class="amenity amenity-">Sunrise</span><span class="amenity amenity-sky">Unique</span></div>
-                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20Valley%20hot%20air%20balloon%20ride&partner_id=Y2EKWLC" target="_blank" rel="noopener noreferrer">Check Availability</a>
+                        <a class="availability-btn" href="https://www.getyourguide.com/s/?q=Santa%20Ynez%20Valley%20hot%20air%20balloon%20ride&amp;partner_id=Y2EKWLC" target="_blank" rel="sponsored noopener noreferrer">Check Availability</a>
                     </div>
                 </article>
             </div>
